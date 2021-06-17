@@ -1,0 +1,6 @@
+<meta>
+	<oop>true</oop>
+	<script src = "client.lua" type = "client" />
+	<script src = "server.slua" type = "server" />
+	<export function = "jailPlayer" type = "server" />
+</meta>

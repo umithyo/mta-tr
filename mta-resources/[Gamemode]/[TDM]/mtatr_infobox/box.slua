@@ -1,0 +1,3 @@
+function showBox(str, type, elem, ...)
+	triggerClientEvent (elem, "CreateBox", elem, type, str, ...);
+end	

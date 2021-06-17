@@ -1,0 +1,11 @@
+<meta>
+	<oop>true</oop>
+	<script src = "box_c.lua"	type = "client" />
+	<script src = "box.slua"	type = "server" />
+	<export function = "showBox" type = "server" />
+
+	<file src = "bip.mp3" />
+	<file src = "img/error.png" />
+	<file src = "img/info.png" />
+	<file src = "img/warning.png" />
+</meta>

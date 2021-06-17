@@ -1,0 +1,6 @@
+<meta>
+	<oop>true</oop>
+	<script src = "server.lua" type = "server" />
+	<export function = "_setPlayerMuted" type = "server" />
+	<export function = "isAdvertising" type = "server" />
+</meta>

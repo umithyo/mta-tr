@@ -1,0 +1,24 @@
+addEvent ("onPlayerJoinRaceEvent");
+addEventHandler ("onPlayerJoinRaceEvent", root, 
+	function ()
+		local id = exports.mtatr_engines:getNextSlot(order);
+		order[id] = source;
+		setPlayerEventData (source, "id", id);
+	end
+);
+
+addEvent ("onPlayerLeaveRaceEvent");
+addEventHandler ("onPlayerLeaveRaceEvent", root, 
+	function ()
+		local id = getPlayerEventData(source, "id");
+		order[id] = nil;
+	end
+);	
+
+addEventHandler ("onPlayerQuit", root, 
+	function ()
+		if isPlayerInEvent(source) then 
+			triggerEvent ("onPlayerLeaveRaceEvent", source);
+		end	
+	end
+);	

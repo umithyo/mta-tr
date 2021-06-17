@@ -1,0 +1,20 @@
+<meta>
+	<download_priority_group>2</download_priority_group>
+	<oop>true</oop>
+	<script src = "client.lua" type = "client" />
+	<script src = "dx_animate.lua" type = "client" />
+	<script src = "dx_shared.lua" type = "client" />
+	<script src = "buttons.lua" type = "client" />
+	<script src = "edit.lua" type = "client" />
+	<export function = "guiCreateWindow" type = "client" />
+	<export function = "guiCreateButton" type = "client" />
+	<export function = "guiCreateEdit" type = "client" />
+	<export function = "guiEditSetMasked" type = "client" />
+	<export function = "getScale" type = "client" />
+	<!-- <export function = "guiSetAlpha" type = "client" /> -->
+	<file src = "blank.png" />
+	<file src = "back.png" />
+	<file src = "layer.png" />
+	<file src = "button.png" />
+	<file src = "RobotoSlab-Bold.ttf" />
+</meta>

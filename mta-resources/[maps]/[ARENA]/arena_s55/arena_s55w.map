@@ -1,0 +1,77 @@
+<map edf:definitions="tactics,editor_main">
+    <object id="object (ramp) (2)" doublesided="false" model="1660" interior="0" dimension="6967" posX="-1840.6475830078" posY="-92.845603942871" posZ="13.109375" rotX="0" rotY="0" rotZ="270"></object>
+    <object id="object (vgElkup) (1)" doublesided="false" model="8947" interior="0" dimension="6967" posX="-1864.7626953125" posY="-160.2685546875" posZ="13.626001358032" rotX="0" rotY="0" rotZ="0"></object>
+    <object id="object (cxrf_a51_stairs) (1)" doublesided="true" model="3399" interior="0" dimension="6967" posX="-1815.9459228516" posY="-39.056083679199" posZ="11.860863685608" rotX="0" rotY="0" rotZ="0"></object>
+    <object id="object (cxrf_a51_stairs) (2)" doublesided="true" model="3399" interior="0" dimension="6967" posX="-1827.6431884766" posY="-39.053852081299" posZ="7.1858611106873" rotX="0" rotY="0" rotZ="0"></object>
+    <object id="object (CJ_BIG_SKIP1) (1)" doublesided="false" model="1365" interior="0" dimension="6967" posX="-1809.55859375" posY="-38.4677734375" posZ="6.9716172218323" rotX="0" rotY="5.99853515625" rotZ="5.99853515625"></object>
+    <object id="object (gen_whouse03_SFSe01) (1)" doublesided="false" model="10847" interior="0" dimension="6967" posX="-1883.0999755859" posY="-76" posZ="17.300012588501" rotX="0" rotY="0" rotZ="270"></object>
+    <object id="object (sm_veg_tree5) (1)" doublesided="false" model="672" interior="0" dimension="6967" posX="-1888.3029785156" posY="-0.82781219482422" posZ="26.5625" rotX="0" rotY="0" rotZ="125.99670410156"></object>
+    <object id="object (vgElkup) (1)" doublesided="false" model="8947" interior="0" dimension="6967" posX="-1882.599609375" posY="-81.7998046875" posZ="14.350021362305" rotX="0" rotY="0" rotZ="270"></object>
+    <object id="object (vgElkup) (1)" doublesided="false" model="8947" interior="0" dimension="6967" posX="-1882.6014404297" posY="-67.174980163574" posZ="14.350021362305" rotX="0" rotY="0" rotZ="270"></object>
+    <object id="object (gen_whouse03_SFSe01) (4)" doublesided="false" model="10847" interior="0" dimension="6967" posX="-1883.0999755859" posY="-76" posZ="29.899995803833" rotX="0" rotY="0" rotZ="270"></object>
+    <Anti_Rush_Point id="Anti_Rush_Point (7)" interior="0" posX="-1817.9000244141" posY="12.60000038147" posZ="17.10000038147" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (7)" interior="0" posX="-1795.8000488281" posY="12.89999961853" posZ="15" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (7)" interior="0" posX="-1772.0999755859" posY="13.60000038147" posZ="7.0999999046326" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (7)" interior="0" posX="-1772" posY="-27.39999961853" posZ="10.199999809265" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <object id="object (CJ_WHEELCHAIR1) (1)" doublesided="false" model="1369" interior="0" dimension="6967" posX="-1762.8344726562" posY="-28.84920501709" posZ="3.684544801712" rotX="0" rotY="0" rotZ="60"></object>
+    <Anti_Rush_Point id="Anti_Rush_Point (7)" interior="0" posX="-1772.1999511719" posY="-106.90000152588" posZ="2.7999999523163" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (7)" interior="0" posX="-1772.2998046875" posY="-246.3994140625" posZ="10.300000190735" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (7)" interior="0" posX="-1789" posY="-246.19999694824" posZ="17.39999961853" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (7)" interior="0" posX="-1864.4000244141" posY="-246.39999389648" posZ="19.5" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (7)" interior="0" posX="-1891.8000488281" posY="-247.5" posZ="24.200000762939" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (7)" interior="0" posX="-1925.3000488281" posY="-249.39999389648" posZ="24.700000762939" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (12)" posX="-1949.1656494141" posY="-249.70065307617" posZ="24.7109375" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (13)" posX="-1940.9295654297" posY="-152.01748657227" posZ="24.7109375" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (14)" posX="-1940.7897949219" posY="-86.266876220703" posZ="24.705362319946" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (15)" posX="-1941.9230957031" posY="6.3041501045227" posZ="24.705560684204" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <object id="object (vgElkup) (1)" doublesided="false" model="8947" interior="0" dimension="6967" posX="-1784.4748535156" posY="-192.93496704102" posZ="6.7438554763794" rotX="0" rotY="344" rotZ="270"></object>
+    <object id="object (vgElkup) (1)" doublesided="false" model="8947" interior="0" dimension="6967" posX="-1784.4735107422" posY="-206.88952636719" posZ="9.7188482284546" rotX="0" rotY="352" rotZ="270"></object>
+    <object id="object (vgElkup) (1)" doublesided="false" model="8947" interior="0" dimension="6967" posX="-1784.4803466797" posY="-180.50140380859" posZ="3.1688551902771" rotX="0" rotY="343.99841308594" rotZ="270"></object>
+    <object id="object (vgElkup) (1)" doublesided="false" model="8947" interior="0" dimension="6967" posX="-1779.5615234375" posY="-225.90625" posZ="10.693848609924" rotX="0" rotY="0" rotZ="179.99450683594"></object>
+    <object id="object (vgElkup) (1)" doublesided="false" model="8947" interior="0" dimension="6967" posX="-1779.5999755859" posY="-250.39999389648" posZ="10.699999809265" rotX="0" rotY="0" rotZ="179.99450683594"></object>
+    <object id="object (sm_veg_tree5) (2)" doublesided="false" model="672" interior="0" dimension="6967" posX="-1909.6904296875" posY="-151.26502990723" posZ="23.424997329712" rotX="0" rotY="0" rotZ="65.996704101562"></object>
+    <object id="object (genVEG_bush08) (1)" doublesided="false" model="802" interior="0" dimension="6967" posX="-1908.8486328125" posY="-152.0498046875" posZ="22.862199783325" rotX="0" rotY="0" rotZ="0"></object>
+    <Team1 id="Team1 (1)" posX="-1843" posY="-15.60000038147" posZ="15.10000038147" rotX="0" rotY="0" rotZ="180"></Team1>
+    <object id="object (new_bushsm) (1)" doublesided="false" model="647" interior="0" dimension="6967" posX="-1911.3129882812" posY="-151.07461547852" posZ="24.50076675415" rotX="0" rotY="0" rotZ="0"></object>
+    <Team1 id="Team1 (2)" interior="0" posX="-1841.8000488281" posY="-16.200000762939" posZ="15.10000038147" rotX="0" rotY="0" rotZ="180"></Team1>
+    <Team1 id="Team1 (3)" interior="0" posX="-1842.8000488281" posY="-17.700000762939" posZ="15.10000038147" rotX="0" rotY="0" rotZ="179.99450683594"></Team1>
+    <Team1 id="Team1 (4)" interior="0" posX="-1841.5" posY="-18" posZ="15.10000038147" rotX="0" rotY="0" rotZ="179.99450683594"></Team1>
+    <Team1 id="Team1 (5)" interior="0" posX="-1842.3000488281" posY="-19.60000038147" posZ="15.10000038147" rotX="0" rotY="0" rotZ="179.99450683594"></Team1>
+    <Team1 id="Team1 (6)" interior="0" posX="-1841.9000244141" posY="-14.800000190735" posZ="15.10000038147" rotX="0" rotY="0" rotZ="179.99450683594"></Team1>
+    <Team1 id="Team1 (7)" interior="0" posX="-1840.5999755859" posY="-15.89999961853" posZ="15.10000038147" rotX="0" rotY="0" rotZ="179.99450683594"></Team1>
+    <Team1 id="Team1 (8)" interior="0" posX="-1840.3000488281" posY="-17.700000762939" posZ="15.10000038147" rotX="0" rotY="0" rotZ="179.99450683594"></Team1>
+    <Team1 id="Team1 (9)" interior="0" posX="-1840" posY="-19.10000038147" posZ="15.10000038147" rotX="0" rotY="0" rotZ="180"></Team1>
+    <Team1 id="Team1 (10)" interior="0" posX="-1840.2998046875" posY="-17.69921875" posZ="15.10000038147" rotX="0" rotY="0" rotZ="179.99450683594"></Team1>
+    <Central_Marker id="Central_Marker (1)" posX="-1857.7069091797" posY="-102.97928619385" posZ="34.891693115234" rotX="0" rotY="0" rotZ="0"></Central_Marker>
+    <Team1 id="Team1 (11)" interior="0" posX="-1840.6999511719" posY="-20.10000038147" posZ="15.10000038147" rotX="0" rotY="0" rotZ="179.99450683594"></Team1>
+    <Team1 id="Team1 (12)" interior="0" posX="-1840.8000488281" posY="-13.5" posZ="15.10000038147" rotX="0" rotY="0" rotZ="179.99450683594"></Team1>
+    <Team1 id="Team1 (13)" interior="0" posX="-1842.3000488281" posY="-12.39999961853" posZ="15.10000038147" rotX="0" rotY="0" rotZ="179.99450683594"></Team1>
+    <Team1 id="Team1 (14)" interior="0" posX="-1843.4000244141" posY="-12.699999809265" posZ="15.10000038147" rotX="0" rotY="0" rotZ="179.99450683594"></Team1>
+    <Team1 id="Team1 (15)" interior="0" posX="-1843.8000488281" posY="-19.10000038147" posZ="15.10000038147" rotX="0" rotY="0" rotZ="179.99450683594"></Team1>
+    <Team1 id="Team1 (16)" interior="0" posX="-1843.8000488281" posY="-14" posZ="15.10000038147" rotX="0" rotY="0" rotZ="179.99450683594"></Team1>
+    <Team2 id="Team2 (1)" posX="-1852.8000488281" posY="-170.69999694824" posZ="9.6000003814697" rotX="0" rotY="0" rotZ="0"></Team2>
+    <object id="object (meshfence1_LAn) (2)" doublesided="false" model="4100" interior="0" dimension="6967" posX="-1826.7998046875" posY="-71.099609375" posZ="15.699999809265" rotX="0" rotY="0" rotZ="319.99877929688"></object>
+    <object id="object (meshfence1_LAn) (3)" doublesided="false" model="4100" interior="0" dimension="6967" posX="-1826.8000488281" posY="-71.099998474121" posZ="18.5" rotX="0" rotY="0" rotZ="319.99877929688"></object>
+    <object id="object (meshfence1_LAn) (4)" doublesided="false" model="4100" interior="0" dimension="6967" posX="-1826.8000488281" posY="-71.099998474121" posZ="21.299999237061" rotX="0" rotY="0" rotZ="319.99877929688"></object>
+    <Team2 id="Team2 (2)" interior="0" posX="-1851.3000488281" posY="-170.69999694824" posZ="9.3000001907349" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (3)" interior="0" posX="-1852.6999511719" posY="-169" posZ="9.1999998092651" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (4)" interior="0" posX="-1852.6999511719" posY="-171.60000610352" posZ="9.3000001907349" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (5)" interior="0" posX="-1851" posY="-172.10000610352" posZ="9.1000003814697" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (6)" interior="0" posX="-1855.1999511719" posY="-170.10000610352" posZ="9.1999998092651" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (7)" interior="0" posX="-1855" posY="-171.80000305176" posZ="9.1999998092651" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (8)" interior="0" posX="-1853.5" posY="-173.19999694824" posZ="9.3000001907349" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (9)" interior="0" posX="-1854.8000488281" posY="-174.69999694824" posZ="9.3000001907349" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (10)" interior="0" posX="-1852.3000488281" posY="-174.10000610352" posZ="9.3999996185303" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (11)" interior="0" posX="-1853.3000488281" posY="-175.5" posZ="9.3999996185303" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (12)" interior="0" posX="-1857.3000488281" posY="-175.69999694824" posZ="9.1999998092651" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (13)" interior="0" posX="-1855.0999755859" posY="-169" posZ="9.1999998092651" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (14)" interior="0" posX="-1855.8000488281" posY="-173.5" posZ="9.1999998092651" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (15)" interior="0" posX="-1851.1999511719" posY="-174.89999389648" posZ="9.3999996185303" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (16)" interior="0" posX="-1853.5999755859" posY="-176.89999389648" posZ="9.3999996185303" rotX="0" rotY="0" rotZ="0"></Team2>
+    <object id="object (sm_veg_tree5) (4)" doublesided="false" model="672" interior="0" dimension="6967" posX="-1916.0064697266" posY="-2.9874954223633" posZ="26.120416641235" rotX="0" rotY="0" rotZ="125.99670410156"></object>
+    <object id="object (lasnfltrail) (1)" doublesided="false" model="3567" interior="0" dimension="6967" posX="-1781.5672607422" posY="-37.919746398926" posZ="4.6500010490417" rotX="3" rotY="0" rotZ="92"></object>
+    <object id="object (kmb_container_yel) (1)" doublesided="false" model="2935" interior="0" dimension="6967" posX="-1777.3502197266" posY="-37.726905822754" posZ="6.7377958297729" rotX="357" rotY="0" rotZ="272"></object>
+    <object id="object (vegasNnewfence2b) (4)" doublesided="false" model="7191" interior="0" dimension="6967" posX="-1767.6186523438" posY="-39.265975952148" posZ="7.1001024246216" rotX="12.996826171875" rotY="0" rotZ="92.74658203125"></object>
+    <object id="object (vegasNnewfence2b) (5)" doublesided="false" model="7191" interior="0" dimension="6967" posX="-1767.6181640625" posY="-39.265625" posZ="3.6001062393188" rotX="12.996826171875" rotY="0" rotZ="92.74658203125"></object>
+    <object id="object (vegasNnewfence2b) (6)" doublesided="false" model="7191" interior="0" dimension="6967" posX="-1767.6181640625" posY="-39.265625" posZ="0.1501050144434" rotX="12.996826171875" rotY="0" rotZ="92.74658203125"></object>
+</map>

@@ -1,0 +1,8 @@
+<meta>
+	<script src = "server.lua" type = "server" />
+	<export function = "getTeamsType" type = "server" />
+	
+	<settings> 
+		<setting name = "*Takım Türü" value = "Takım" accept = "Takım,Scoreboard" desc = "Deathmatch ve mesleklerin takım olarak veya scoreboardda oluşmasını sağlar. Not: değişikliğin geçerli olması için meslekler ve deathmatch scriptlerinin yeniden başlatılması gerekir." />
+	</settings>	
+</meta>

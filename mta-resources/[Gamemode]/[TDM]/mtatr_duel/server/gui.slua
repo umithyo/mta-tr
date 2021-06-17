@@ -1,0 +1,117 @@
+addEvent ("duel.changemode", true);
+addEventHandler ("duel.changemode", root, 
+	function ()
+		if isPlayerInMode(source) then 
+			setPlayerOutOfMode(source);
+		end
+	end
+);
+
+addEvent ("duel.create", true);
+addEventHandler ("duel.create", root, 
+	function (weapons, typ, limit, bet, map)
+		local canhe, err = canPlayerCreateRoom(client, tonumber(bet));
+		if canhe then
+			createRoom(weapons, typ, client, limit, bet, map);
+			local str = {}
+			for i, v in ipairs (weapons) do
+				table.insert (str, getWeaponNameFromID(v.id));
+			end	
+			str = table.concat (str, " ");
+			local map=map;
+			if typ == "PVP" then 
+				map = PVP_MAP[map].name;
+			else 
+				map = TDM_MAP[map].name;
+			end	
+			exports.mtatr_infobox:showBox("["..typ.."]"..limit/2 .." v "..limit/2 .."\n"..client:getName().." yeni bir oda açtı!\nBahis: "..bet.."₺ Harita:"..map.."\nSilahlar: "..str, "info", root);
+		else
+			exports.mtatr_hud:dm(err, client, 255, 0, 0);
+		end	
+	end
+);	
+
+addEvent ("duel.join", true);
+addEventHandler ("duel.join", root,
+	function (room, team)
+		local canhe, err = canPlayerEnterRoom(client, room);
+		if canhe then
+			local _, team1, team2 = getPlayersInRoom(room);
+			if getRoomType(room) == "PVP" then 			
+				if team == "team1" then 
+					if #team1 > #team2 then 
+						exports.mtatr_hud:dm ("Bu takım sayıca fazla! Başka bir takım seçmeyi deneyin.", client, 255, 0, 0);
+						return;
+					end	
+				elseif team == "team2" then 
+					if #team2 > #team1 then 
+						exports.mtatr_hud:dm ("Bu takım sayıca fazla! Başka bir takım seçmeyi deneyin.", client, 255, 0, 0);
+						return;
+					end	
+				end	
+			elseif getRoomType(room) == "TDM" then 
+				if team == "team1" then 
+					if #team1 == getRoomLimit(room) then 
+						exports.mtatr_hud:dm ("Bu takım dolu! Başka bir takım seçmeyi deneyin.", client, 255, 0, 0);
+						return;
+					end	
+				elseif team == "team2" then 
+					if #team2 == getRoomLimit(room) then 
+						exports.mtatr_hud:dm ("Bu takım dolu! Başka bir takım seçmeyi deneyin.", client, 255, 0, 0);
+						return;
+					end	
+				end	
+			end	
+			setPlayerRoom(client, room, team);
+		else
+			exports.mtatr_hud:dm(err, client, 255, 0, 0);
+		end
+	end
+);	
+
+addEvent ("duel.leave", true);
+addEventHandler ("duel.leave", root, 
+	function ()
+		if isPlayerInARoom(client) then 
+			kickPlayerOutOfRoom(client);
+		end
+	end
+);
+
+addEvent ("duel.kick", true);
+addEventHandler ("duel.kick", root, 
+	function (player)
+		if player==client then 
+			return;
+		end	
+		local id = getPlayerRoom(client);
+		if isStarter(id, client) then
+			exports.mtatr_hud:dm (client:getName() .. " seni odadan attı!", player, 200, 0, 0);
+			kickPlayerOutOfRoom(player);
+		end
+	end
+);	
+
+addEvent ("duel.closeroom", true);
+addEventHandler ("duel.closeroom", root, 
+	function ()
+		local room = getPlayerRoom(client);
+		if isStarter(room, client) then
+			closeRoom(room);
+		end
+	end
+);	
+
+addEvent ("duel.start", true);
+addEventHandler ("duel.start", root, 
+	function ()
+		local room=getPlayerRoom(client);
+		local limit = getRoomLimit(room);
+		local players = getPlayersInRoom(room);
+		if #players ~= limit then 
+			exports.mtatr_hud:dm ("Oda dolmadan düelloyu başlatamazsın.", client, 255, 0, 0);
+			return;
+		end	
+		startDuel(room);
+	end
+);	

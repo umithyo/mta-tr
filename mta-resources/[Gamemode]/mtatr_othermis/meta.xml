@@ -1,0 +1,6 @@
+<meta>
+	<oop>true</oop>
+	<script src = "rt/utils.lua" type = "server" />
+	<script src = "rt/server.lua" type = "server" />
+	<script src = "lottery/server.lua" type = "server" />
+</meta>

@@ -1,0 +1,84 @@
+addEvent ("onPlayerChangeGamemode");
+addEventHandler ("onPlayerChangeGamemode", root, 
+	function(mode)
+		if mode == "TDM" then 
+			exports.mtatr_accounts:saveMisc(source);
+			exports.mtatr_accounts:saveLocation(source);
+			exports.mtatr_accounts:saveWeapons(source);
+			setPlayerInMode(source);
+			sync(source);
+		else
+			setPlayerOutOfMode(source);
+		end
+	end
+);	
+
+addEvent ("onPlayerLeaveGamemode");
+addEventHandler ("onPlayerLeaveGamemode", root, 
+	function(mode)
+		if mode=="TDM" then 
+			for i, v in ipairs (getRooms()) do 
+				if isStarter(v.id, source) then
+					closeRoom(v.id);
+				end
+			end	
+			if isPlayerInARoom(source) then 
+				local room = getPlayerRoom(source);
+				kickPlayerOutOfRoom(source, room);
+			end	
+			sync();
+			givePlayerAssetsBack(source);
+			setCameraTarget(source, source);
+			exports.mtatr_civ:toggleHUD(source, true);
+		end			
+	end
+);	
+
+function setPlayerInMode(player)
+	setElementData (player, "Oyun Modu", "TDM");
+	setElementData (player, "inpvp", true);
+	setElementDimension(player, DIMENSION);
+	if isPedInVehicle(player) then 
+		removePedFromVehicle(player, getPedOccupiedVehicle(player));
+	end	
+end	
+
+function setPlayerOutOfMode(player)	
+	setElementData (player, "Oyun Modu", nil);
+	setElementData (player, "inpvp", nil);
+	triggerEvent ("onPlayerLeaveGamemode", player, "TDM");
+	if eventName=="onResourceStop" then return; end
+	triggerClientEvent (player, "onClientPlayerLeaveGamemode", player, "TDM");
+end	
+
+function givePlayerAssetsBack(player)
+	if not isElement (player) then return false; end
+	takeAllWeapons(player);
+	local char = exports.mtatr_accounts:getPlayerCurrentCharacter (player);
+	local function g_data (data)
+		return exports.database:getPlayerCharacterData (player, char, data);
+	end	
+	local location = g_data ("location");
+	local x, y, z = unpack (location);
+	local weapons = g_data ("weapons");
+	local model = g_data ("model");
+	local dim, int = g_data ("dim") or 0, g_data ("int") or 0;
+	for i, v in ipairs (weapons or {}) do
+		giveWeapon (player, v.id, v.ammo);
+	end
+	if model then 
+		player:setModel(model);
+	end	
+	player:setPosition(x, y, z);
+	player:setDimension(dim);
+	player:setInterior(int);
+	return true;
+end
+
+addEventHandler ("onPlayerQuit", root, 
+	function ()
+		if getElementData (source, "inpvp") then 
+			setPlayerOutOfMode(source);
+		end
+	end
+);	

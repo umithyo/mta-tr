@@ -1,0 +1,119 @@
+<map edf:definitions="BaseMode,editor_main">
+    <object id="object (vgElkup) (1)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1019.0960083008" posY="-3737.4326171875" posZ="0.99500042200089" rotX="0" rotY="0" rotZ="0" />
+    <object id="object (vgElkup) (2)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1033.7767333984" posY="-3737.4296875" posZ="1" rotX="0" rotY="0" rotZ="0" />
+    <object id="object (vgElkup) (3)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1004.4072265625" posY="-3737.4208984375" posZ="0" rotX="0" rotY="0" rotZ="0" />
+    <object id="object (vgElkup) (6)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1018.3630371094" posY="-3732.9294433594" posZ="-1.4597997665405" rotX="0" rotY="12" rotZ="0" />
+    <object id="object (vgElkup) (8)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1004.4033203125" posY="-3732.931640625" posZ="-0.0097999982535839" rotX="0" rotY="0" rotZ="0" />
+    <object id="object (vgElkup) (9)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1032.6402587891" posY="-3732.9313964844" posZ="-2.9361991882324" rotX="0" rotY="0" rotZ="0" />
+    <object id="object (vgElkup) (12)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1028.8876953125" posY="-3732.5732421875" posZ="7.106324672699" rotX="0" rotY="0" rotZ="270" />
+    <object id="object (vgElkup) (13)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1028.8742675781" posY="-3732.587890625" posZ="7.1259245872498" rotX="0" rotY="0" rotZ="90" />
+    <object id="object (vgElkup) (14)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1047.3623046875" posY="-3712.9052734375" posZ="-2.9361991882324" rotX="0" rotY="0" rotZ="0" />
+    <object id="object (vgElkup) (15)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1036.3447265625" posY="-3705.9267578125" posZ="2.926399230957" rotX="0" rotY="0" rotZ="0" />
+    <object id="object (vgElkup) (17)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1036.3736572266" posY="-3705.9208984375" posZ="5.2791976928711" rotX="0" rotY="0" rotZ="0" />
+    <object id="object (vgElkup) (18)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1052.5964355469" posY="-3742.3232421875" posZ="7.106324672699" rotX="0" rotY="0" rotZ="270" />
+    <object id="object (vgElkup) (20)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1052.595703125" posY="-3742.3232421875" posZ="7.1161246299744" rotX="0" rotY="0" rotZ="270" />
+    <object id="object (vgElkup) (21)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1052.595703125" posY="-3742.3232421875" posZ="1.0035262107849" rotX="0" rotY="179.99993896484" rotZ="90" />
+    <object id="object (vgElkup) (22)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1052.0498046875" posY="-3742.3203125" posZ="7.0965247154236" rotX="0" rotY="0" rotZ="270" />
+    <object id="object (vgElkup) (24)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1052.8907470703" posY="-3742.3205566406" posZ="-0.67267370223999" rotX="352.02795410156" rotY="0" rotZ="270" />
+    <object id="object (vgElkup) (25)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1065.3193359375" posY="-3747.279296875" posZ="-2.3188018798828" rotX="0" rotY="0" rotZ="0" />
+    <object id="object (vgElkup) (26)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1050.9921875" posY="-3761.7353515625" posZ="0.16159811615944" rotX="0" rotY="0" rotZ="0" />
+    <object id="object (vgElkup) (27)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1065.3212890625" posY="-3771.8312988281" posZ="-2.3188018798828" rotX="0" rotY="0" rotZ="0" />
+    <object id="object (vgElkup) (28)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1009.2885742188" posY="-3757.0258789063" posZ="3" rotX="0" rotY="0" rotZ="270" />
+    <object id="object (vgElkup) (29)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1033.822265625" posY="-3757.0634765625" posZ="3" rotX="0" rotY="0" rotZ="270" />
+    <object id="object (vgElkup) (30)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1033.8056640625" posY="-3757.052734375" posZ="9.078197479248" rotX="0" rotY="0" rotZ="270" />
+    <object id="object (vgElkup) (31)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1014.2158203125" posY="-3757.025390625" posZ="9.0685997009277" rotX="0" rotY="0" rotZ="90" />
+    <object id="object (vgElkup) (32)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1009.259765625" posY="-3757.0146484375" posZ="3.0293998718262" rotX="0" rotY="0" rotZ="90" />
+    <object id="object (vgElkup) (33)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1004.4296875" posY="-3708.3798828125" posZ="-0.0097999982535839" rotX="0" rotY="0" rotZ="0" />
+    <object id="object (vgElkup) (34)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1050.677734375" posY="-3784.998046875" posZ="-2.3188018798828" rotX="0" rotY="0" rotZ="0" />
+    <object id="object (vgElkup) (35)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1065.322265625" posY="-3796.0380859375" posZ="-0.078601881861687" rotX="0" rotY="0" rotZ="0" />
+    <object id="object (vgElkup) (37)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1065.3304443359" posY="-3796.3984375" posZ="2.5537986755371" rotX="348" rotY="0" rotZ="0" />
+    <object id="object (vgElkup) (38)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1065.2822265625" posY="-3801.2670898438" posZ="5.9311981201172" rotX="0" rotY="0" rotZ="0" />
+    <object id="object (vgElkup) (39)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1065.29296875" posY="-3801.2729492188" posZ="-0.068801879882813" rotX="0" rotY="0" rotZ="0" />
+    <object id="object (vgElkup) (41)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1066.455078125" posY="-3708.0400390625" posZ="2.0002021789551" rotX="23.999633789063" rotY="0" rotZ="270" />
+    <object id="object (vgElkup) (42)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1066.2260742188" posY="-3712.1220703125" posZ="3.1797244548798" rotX="0" rotY="0" rotZ="90" />
+    <object id="object (vgElkup) (34)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1050.662109375" posY="-3809.556640625" posZ="-2.3188018798828" rotX="0" rotY="0" rotZ="0" />
+    <object id="object (vgElkup) (42)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1072.7896728516" posY="-3714.9287109375" posZ="9.0329275131226" rotX="0" rotY="0" rotZ="90" />
+    <object id="object (vgElkup) (42)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1083.8056640625" posY="-3712.9853515625" posZ="6.7287244796753" rotX="0" rotY="0" rotZ="0" />
+    <object id="object (vgElkup) (42)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1066.2216796875" posY="-3715.3857421875" posZ="3.1699244976044" rotX="0" rotY="0" rotZ="90" />
+    <object id="object (vgElkup) (15)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1036.3635253906" posY="-3705.9213867188" posZ="-2.9120025634766" rotX="0" rotY="180" rotZ="0" />
+    <object id="object (vgElkup) (33)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1004.4353027344" posY="-3683.8974609375" posZ="-0.0097999982535839" rotX="0" rotY="0" rotZ="0" />
+    <object id="object (vgElkup) (33)" doublesided="false" model="8947" interior="0" dimension="6967" posX="999.5283203125" posY="-3664.259765625" posZ="-0.0097999982535839" rotX="0" rotY="0" rotZ="90" />
+    <object id="object (vgElkup) (3)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1004.905090332" posY="-3748.1884765625" posZ="-0.0097999982535839" rotX="0" rotY="0" rotZ="90" />
+    <object id="object (vgElkup) (3)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1004.9114990234" posY="-3761.7978515625" posZ="-1.9312000274658" rotX="0" rotY="344" rotZ="90" />
+    <object id="object (vgElkup) (34)" doublesided="false" model="8947" interior="0" dimension="6967" posX="999.98468017578" posY="-3775.8498535156" posZ="-2.3188018798828" rotX="0" rotY="0" rotZ="0" />
+    <object id="object (vgElkup) (34)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1035.9613037109" posY="-3785.0031738281" posZ="-2.3188018798828" rotX="0" rotY="0" rotZ="0" />
+    <object id="object (vgElkup) (34)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1018.28515625" posY="-3783.5270996094" posZ="-6.6522026062012" rotX="0" rotY="89.972015380859" rotZ="90" />
+    <object id="object (vgElkup) (34)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1018.28515625" posY="-3783.5263671875" posZ="-6.6816024780273" rotX="0" rotY="89.965728759766" rotZ="270" />
+    <object id="object (vgElkup) (34)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1035.9580078125" posY="-3809.5654296875" posZ="-2.3188018798828" rotX="0" rotY="0" rotZ="0" />
+    <object id="object (vgElkup) (34)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1088.11328125" posY="-3737.3752441406" posZ="2.4020662307739" rotX="0" rotY="89.965728759766" rotZ="180" />
+    <object id="object (vgElkup) (42)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1072.7890625" posY="-3714.9287109375" posZ="15.077128410339" rotX="0" rotY="0" rotZ="90" />
+    <object id="object (vgElkup) (34)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1088.11328125" posY="-3737.375" posZ="2.3824663162231" rotX="0" rotY="89.96044921875" rotZ="359.99450683594" />
+    <object id="object (vgElkup) (42)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1083.7978515625" posY="-3713.013671875" posZ="6.7189245223999" rotX="0" rotY="0" rotZ="179.99450683594" />
+    <object id="object (vgElkup) (42)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1083.7978515625" posY="-3713.013671875" posZ="0.64072483778" rotX="0" rotY="0" rotZ="179.99450683594" />
+    <object id="object (vgElkup) (34)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1088.095703125" posY="-3761.9384765625" posZ="2.4020662307739" rotX="0" rotY="89.961547851563" rotZ="179.99450683594" />
+    <object id="object (vgElkup) (34)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1088.095703125" posY="-3761.9384765625" posZ="2.3726663589478" rotX="0" rotY="89.96044921875" rotZ="359.99450683594" />
+    <object id="object (vgElkup) (34)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1088.1143798828" posY="-3781.1796875" posZ="-2.7549352645874" rotX="330" rotY="90" rotZ="180" />
+    <object id="object (vgElkup) (34)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1088.1142578125" posY="-3781.1796875" posZ="-2.7843351364136" rotX="30" rotY="90" rotZ="359.99462890625" />
+    <object id="object (vgElkup) (25)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1079.9912109375" posY="-3747.2973632813" posZ="-2.3090019226074" rotX="0" rotY="0" rotZ="0" />
+    <object id="object (vgElkup) (25)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1079.8461914063" posY="-3771.802734375" posZ="-2.3090019226074" rotX="0" rotY="0" rotZ="0" />
+    <object id="object (vgElkup) (25)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1078.892578125" posY="-3791.439453125" posZ="-2.3090019226074" rotX="0" rotY="0" rotZ="270" />
+    <object id="object (vgElkup) (22)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1052.0595703125" posY="-3742.3208007813" posZ="9.0673274993896" rotX="0" rotY="0" rotZ="270" />
+    <object id="object (vgElkup) (34)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1065.2835693359" posY="-3809.5573730469" posZ="-2.2894020080566" rotX="0" rotY="0" rotZ="0" />
+    <object id="object (vgElkup) (38)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1065.3231201172" posY="-3801.2854003906" posZ="5.9115982055664" rotX="0" rotY="0" rotZ="180" />
+    <object id="object (vgElkup) (31)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1014.2158203125" posY="-3757.025390625" posZ="15.122398376465" rotX="0" rotY="0" rotZ="90" />
+    <object id="object (vgElkup) (13)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1028.8935546875" posY="-3732.5908203125" posZ="12.875925064087" rotX="0" rotY="0" rotZ="90" />
+    <object id="object (vgElkup) (12)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1028.9169921875" posY="-3732.5769042969" posZ="12.861124038696" rotX="0" rotY="0" rotZ="270" />
+    <object id="object (lasrnway3_LAS) (1)" doublesided="false" model="4867" interior="0" dimension="6967" posX="1018.2294921875" posY="-3739.3203125" posZ="-3.0358123779297" rotX="0" rotY="0" rotZ="0" />
+    <object id="object (vgElkup) (33)" doublesided="false" model="8947" interior="0" dimension="6967" posX="999.49072265625" posY="-3664.2282714844" posZ="-0.029399994760752" rotX="0" rotY="0" rotZ="270" />
+    <object id="object (vgElkup) (42)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1066.2476806641" posY="-3715.3615722656" posZ="-2.8742761611938" rotX="0" rotY="0" rotZ="90" />
+    <Anti_Rush_Point id="Anti_Rush_Point (1)" posX="1072.6278076172" posY="-3821.8076171875" posZ="0.76414155960083" rotX="0" rotY="0" rotZ="0" />
+    <Anti_Rush_Point id="Anti_Rush_Point (2)" posX="1090.58984375" posY="-3821.515625" posZ="0" rotX="0" rotY="0" rotZ="0" />
+    <Anti_Rush_Point id="Anti_Rush_Point (3)" posX="1091.1142578125" posY="-3798.8017578125" posZ="0.74454212188721" rotX="0" rotY="0" rotZ="0" />
+    <Anti_Rush_Point id="Anti_Rush_Point (4)" posX="1091.14453125" posY="-3700.732421875" posZ="9.7822685241699" rotX="0" rotY="0" rotZ="0" />
+    <Anti_Rush_Point id="Anti_Rush_Point (5)" posX="1054.7138671875" posY="-3700.6650390625" posZ="0.11734485626221" rotX="0" rotY="0" rotZ="0" />
+    <Anti_Rush_Point id="Anti_Rush_Point (6)" posX="1051.8812255859" posY="-3658.4868164063" posZ="0" rotX="0" rotY="0" rotZ="0" />
+    <Anti_Rush_Point id="Anti_Rush_Point (7)" posX="1011.7747802734" posY="-3656.904296875" posZ="3.0437440872192" rotX="0" rotY="0" rotZ="0" />
+    <Anti_Rush_Point id="Anti_Rush_Point (8)" posX="987.24597167969" posY="-3656.9074707031" posZ="3.0437440872192" rotX="0" rotY="0" rotZ="0" />
+    <Anti_Rush_Point id="Anti_Rush_Point (9)" posX="987.46795654297" posY="-3674.126953125" posZ="0" rotX="0" rotY="0" rotZ="0" />
+    <Anti_Rush_Point id="Anti_Rush_Point (10)" posX="987.25927734375" posY="-3804.4797363281" posZ="2.001070022583" rotX="0" rotY="0" rotZ="0" />
+    <Anti_Rush_Point id="Anti_Rush_Point (11)" interior="0" posX="987.15881347656" posY="-3821.5075683594" posZ="0" rotX="0" rotY="0" rotZ="0" />
+    <Anti_Rush_Point id="Anti_Rush_Point (12)" posX="1028.6188964844" posY="-3821.8071289063" posZ="0.73474216461182" rotX="0" rotY="0" rotZ="0" />
+    <Central_Marker id="Central_Marker (1)" posX="1024.6846923828" posY="-3746.7453613281" posZ="42.039573669434" rotX="0" rotY="0" rotZ="0" />
+    <Team1 id="Team1 (1)" posX="1052.5235595703" posY="-3810.2805175781" posZ="1.7347421646118" rotX="0" rotY="0" rotZ="0" />
+    <Team1 id="Team1 (2)" interior="0" posX="1051.0457763672" posY="-3810.4270019531" posZ="1.7347421646118" rotX="0" rotY="0" rotZ="0" />
+    <Team1 id="Team1 (3)" interior="0" posX="1051.8061523438" posY="-3812.0061035156" posZ="1.7347421646118" rotX="0" rotY="0" rotZ="0" />
+    <Team1 id="Team1 (4)" interior="0" posX="1050.0118408203" posY="-3811.7587890625" posZ="1.7347421646118" rotX="0" rotY="0" rotZ="0" />
+    <Team1 id="Team1 (5)" interior="0" posX="1048.9721679688" posY="-3809.90234375" posZ="1.7347421646118" rotX="0" rotY="0" rotZ="0" />
+    <Team1 id="Team1 (6)" interior="0" posX="1047.9208984375" posY="-3811.5693359375" posZ="1.7347421646118" rotX="0" rotY="0" rotZ="0" />
+    <Team1 id="Team1 (7)" interior="0" posX="1049.1062011719" posY="-3813.6481933594" posZ="1.7347421646118" rotX="0" rotY="0" rotZ="0" />
+    <Team1 id="Team1 (8)" interior="0" posX="1050.9072265625" posY="-3813.7546386719" posZ="1.7347421646118" rotX="0" rotY="0" rotZ="0" />
+    <Team1 id="Team1 (9)" interior="0" posX="1052.4897460938" posY="-3813.7438964844" posZ="1.7347421646118" rotX="0" rotY="0" rotZ="0" />
+    <Team1 id="Team1 (10)" interior="0" posX="1053.6499023438" posY="-3812.1506347656" posZ="1.7347421646118" rotX="0" rotY="0" rotZ="0" />
+    <Team1 id="Team1 (11)" interior="0" posX="1046.9310302734" posY="-3813.4194335938" posZ="1.7347421646118" rotX="0" rotY="0" rotZ="0" />
+    <Team1 id="Team1 (12)" interior="0" posX="1045.9864501953" posY="-3811.4321289063" posZ="1.7347421646118" rotX="0" rotY="0" rotZ="0" />
+    <Team1 id="Team1 (13)" interior="0" posX="1046.8723144531" posY="-3809.9123535156" posZ="1.7347421646118" rotX="0" rotY="0" rotZ="0" />
+    <Team1 id="Team1 (14)" interior="0" posX="1045.2211914063" posY="-3813.5056152344" posZ="1.7347421646118" rotX="0" rotY="0" rotZ="0" />
+    <Team1 id="Team1 (15)" interior="0" posX="1044.158203125" posY="-3811.42578125" posZ="1.7347421646118" rotX="0" rotY="0" rotZ="0" />
+    <Team1 id="Team1 (16)" interior="0" posX="1045.0411376953" posY="-3809.9897460938" posZ="1.7347421646118" rotX="0" rotY="0" rotZ="0" />
+    <Team2 id="Team2 (1)" posX="1004.9967651367" posY="-3669.2390136719" posZ="4.0437440872192" rotX="0" rotY="0" rotZ="180" />
+    <Team2 id="Team2 (2)" interior="0" posX="1003.0966796875" posY="-3669.2570800781" posZ="4.0437440872192" rotX="0" rotY="0" rotZ="179.99450683594" />
+    <Team2 id="Team2 (3)" interior="0" posX="1004.0832519531" posY="-3667.6994628906" posZ="4.0437440872192" rotX="0" rotY="0" rotZ="179.99450683594" />
+    <Team2 id="Team2 (4)" interior="0" posX="1001.9951782227" posY="-3667.8376464844" posZ="4.0437440872192" rotX="0" rotY="0" rotZ="179.99450683594" />
+    <Team2 id="Team2 (5)" interior="0" posX="1006.5826416016" posY="-3667.9890136719" posZ="4.0437440872192" rotX="0" rotY="0" rotZ="179.99450683594" />
+    <Team2 id="Team2 (6)" interior="0" posX="1003.0611572266" posY="-3666.6369628906" posZ="4.0437440872192" rotX="0" rotY="0" rotZ="179.99450683594" />
+    <Team2 id="Team2 (7)" interior="0" posX="1005.3140258789" posY="-3666.7966308594" posZ="4.0437440872192" rotX="0" rotY="0" rotZ="179.99450683594" />
+    <Team2 id="Team2 (8)" interior="0" posX="1007.6480102539" posY="-3667.0102539063" posZ="4.0437440872192" rotX="0" rotY="0" rotZ="180" />
+    <Team2 id="Team2 (9)" interior="0" posX="1007.7100830078" posY="-3669.3107910156" posZ="4.0437440872192" rotX="0" rotY="0" rotZ="179.99450683594" />
+    <Team2 id="Team2 (10)" interior="0" posX="1008.9957275391" posY="-3668.3784179688" posZ="4.0437440872192" rotX="0" rotY="0" rotZ="179.99450683594" />
+    <Team2 id="Team2 (11)" interior="0" posX="1000.7872314453" posY="-3669.2209472656" posZ="4.0437440872192" rotX="0" rotY="0" rotZ="179.99450683594" />
+    <Team2 id="Team2 (12)" interior="0" posX="1001.1126708984" posY="-3666.6918945313" posZ="4.0437440872192" rotX="0" rotY="0" rotZ="179.99450683594" />
+    <Team2 id="Team2 (13)" interior="0" posX="999.82800292969" posY="-3668.0322265625" posZ="4.0437440872192" rotX="0" rotY="0" rotZ="179.99450683594" />
+    <Team2 id="Team2 (14)" interior="0" posX="999.02966308594" posY="-3666.7868652344" posZ="4.0437440872192" rotX="0" rotY="0" rotZ="179.99450683594" />
+    <Team2 id="Team2 (15)" interior="0" posX="997.91613769531" posY="-3668.0603027344" posZ="4.0437440872192" rotX="0" rotY="0" rotZ="179.99450683594" />
+    <Team2 id="Team2 (16)" interior="0" posX="998.93865966797" posY="-3669.2497558594" posZ="4.0437440872192" rotX="0" rotY="0" rotZ="179.99450683594" />
+    <object id="object (vgElkup) (34)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1021.2524414063" posY="-3809.5637207031" posZ="-2.3188018798828" rotX="0" rotY="0" rotZ="0" />
+    <object id="object (vgElkup) (34)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1006.546081543" posY="-3809.5673828125" posZ="-2.3188018798828" rotX="0" rotY="0" rotZ="0" />
+    <object id="object (vgElkup) (31)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1014.7937011719" posY="-3804.6918945313" posZ="3.7875227928162" rotX="0" rotY="0" rotZ="90" />
+    <object id="object (vgElkup) (25)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1078.9705810547" posY="-3801.4990234375" posZ="-2.299201965332" rotX="0" rotY="0" rotZ="270" />
+    <object id="object (vgElkup) (31)" doublesided="false" model="8947" interior="0" dimension="6967" posX="1014.8167724609" posY="-3804.673828125" posZ="3.8169226646423" rotX="0" rotY="0" rotZ="270" />
+</map>

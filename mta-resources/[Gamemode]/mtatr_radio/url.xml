@@ -1,0 +1,99 @@
+<radio>
+	<url 
+		name  = "Alem Fm"
+		genre = "Türkçe Pop"
+		url = "http://provisioning.streamtheworld.com/pls/ALEM_FMAAC.pls" 
+		/>
+	<url 
+		name = "Best Fm"
+		genre = "Türkçe Pop"
+		url = "http://46.20.7.125/listen.pls" 
+		/>
+	<url 
+		name = "Gönül"
+		genre = "Türkü"
+		url = "http://provisioning.streamtheworld.com/pls/GONULAAC.pls" 
+		/>
+	<url
+		name = "Joy Fm"
+		genre = "Yabancı Klasik"
+		url = "http://provisioning.streamtheworld.com/pls/JOY_FMAAC.pls" 
+		/>
+	<url 
+		name = "Joy Türk"
+		genre = "Türkçe Slow"
+		url = "http://provisioning.streamtheworld.com/pls/JOY_TURKAAC.pls"
+		/>
+	<url 
+		name = "Joy Türk Akustik"
+		genre = "Türkçe Akustik"
+		url = "http://provisioning.streamtheworld.com/pls/JOYTURK_AKUSTIKAAC.pls" 
+		/>
+	<url
+		name = "Kemençe Fm"	
+		genre = "Karadeniz Türküleri"
+		url = "http://dinle.kemencefm.com:6161/listen.pls" 
+		/>
+	<url 
+		name = "Kral Fm"
+		genre = "Türkçe Müzikler"
+		url = "http://46.20.3.204:80/" 
+		/>
+	<url 
+		name = "Kral Pop Radyo"
+		genre = "Türkçe Pop"	
+		url = "http://46.20.3.201:80/" 
+		/>
+	<url
+		name = "Kral World Radio"
+		genre = "Yabancı Hit"
+		url = "http://46.20.3.236:80/"
+		/>
+	<url 
+		name = "Metro Fm"	
+		genre = "Yabancı Hit"
+		url = "http://provisioning.streamtheworld.com/pls/METRO_FMAAC.pls" 
+		/>
+	<url 
+		name = "Number One Fm"	
+		genre = "Yabancı Hit"	
+		url = "http://sh.mncdn.com:8092/listen.pls" 
+		/>
+	<url 
+		name = "Number One Türk"	
+		genre = "Türkçe Pop"	
+		url = "http://176.227.210.74:3332/listen.pls" 
+		/>
+	<url 
+		name = "POP 90"
+		genre = "Nostalji Türk"	
+		url = "http://provisioning.streamtheworld.com/pls/POP90AAC.pls" 
+		/>
+	<url 
+		name = "Power Fm"
+		genre = "Yabancı Hit"	
+		url = "http://icast.powergroup.com.tr/PowerFM/mpeg/128/home" 
+		/>
+	<url 
+		name = "Power Türk"
+		genre = "Türkçe Pop"
+		url = "http://icast.powergroup.com.tr/PowerTurk/mpeg/128/home" 
+		/>
+	<url 
+		name = "Radyo Seymen"
+		genre = "Oyun Havası"
+		url = "http://213.128.77.142:8050/"
+		/>
+	<url 
+		name = "Türkçe Rap FM"
+		genre = "Türkçe Rap"
+		url = "http://95.173.188.166:9984/listen.pls"
+		/>
+	<!-- 	
+	<url 
+		name = ""
+		genre = ""
+		url = ""
+		/> 
+	-->
+</radio>

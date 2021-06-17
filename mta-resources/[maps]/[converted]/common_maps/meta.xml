@@ -1,0 +1,8 @@
+<meta>
+    <info version="1.0.0" />
+    <script src="big_air_drift.lua" type = "server" />
+    <script src="master_stunt.lua" type = "server" />
+    <script src="stunt_lv_airport.lua" type = "server" />
+    <script src="stunt_sf_island.lua" type = "server" />
+    <script src="verona_island.lua" type = "server" />	
+</meta>

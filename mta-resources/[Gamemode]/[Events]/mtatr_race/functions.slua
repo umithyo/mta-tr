@@ -1,0 +1,42 @@
+function getPlayersInEvent()
+	local tbl = {};
+	for player in pairs (players) do 
+		table.insert (tbl, player);
+	end
+	return tbl;
+end
+
+function isPlayerInEvent (player)
+	return players[player];
+end	
+
+function setPlayerEventData (player, key, data)
+	if not players[player] then 
+		players[player] = {};
+	end
+	players[player][key] = data;
+end
+
+function getPlayerEventData (player, key)
+	if not players[player] then return false; end
+	return tonumber (players[player][key]) or players[player][key];
+end	
+
+function setPlayerIn(player)
+	exports.mtatr_accounts:saveLocation(player);
+	triggerEvent ("onPlayerJoinRaceEvent", player);
+	_setPlayerIn(player);
+end
+
+function setPlayerOut (player, immediate)
+	triggerEvent ("onPlayerLeaveRaceEvent", player, immediate);
+end	
+
+function getStats (_type)
+	local tbl = {};
+	for i, v in pairs (stats) do 
+		table.insert (tbl, {name = i:getName(), kills = v.kills, dmg = v.dmg});
+	end
+	table.sort (tbl, function (a, b) if a[_type] and b[_type] then  return a[_type] > b[_type]; end end);
+	return tbl;
+end	

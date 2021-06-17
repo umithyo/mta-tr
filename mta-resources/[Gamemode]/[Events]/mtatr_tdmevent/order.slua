@@ -1,0 +1,26 @@
+addEvent ("onPlayerJoinTDMEvent");
+addEventHandler ("onPlayerJoinTDMEvent", root, 
+	function ()
+		local team = setPlayerEventTeam(source);
+		local id = exports.mtatr_engines:getNextSlot(order[team]);
+		order[team][id] = source;
+		setPlayerEventData (source, "id", id);
+	end
+);
+
+addEvent ("onPlayerLeaveTDMEvent");
+addEventHandler ("onPlayerLeaveTDMEvent", root, 
+	function ()
+		local id = getPlayerEventData(source, "id");
+		local team = getPlayerEventData (source, "team");
+		order[team][id] = nil;
+	end
+);	
+
+addEventHandler ("onPlayerQuit", root, 
+	function ()
+		if isPlayerInEvent(source) then 
+			triggerEvent ("onPlayerLeaveRaceEvent", source);
+		end	
+	end
+);	

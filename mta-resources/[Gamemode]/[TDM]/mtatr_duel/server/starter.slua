@@ -1,0 +1,167 @@
+local fighting={};
+local pending={};
+local fought={};
+
+function startDuel(room)
+	local players, team1, team2 = getPlayersInRoom(room);
+	local spawnpoints = {team1=getTeamSpawnpoints(room, "team1"), team2=getTeamSpawnpoints(room, "team2")};
+	local int = getRoomInterior(room);
+	local dim = DIMENSION + room;
+	local weapons = getRoomWeapons(room);
+	local ids = {};
+
+	for i, v in ipairs (team1) do
+		ids[v] = i;
+	end
+
+	for _, player in ipairs (players) do
+		if getPlayerTeam(player) == "team1" then
+			exports.mtatr_engines:setPlayerImmuneAgainst(player, team1);
+		else
+			exports.mtatr_engines:setPlayerImmuneAgainst(player, team2);
+		end
+		local i = ids[v] or 1;
+		fighting[player] = true;
+		local spawnpoint=spawnpoints[getPlayerTeam(player)];
+		if spawnpoint[i] then
+			spawnpoint=spawnpoint[i];
+		else
+			spawnpoint=spawnpoint[1];
+		end
+		local x, y, z, rot = unpack(spawnpoint);
+		setElementDimension(player, dim);
+		setElementInterior(player, int);
+		setElementPosition(player, x, y, z);
+		setElementRotation(player, 0, 0, rot);
+		takeAllWeapons(player);
+		for _, v in ipairs (weapons) do
+			giveWeapon(player, v.id, v.ammo);
+		end
+		fadeCamera(player, false);
+		toggleAllControls(player, false, true, false);
+		setTimer (startPlayer, 1000, 1, player, room);
+		triggerClientEvent(player, "onClientPlayerStartDuelling", player);
+	end
+end
+
+function startPlayer(player, room)
+	if not isElement(player) then return; end
+	fadeCamera(player, true);
+	setCameraTarget(player, player);
+	exports.mtatr_engines:startCountDown(player, "TDM: "..room, tonumber(room));
+	setPedArmor(player, 100);
+	setElementHealth(player, 100);
+end
+
+addEvent ("onCountDownReachedToEnd");
+addEventHandler ("onCountDownReachedToEnd", root,
+	function (type, room)
+		if type and room then
+			if type:find("TDM:") then
+				local players = getPlayersInRoom(tonumber(room));
+				for i, v in ipairs (players) do
+					if fighting[v] then
+						exports.mtatr_civ:toggleHUD(v, true);
+					end
+				end
+			end
+		end
+	end
+);
+
+addEventHandler ("onPlayerWasted", root,
+	function (_, killer)
+		if isElement (killer) and fighting[killer] then
+			local id = exports.database:getPlayerId(killer);
+			local kills = exports.database:getPlayerData (id, "fr_stats", "pvptdm.kills") or 0;
+			exports.database:setPlayerData(id, "fr_stats", "pvptdm.kills", kills+1);
+		end
+		if fighting[source] then
+			local id = exports.database:getPlayerId(source);
+			local deaths = exports.database:getPlayerData (id, "fr_stats", "pvptdm.deaths") or 0;
+			exports.database:setPlayerData(id, "fr_stats", "pvptdm.deaths", deaths+1);
+			fighting[source]=nil;
+			local id = getPlayerRoom(source);
+			local room = getRoomFromId(id);
+			if rooms[room] then
+				if rooms[room].players then
+					if rooms[room].players[source] then
+						rooms[room].players[source].terminated=true;
+					end
+				end
+			end
+			pending[source]=true;
+			local room=getPlayerRoom(source);
+			local bet=getRoomBet(room);
+			local team=getPlayerTeam(source);
+			fought[source]={debt=bet, team=team, room=id};
+			check(id);
+		end
+	end
+);
+
+addEventHandler ("onPlayerQuit", root,
+	function ()
+		if isPlayerInARoom(source) then
+			local room=getPlayerRoom(source);
+			local bet=getRoomBet(room);
+			exports.database:takePlayerMoney(source, bet, "TDM: Quit");
+			fought[source]=nil;
+			local id = getPlayerRoom(source);
+			local room = getRoomFromId(id);
+			rooms[room].players[source] = nil;
+			check(id);
+		end
+	end
+);
+
+addEventHandler ("onPlayerSpawn", root,
+	function ()
+		if not pending[source] then return; end
+		pending[source]=nil;
+		setPlayerOutOfMode(source);
+		exports.mtatr_engines:setPlayerImmuneAgainst(source);
+	end
+);
+
+function check(room)
+	local players, team1, team2 = getPlayersInRoom(room);
+	if team1 and team2 then
+		if #team2 == 0 then
+			finishDuel(room, "Takım 1", "team1");
+		elseif #team1 == 0 then
+			finishDuel(room, "Takım 2", "team2");
+		end
+	end
+end
+
+function finishDuel(room, team, teamprefix)
+	local bet = getRoomBet(room);
+	local players = getPlayersInRoom(room);
+	for i, v in ipairs (players) do
+		exports.mtatr_engines:setEventFinished(v, 4);
+		setTimer(giveReward, 4000, 1, v, bet);
+		setTimer (setPlayerOutOfMode, 4000, 1, v);
+		exports.mtatr_engines:output("Düelloyu "..team.." kazandı!", "", v, 100, 200, 100);
+		setTimer (setPedArmor, 4000, 1, v, 0);
+		fighting[v]=nil;
+	end
+	for i, v in pairs (fought) do
+		if isElement (i) then
+			if v.room==room then
+				local bet = v.debt;
+				local pteam= v.team;
+				if pteam==teamprefix then
+					giveReward(i, bet);
+				else
+					exports.database:takePlayerMoney(i, bet, "TDM: Lost");
+				end
+				fought[i]=nil;
+			end
+		end
+	end
+end
+
+function giveReward(player, reward)
+	exports.database:givePlayerMoney(player, tonumber(reward) or 0, "TDM Mode");
+end

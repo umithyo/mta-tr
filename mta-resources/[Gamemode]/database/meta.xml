@@ -1,0 +1,41 @@
+<meta>
+	<oop>true</oop>
+	<script src = "server.lua" type = "server" />
+	
+	<export function = "dbConnect" 						type = "server" />
+	<export function = "getAccounts" 					type = "server" />
+	<export function = "setPlayerData" 					type = "server" />
+	<export function = "getPlayerData" 					type = "server" />
+	<export function = "getAccountFromID" 				type = "server" />
+	<export function = "getIDFromAccount" 				type = "server" />
+	<export function = "getPlayerId" 					type = "server" />
+	<export function = "getPlayerAccount" 				type = "server" />
+	<export function = "getAccountCharacters" 			type = "server" />
+	<export function = "setCharacterData" 				type = "server" />
+	<export function = "getCharacterData" 				type = "server" />
+	<export function = "getPlayerCharacters" 			type = "server" />
+	<export function = "setPlayerCharacterData" 		type = "server" />
+	<export function = "getPlayerCharacterData" 		type = "server" />
+	<export function = "getAccountSerial" 				type = "server" />
+	<export function = "getAccountFromSerial" 			type = "server" />
+	<export function = "resetAccountPassword" 			type = "server" />
+	<export function = "setAccountPassword" 			type = "server" />
+	<export function = "setAccountName" 				type = "server" />
+	<export function = "getAccountPlayer" 				type = "server" />
+	<export function = "getPlayerFromID" 				type = "server" />
+	<export function = "getAccountCharacterList" 		type = "server" />
+	<export function = "getPlayerCharacterList" 		type = "server" />
+	<export function = "isCharacterNameAvailable" 		type = "server" />
+	<export function = "givePlayerMoney" 				type = "server" />
+	<export function = "takePlayerMoney" 				type = "server" />
+	<export function = "setPlayerMoney" 				type = "server" />
+	<export function = "getAccountLastPlayedCharacter" 	type = "server" />
+	<export function = "addBankMoney" 					type = "server" />
+	<export function = "writeLog" 						type = "server" />
+	<export function="getPlayerAddressList" 			type = "server" />
+	<export function="getAccountAddressList" 			type = "server" />
+	<export function="getAddressList" 					type = "server" />
+	<export function="getSerialAddressList" 			type = "server" />
+	<export function="getIPAddressList" 				type = "server" />
+	<export function="addPlayerAddress" 				type = "server" />
+</meta>

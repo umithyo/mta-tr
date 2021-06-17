@@ -1,0 +1,22 @@
+<meta>
+	<download_priority_group>1</download_priority_group>
+	<oop>true</oop>
+	<script src = "players.lua" type = "shared" />
+	<script src = "xml.lua" type = "shared" />
+	<script src = "misc.lua" type = "shared" />
+	<script src = "client.lua" type = "client" />
+	<export function = "xmlToTable" type = "shared" />
+	<export function = "searchInGrid" type = "client" />
+	<export function = "getPedWeapons" type = "server" />
+	<export function = "findPlayer" type = "shared" />
+	<export function = "RGBToHex" type = "shared" />
+	<export function = "comma_value" type = "shared" />
+	<export function = "isPlayerAdmin" type = "server" />
+	<export function = "isPlayerStaff" type = "server" />
+	<export function = "isPlayerInACL" type = "server" />
+	<export function = "_todate" type = "shared" />
+	<export function = "todate" type = "shared" />
+	<export function = "_totime" type = "shared" />
+	<export function = "totime" type = "shared" />
+	<export function = "flashBlip" type = "shared" />
+</meta>

@@ -1,0 +1,23 @@
+<map edf:definitions="editor_main,lvdm_core">
+    <black_export_spawn_points id="black_export_spawn_points (1)" posX="2629.2" posY="697.59998" posZ="10.5" rotX="0" rotY="0" rotZ="89.2"></black_export_spawn_points>
+    <black_export_spawn_points id="black_export_spawn_points (2)" posX="2853.3" posY="1373.1" posZ="10.6" rotX="0" rotY="0" rotZ="0"></black_export_spawn_points>
+    <black_export_spawn_points id="black_export_spawn_points (3)" posX="2816.3" posY="2356.8" posZ="10.6" rotX="0" rotY="0" rotZ="89.208"></black_export_spawn_points>
+    <black_export_spawn_points id="black_export_spawn_points (4)" posX="2311.8999" posY="2747.7" posZ="10.6" rotX="0" rotY="0" rotZ="87.224"></black_export_spawn_points>
+    <black_export_spawn_points id="black_export_spawn_points (5)" posX="1681.2" posY="2358.6001" posZ="10.6" rotX="0" rotY="0" rotZ="270.8"></black_export_spawn_points>
+    <black_export_spawn_points id="black_export_spawn_points (6)" posX="1519.3" posY="2280" posZ="10.6" rotX="0" rotY="0" rotZ="0"></black_export_spawn_points>
+    <black_export_spawn_points id="black_export_spawn_points (7)" posX="782.09998" posY="1856.1" posZ="4.5" rotX="0" rotY="0" rotZ="268.816"></black_export_spawn_points>
+    <black_export_spawn_points id="black_export_spawn_points (8)" posX="1055.3" posY="1396.9" posZ="5.6" rotX="0" rotY="0" rotZ="0"></black_export_spawn_points>
+    <black_export_spawn_points id="black_export_spawn_points (9)" posX="1036.7" posY="1307.1" posZ="10.6" rotX="0" rotY="0" rotZ="0"></black_export_spawn_points>
+    <black_export_spawn_points id="black_export_spawn_points (10)" posX="1427" posY="1058.3" posZ="10.6" rotX="0" rotY="0" rotZ="91.184"></black_export_spawn_points>
+    <black_export_spawn_points id="black_export_spawn_points (11)" posX="2038.7" posY="1466.5" posZ="10.5" rotX="0" rotY="0" rotZ="0"></black_export_spawn_points>
+    <black_export_spawn_points id="black_export_spawn_points (12)" posX="2075.7" posY="1673.4" posZ="10.5" rotX="0" rotY="0" rotZ="0"></black_export_spawn_points>
+    <black_export_spawn_points id="black_export_spawn_points (13)" posX="2232.8" posY="1787.4" posZ="10.6" rotX="0" rotY="0" rotZ="0"></black_export_spawn_points>
+    <black_export_spawn_points id="black_export_spawn_points (14)" posX="2339.3" posY="2079.8999" posZ="10.5" rotX="0" rotY="0" rotZ="0"></black_export_spawn_points>
+    <black_export_spawn_points id="black_export_spawn_points (15)" posX="2519.3999" posY="2302.2" posZ="10.6" rotX="0" rotY="0" rotZ="0"></black_export_spawn_points>
+    <black_export_spawn_points id="black_export_spawn_points (16)" posX="2339.7" posY="2209.1001" posZ="10.5" rotX="0" rotY="0" rotZ="0"></black_export_spawn_points>
+    <black_export_spawn_points id="black_export_spawn_points (17)" posX="2291.7" posY="2341.8999" posZ="10.5" rotX="0" rotY="0" rotZ="0"></black_export_spawn_points>
+    <black_export_spawn_points id="black_export_spawn_points (18)" posX="1901.9" posY="2335.6001" posZ="10.6" rotX="0" rotY="0" rotZ="0"></black_export_spawn_points>
+    <black_export_spawn_points id="black_export_spawn_points (19)" posX="984.29999" posY="1137.4" posZ="10.9" rotX="0" rotY="0" rotZ="270.583"></black_export_spawn_points>
+    <object id="object (vgsrailbuild06) (1)" breakable="true" interior="0" collisions="true" alpha="255" model="9168" doublesided="false" scale="1" dimension="0" posX="2894.5859" posY="1606.5" posZ="13.96094" rotX="0" rotY="0" rotZ="0"></object>
+    <removeWorldObject id="removeWorldObject (vgsrailbuild06) (1)" radius="23.288313" interior="0" model="9168" lodModel="8944" posX="2894.5859" posY="1606.5" posZ="13.96094" rotX="0" rotY="0" rotZ="0"></removeWorldObject>
+</map>

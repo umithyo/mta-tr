@@ -1,0 +1,9 @@
+function sync(player)
+	if isElement(player) then 
+		triggerLatentClientEvent(player, "onClientPlayerRequestPVPList", resourceRoot, getRooms());
+		return;
+	end	
+	for i, v in ipairs (getPlayersInMode()) do 
+		triggerLatentClientEvent(v, "onClientPlayerRequestPVPList", resourceRoot, getRooms());
+	end
+end	

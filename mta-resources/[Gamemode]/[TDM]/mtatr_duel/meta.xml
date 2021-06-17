@@ -1,0 +1,18 @@
+<meta>
+	<oop>true</oop>
+	<script src = "shared/maps.lua"			type = "shared" />
+	<script src = "client/global_client.lua" 	type = "client" />
+	<script src = "client/utils.lua" 			type = "client" />
+	<script src = "client/general_gui.lua" 	type = "client" />
+	<script src = "client/rooms.lua"			type = "client" />
+	<script src = "client/joiner.lua"			type = "client" />
+	<script src = "server/util.slua"			type = "server" />
+	<script src = "server/room.slua"			type = "server" />
+	<script src = "server/mode.slua"			type = "server" />
+	<script src = "server/joiner.slua"			type = "server" />
+	<script src = "server/sync.slua"			type = "server" />
+	<script src = "server/gui.slua"				type = "server" />
+	<script src = "server/starter.slua"			type = "server" />
+
+	<export function = "givePlayerAssetsBack" 	type = "server" />
+</meta>

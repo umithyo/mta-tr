@@ -1,0 +1,8 @@
+<meta>
+	<info type = "mission" name = "Uyuşturucu Kaçakçısı" />
+	<oop>true</oop>
+	<script src = "cutscene.lua"	type = "client" />
+	<script src = "client.lua" 	type = "client" />
+	<script src = "civ.slua" 		type = "server" />
+	<script src = "server.slua"		type = "server" />
+</meta>

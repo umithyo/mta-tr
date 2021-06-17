@@ -1,0 +1,1 @@
+<meta>	<script src="playerblips.lua" type="server" />	<export function = "destroyBlipsAttachedTo" type = "server" />	<export function = "getPlayerBlip" type = "server" />	<export function = "createBlips" type = "server" /></meta>

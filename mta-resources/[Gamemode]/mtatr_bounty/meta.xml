@@ -1,0 +1,13 @@
+<meta>
+	<info author = "roaboar"/>
+	<oop>true</oop>
+	<script src = "util"/>
+	<script src = "texts.lua" type = "shared" />
+	<script src="s.lua" type="server" />
+	<script src="c.lua" type="client" />
+
+	<file src= "files/killed.mp3" />
+
+
+	<min_mta_version server="1.3.4-0.00000" client="1.3.4-0.00000"></min_mta_version>
+</meta>

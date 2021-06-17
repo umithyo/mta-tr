@@ -1,0 +1,45 @@
+<map edf:definitions="tactics,editor_main">
+    <object id="object (k_cargo1) (1)" doublesided="false" model="2974" interior="0" dimension="6967" posX="2515.0576171875" posY="1152.603515625" posZ="14.345058441162" rotX="0" rotY="0" rotZ="0"></object>
+    <object id="object (k_cargo1) (2)" doublesided="false" model="2974" interior="0" dimension="6967" posX="2515.060546875" posY="1152.6031494141" posZ="17.595066070557" rotX="0" rotY="0" rotZ="0"></object>
+    <object id="object (k_cargo1) (3)" doublesided="false" model="2974" interior="0" dimension="6967" posX="2515.0817871094" posY="1146.3507080078" posZ="17.595066070557" rotX="0" rotY="0" rotZ="0"></object>
+    <object id="object (k_cargo1) (4)" doublesided="false" model="2974" interior="0" dimension="6967" posX="2515.0590820313" posY="1146.3486328125" posZ="14.070066452026" rotX="0" rotY="0" rotZ="0"></object>
+    <object id="object (k_cargo1) (5)" doublesided="false" model="2974" interior="0" dimension="6967" posX="2512.8920898438" posY="1145.5004882813" posZ="17.320066452026" rotX="0" rotY="0" rotZ="270"></object>
+    <object id="object (k_cargo1) (6)" doublesided="false" model="2974" interior="0" dimension="6967" posX="2508.8864746094" posY="1145.5225830078" posZ="17.320066452026" rotX="0" rotY="0" rotZ="270"></object>
+    <object id="object (k_cargo1) (7)" doublesided="false" model="2974" interior="0" dimension="6967" posX="2504.6315917969" posY="1145.5587158203" posZ="17.320066452026" rotX="0" rotY="0" rotZ="270"></object>
+    <object id="object (k_cargo1) (8)" doublesided="false" model="2974" interior="0" dimension="6967" posX="2568.7387695313" posY="1098.8325195313" posZ="15.070066452026" rotX="0" rotY="0" rotZ="270"></object>
+    <Anti_Rush_Point id="Anti_Rush_Point (1)" posX="2417.3999023438" posY="1063.3000488281" posZ="9.8000001907349" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (2)" interior="0" posX="2617.3999023438" posY="1203.0999755859" posZ="9.8000001907349" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <object id="object (k_cargo1) (9)" doublesided="false" model="2974" interior="0" dimension="6967" posX="2561.4875488281" posY="1098.8413085938" posZ="14.520051956177" rotX="0" rotY="0" rotZ="270"></object>
+    <Team1 id="Team1 (1)" posX="2428.1999511719" posY="1135.6999511719" posZ="10.699999809265" rotX="0" rotY="0" rotZ="270"></Team1>
+    <Central_Marker id="Central_Marker (1)" posX="2516.6335449219" posY="1135.3176269531" posZ="13.308941841125" rotX="0" rotY="0" rotZ="0"></Central_Marker>
+    <Team2 id="Team2 (1)" posX="2600.9018554688" posY="1135.7971191406" posZ="10.8203125" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (2)" posX="2600.7143554688" posY="1132.6331787109" posZ="10.8203125" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (3)" posX="2602.6599121094" posY="1133.3061523438" posZ="10.671875" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (4)" posX="2599.8078613281" posY="1134.6474609375" posZ="10.8203125" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (5)" posX="2601.4245605469" posY="1134.0911865234" posZ="10.8203125" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (6)" posX="2602.9877929688" posY="1134.7746582031" posZ="10.671875" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (7)" posX="2601.9404296875" posY="1131.9287109375" posZ="10.8203125" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (8)" posX="2600.7006835938" posY="1131.3256835938" posZ="10.8203125" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (9)" posX="2599.0168457031" posY="1132.5726318359" posZ="10.8203125" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (10)" posX="2598.798828125" posY="1134.1165771484" posZ="10.8203125" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (11)" posX="2603.7993164063" posY="1131.5958251953" posZ="10.671875" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (12)" posX="2604.0559082031" posY="1133.4473876953" posZ="10.671875" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (13)" posX="2602.6257324219" posY="1130.4514160156" posZ="10.671875" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (14)" posX="2599.4645996094" posY="1130.9537353516" posZ="10.8203125" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (15)" posX="2601.3044433594" posY="1130.1685791016" posZ="10.8203125" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (16)" posX="2604.0773925781" posY="1135.0743408203" posZ="10.671875" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team1 id="Team1 (4)" interior="0" posX="2429.6999511719" posY="1134.6999511719" posZ="10.699999809265" rotX="0" rotY="0" rotZ="270"></Team1>
+    <Team1 id="Team1 (5)" interior="0" posX="2427.6000976563" posY="1133.6999511719" posZ="10.699999809265" rotX="0" rotY="0" rotZ="270"></Team1>
+    <Team1 id="Team1 (6)" interior="0" posX="2429.5" posY="1133" posZ="10.699999809265" rotX="0" rotY="0" rotZ="270"></Team1>
+    <Team1 id="Team1 (7)" interior="0" posX="2429.8000488281" posY="1136.6999511719" posZ="10.699999809265" rotX="0" rotY="0" rotZ="270"></Team1>
+    <Team1 id="Team1 (8)" interior="0" posX="2428" posY="1137.6999511719" posZ="10.699999809265" rotX="0" rotY="0" rotZ="270"></Team1>
+    <Team1 id="Team1 (9)" interior="0" posX="2426.8999023438" posY="1135.5999755859" posZ="10.699999809265" rotX="0" rotY="0" rotZ="270"></Team1>
+    <Team1 id="Team1 (10)" interior="0" posX="2430" posY="1138.3000488281" posZ="10.699999809265" rotX="0" rotY="0" rotZ="270"></Team1>
+    <Team1 id="Team1 (11)" interior="0" posX="2429.8000488281" posY="1131.3000488281" posZ="10.699999809265" rotX="0" rotY="0" rotZ="270"></Team1>
+    <Team1 id="Team1 (12)" interior="0" posX="2427.5" posY="1132.0999755859" posZ="10.699999809265" rotX="0" rotY="0" rotZ="270"></Team1>
+    <Team1 id="Team1 (13)" interior="0" posX="2425.5" posY="1133.0999755859" posZ="10.699999809265" rotX="0" rotY="0" rotZ="270"></Team1>
+    <Team1 id="Team1 (14)" interior="0" posX="2425.8000488281" posY="1137" posZ="10.699999809265" rotX="0" rotY="0" rotZ="270"></Team1>
+    <Team1 id="Team1 (15)" interior="0" posX="2425.6000976563" posY="1135.0999755859" posZ="10.699999809265" rotX="0" rotY="0" rotZ="270"></Team1>
+    <object id="object (lhroofst14) (1)" doublesided="true" model="5822" interior="0" dimension="6967" posX="2580.0166015625" posY="1182.4475097656" posZ="15.350368499756" rotX="0" rotY="0" rotZ="4"></object>
+    <object id="object (des_a51guardbox02) (1)" doublesided="false" model="16095" interior="0" dimension="6967" posX="2587.6662597656" posY="1153.7171630859" posZ="20.62583732605" rotX="0" rotY="0" rotZ="270"></object>
+</map>

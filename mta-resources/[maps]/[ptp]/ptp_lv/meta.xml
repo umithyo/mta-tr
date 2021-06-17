@@ -1,0 +1,19 @@
+<meta>
+    <info type="map" name="PTP - LV" author="roaboar" version="1.0.0" description="Event_PTP"></info>
+    <map src="ptp_lv.map" dimension="0"></map>
+    <settings>
+        <setting name="#maxplayers" value="[ 128 ]"></setting>
+        <setting name="#useLODs" value="[ false ]"></setting>
+        <setting name="#gamespeed" value="[ 1 ]"></setting>
+        <setting name="#minplayers" value="[ 0 ]"></setting>
+        <setting name="#prize_money" value="[ 600 ]"></setting>
+        <setting name="#gravity" value="[ 0.0080000004 ]"></setting>
+        <setting name="#waveheight" value="[ 0 ]"></setting>
+        <setting name="#weather" value="[ 17 ]"></setting>
+        <setting name="#locked_time" value="[ false ]"></setting>
+        <setting name="#prize_exp" value="[ 450 ]"></setting>
+        <setting name="#time" value="16:0"></setting>
+    </settings>
+    <script src="mapEditorScriptingExtension_s.lua" type="server"></script>
+    <script src="mapEditorScriptingExtension_c.lua" type="client" validate="false"></script>
+</meta>

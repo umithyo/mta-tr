@@ -1,0 +1,29 @@
+function getFreeEventTeam()
+	if #getPlayersInEventTeam("team1") > #getPlayersInEventTeam("team2") then 
+		return "team2";
+	else
+		return "team1";
+	end	
+end
+
+function getPlayersInEventTeam(team)
+	local tbl = {};
+	for i, v in ipairs (getPlayersInEvent() or {}) do
+		if getPlayerEventData(v, "team") == team then 
+			table.insert (tbl, v);
+		end
+	end
+	return tbl;
+end	
+
+function getTeamScore(team)
+	return scores[team];
+end
+
+function getEventTeamName(team)
+	return SYMBOLIC_NAMES[team];
+end	
+
+function getTeamColor(team)
+	return unpack(TEAM_COLORS[team]);
+end	

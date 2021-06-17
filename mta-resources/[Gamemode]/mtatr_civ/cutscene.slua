@@ -1,0 +1,38 @@
+local function tr (e, ev, ...)
+	return triggerClientEvent (e, ev, e, ...);
+end
+
+function createCutscene (e, ...)
+	return tr (e, "cutscene.create", ...);
+end
+
+function setCutsceneFocusOnElement(e, ...)
+	return tr (e, "cutscene.focus_elem", ...);
+end	
+
+function setCutsceneFocus(e, ...)
+	return tr (e, "cutscene.focus_", ...);
+end
+
+function destroyCutscene (e, ...)
+	return tr (e, "cutscene.destroy", ...);
+end
+
+function setSubtitles (e, ...)
+	return tr (e, "cutscene.setsub", ...);
+end
+
+function setCutscenePedAnimation (e, ...)
+	return tr (e, "cutscene.setanim", ...);
+end	
+
+function toggleHUD(e, ...)
+	return tr(e, "cutscene.toggle", ...);
+end	
+
+addEvent ("onCutsceneEnded", true);
+addEventHandler ("onCutsceneEnded", root, 
+	function (mission)
+		triggerEvent ("onPlayerMissionReady", client, mission);
+	end
+);	

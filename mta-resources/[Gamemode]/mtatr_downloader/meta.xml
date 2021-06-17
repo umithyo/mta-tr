@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<meta>
+  <oop>true</oop>
+  <script src="server.lua" type="server"/>
+  <script src="utils.lua" type = "client" />
+  <script src="client.lua" type="client"/>
+  <!-- <script src="bg_handler.lua" type = "client" /> -->
+  <file src = "icon.png" />
+
+  <file src="mods/411.txd" download="false" background="true" name="Lamborghini Veneno" model="411" mod_type="vehicle"/>
+  <file src="mods/411.dff" download="false" background="true" name="Lamborghini Veneno" model="411" mod_type="vehicle"/>
+  <file src="mods/451.txd" download="false" background="true" name="La Ferrari" model="451" mod_type="vehicle"/>
+  <file src="mods/451.dff" download="false" background="true" name="La Ferrari" model="451" mod_type="vehicle"/>
+  <file src="mods/502.txd" download="false" background="true" name="Maserati GranTurismo" model="502" mod_type="vehicle"/>
+  <file src="mods/502.dff" download="false" background="true" name="Maserati GranTurismo" model="502" mod_type="vehicle"/>
+  <file src="mods/541.txd" download="false" background="true" name="Mustang GT" model="541" mod_type="vehicle"/>
+  <file src="mods/541.dff" download="false" background="true" name="Mustang GT" model="541" mod_type="vehicle"/>
+  <file src="mods/587.txd" download="false" background="true" name="BMW i8" model="587" mod_type="vehicle"/>
+  <file src="mods/587.dff" download="false" background="true" name="BMW i8" model="587" mod_type="vehicle"/>
+  <file src="mods/405.dff" download="false" background="true" name="Tofas Sahin" model="405" mod_type="vehicle"/>
+  <file src="mods/405.txd" download="false" background="true" name="Tofas Sahin" model="405" mod_type="vehicle"/>
+  <file src="mods/560.txd" download="false" background="true" name="Mercedes E Class" model="560" mod_type="vehicle"/>
+  <file src="mods/560.dff" download="false" background="true" name="Mercedes E Class" model="560" mod_type="vehicle"/>
+  <file src="mods/506.txd" download="false" background="true" name="Nissan GT-R" model="506" mod_type="vehicle"/>
+  <file src="mods/506.dff" download="false" background="true" name="Nissan GT-R" model="506" mod_type="vehicle"/>
+  <file src="mods/409.txd" download="false" background="true" name="Lincoln Limuzin" model="409" mod_type="vehicle"/>
+  <file src="mods/409.dff" download="false" background="true" name="Lincoln Limuzin" model="409" mod_type="vehicle"/>
+  <file src="mods/402.dff" download="false" background="true" name="Audi R8" model="402" mod_type="vehicle"/>
+  <file src="mods/402.txd" download="false" background="true" name="Audi R8" model="402" mod_type="vehicle"/>
+  <file src="mods/401.txd" download="false" background="true" name="Camaro SS" model="401" mod_type="vehicle"/>
+  <file src="mods/401.dff" download="false" background="true" name="Camaro SS" model="401" mod_type="vehicle"/>
+  <file src="mods/415.dff" download="false" background="true" name="Mercedes AMG GT" model="415" mod_type="vehicle"/>
+  <file src="mods/415.txd" download="false" background="true" name="Mercedes AMG GT" model="415" mod_type="vehicle"/>
+  <file src="mods/489.txd" download="false" background="true" name="Range Rover Evoque" model="489" mod_type="vehicle"/>
+  <file src="mods/489.dff" download="false" background="true" name="Range Rover Evoque" model="489" mod_type="vehicle"/>
+  <file src="mods/500.txd" download="false" background="true" name="Land Rover Defender" model="500" mod_type="vehicle"/>
+  <file src="mods/500.dff" download="false" background="true" name="Land Rover Defender" model="500" mod_type="vehicle"/>
+  <file src="mods/603.dff" download="false" background="true" name="BMW M4" model="603" mod_type="vehicle"/>
+  <file src="mods/603.txd" download="false" background="true" name="BMW M4" model="603" mod_type="vehicle"/>
+  <file src="mods/579.txd" download="false" background="true" name="BMW X6" model="579" mod_type="vehicle"/>
+  <file src="mods/579.dff" download="false" background="true" name="BMW X6" model="579" mod_type="vehicle"/>
+  <file src="mods/desert_eagle.txd" download="false" name="ACT 44" model="348" mod_type="weapon"/>
+  <file src="mods/desert_eagle.dff" download="false" name="ACT 44" model="348" mod_type="weapon"/>
+  <file src="mods/gold.txd" download="false" name="ACT 44 Gold" model="348" mod_type="weapon"/>
+  <file src="mods/gold.dff" download="false" name="ACT 44 Gold" model="348" mod_type="weapon"/>
+  <file src="mods/sniper.txd" download="false" name="Agrotech DMR" model="358" mod_type="weapon"/>
+  <file src="mods/sniper.dff" download="false" name="Agrotech DMR" model="358" mod_type="weapon"/>
+  <file src="mods/chromegun.txd" download="false" name="Colby CSG 20" model="349" mod_type="weapon"/>
+  <file src="mods/chromegun.dff" download="false" name="Colby CSG 20" model="349" mod_type="weapon"/>
+  <file src="mods/grenade.txd" download="false" name="Grenade" model="342" mod_type="weapon"/>
+  <file src="mods/grenade.dff" download="false" name="Grenade" model="342" mod_type="weapon"/>
+  <file src="mods/katana.txd" download="false" name="Katana" model="339" mod_type="weapon"/>
+  <file src="mods/katana.dff" download="false" name="Katana" model="339" mod_type="weapon"/>
+  <file src="mods/micro_uzi.txd" download="false" name="N FA-9" model="352" mod_type="weapon"/>
+  <file src="mods/micro_uzi.dff" download="false" name="N FA-9" model="352" mod_type="weapon"/>
+  <file src="mods/AK47.txd" download="false" name="N TEC-5 (AK47)" model="355" mod_type="weapon"/>
+  <file src="mods/AK47.dff" download="false" name="N TEC-5 (AK47)" model="355" mod_type="weapon"/>
+  <file src="mods/shotgspa.txd" download="false" name="NFAS-12" model="351" mod_type="weapon"/>
+  <file src="mods/shotgspa.dff" download="false" name="NFAS-12" model="351" mod_type="weapon"/>
+  <file src="mods/silenced.txd" download="false" name="Obeya FBW" model="347" mod_type="weapon"/>
+  <file src="mods/silenced.dff" download="false" name="Obeya FBW" model="347" mod_type="weapon"/>
+  <file src="mods/colt45.txd" download="false" name="Obeya FBW" model="346" mod_type="weapon"/>
+  <file src="mods/colt45.dff" download="false" name="Obeya FBW" model="346" mod_type="weapon"/>
+  <file src="mods/mp5lng.txd" download="false" name="OCA-EW" model="353" mod_type="weapon"/>
+  <file src="mods/mp5lng.dff" download="false" name="OCA-EW" model="353" mod_type="weapon"/>
+  <file src="mods/tec9.txd" download="false" name="S-AS PDW" model="372" mod_type="weapon"/>
+  <file src="mods/tec9.dff" download="false" name="S-AS PDW" model="372" mod_type="weapon"/>
+  <file src="mods/heatseek.txd" download="false" name="OSMAW" model="360" mod_type="weapon"/>
+  <file src="mods/heatseek.dff" download="false" name="OSMAW" model="360" mod_type="weapon"/>
+  <file src="mods/sawnoff.txd" download="false" name="sawnoff" model="350" mod_type="weapon"/>
+  <file src="mods/sawnoff.dff" download="false" name="sawnoff" model="350" mod_type="weapon"/>
+  <file src="mods/m4.txd" download="false" name="STAR 556 LCR (M4)" model="356" mod_type="weapon"/>
+  <file src="mods/m4.dff" download="false" name="STAR 556 LCR (M4)" model="356" mod_type="weapon"/>
+  <file src="mods/desert_eagle1.txd" download="false" name="Ryull Deagle" model="348" mod_type="weapon"/>
+  <file src="mods/desert_eagle1.dff" download="false" name="Ryull Deagle" model="348" mod_type="weapon"/>
+  <file src="mods/m41.txd" download="false" name="Ryull M4" model="356" mod_type="weapon"/>
+  <file src="mods/m41.dff" download="false" name="Ryull M4" model="356" mod_type="weapon"/>
+  <file src="mods/sniper1.txd" download="false" name="Ryull Sniper" model="358" mod_type="weapon"/>
+  <file src="mods/sniper1.dff" download="false" name="Ryull Sniper" model="358" mod_type="weapon"/>
+  <file src="mods/riri.dff" download="false" name="RiRi" model="201" mod_type="skin"/>
+  <file src="mods/riri.txd" download="false" name="RiRi" model="201" mod_type="skin"/>
+  <file src="mods/skin1.txd" download="false" name="Darkneblade" model="234" mod_type="skin"/>
+  <file src="mods/skin1.dff" download="false" name="Darkneblade" model="234" mod_type="skin"/>
+  <!-- <file src="mods/.txd" download="false" name="" model="" mod_type=""/> -->
+  <!-- <file src="mods/.dff" download="false" name="" model="" mod_type=""/> -->
+</meta>

@@ -1,0 +1,12 @@
+<meta>
+	<oop>true</oop>
+	<script src = "client.lua" type = "client" />
+	<script src = "server.lua"  type = "server" />
+
+	<include resource="blackexport" />
+
+	<!-- engine -->
+	<export function = "startBlackExport" type = "server" />
+	<export function = "stopBlackExport" type = "server" />
+	<export function = "isBlackExportVehicle" type = "server" />
+</meta>

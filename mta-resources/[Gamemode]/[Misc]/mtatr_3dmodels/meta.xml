@@ -1,0 +1,18 @@
+<meta>
+    <script src="3dmodel.lua" type="client" />
+	<script src="3dmodel.slua" type = "server" />
+	<file src="Files/cmodel.dff"></file>
+    <file src="Files/cmodel.txd"></file>
+    <file src="Files/3dmodel.txd" />
+    <file src="Files/3dmodel.dff" />
+    <file src="Files/3dmodel.col" />
+    <file src="Files/3dmodel1.dff" />
+    <file src="Files/3dmodel1.col" />
+    <file src="Files/3dmodel2.dff" />
+    <file src="Files/3dmodel2.col" />
+	<file src="Files/3dmodel3.txd" />
+    <file src="Files/3dmodel3.dff" />
+    <file src="Files/3dmodel3.col" />
+	<export function = "activateModels" type = "server" />
+	<export function = "deactivateModels" type = "server" />
+</meta>

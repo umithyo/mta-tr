@@ -1,0 +1,67 @@
+addEvent ("onPlayerJoinRaceEvent");
+addEventHandler ("onPlayerJoinRaceEvent", root, 
+	function ()
+		setElementData (source, "inevent", "Race");
+	end
+);
+
+addEvent ("onPlayerLeaveRaceEvent");
+addEventHandler ("onPlayerLeaveRaceEvent", root, 
+	function (immediate)
+		setElementData (source, "inevent", nil);
+		_setPlayerOut(source, immediate);
+	end
+);
+
+function _setPlayerIn(player)
+	local id = getPlayerEventData(player, "id");
+	if id and MAP.spawnpoints[id] then 
+		local x, y, z = unpack (MAP.spawnpoints[id].pos);
+		local rot = MAP.spawnpoints[id].rot;
+		toggleAllControls(player, false, true, false);
+		setElementDimension(player, DIMENSION);
+		if isPedInVehicle(player) then 
+			removePedFromVehicle(player);
+		end
+		fadeCamera(player, false);
+		local veh = createVehicle (MODEL, x, y, z, 0, 0, rot);
+		setElementDimension(veh, DIMENSION);
+		vehicles[player] = veh;
+		addEventHandler ("onVehicleStartExit", veh, function() cancelEvent() end);
+		addEventHandler ("onVehicleExplode", veh, function () setPlayerOut(player); end)
+		Timer (warpPedIntoVehicle, 1000, 1, player, veh);
+		Timer (fadeCamera, 1000, 1, player, true);
+	end
+end		
+
+function _setPlayerOut (player, immediate)
+	if not isElement (player) then return; end
+	local char = exports.mtatr_accounts:getPlayerCurrentCharacter(player);
+	local location = exports.database:getPlayerCharacterData(player, char, "location");
+	local x, y, z = unpack(location);
+	local veh = vehicles[player];
+	if isPedInVehicle (player) then 
+		if isElement (getPedOccupiedVehicle(player)) then 
+			getPedOccupiedVehicle(player):destroy();
+		end	
+	end	
+	if isElement (veh) then 
+		veh:destroy();
+	end	
+	local missiontimer = getPlayerEventData(player, "timer");
+	if isElement (missiontimer) then 
+		missiontimer:destroy();
+	end	
+	vehicles[player] = nil;
+	if not immediate then 
+		fadeCamera(player, false);
+		Timer(setElementPosition, 1000, 1, player, x, y, z)
+		Timer (fadeCamera, 1000, 1, player, true);
+	else
+		fadeCamera(player, true);
+		setElementPosition (player, x, y, z);
+	end	
+	setElementDimension (player, 0);
+	toggleAllControls(player, true);
+	players[player] = nil;
+end

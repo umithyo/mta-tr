@@ -1,0 +1,358 @@
+PRIZE_EVERY_MINS = 30;
+TURFING_PLAYER_BASE = 2;
+TURFING_TIME = 6;
+turfing = {};
+capturing = {};
+
+function isBaseBeingCaptured (base)
+	return capturing[base];
+end	
+
+function checkTurfs (team)
+	if isTeamTurfing (team) then 
+		local col, base = turfing[team].col, turfing[team].base;
+		if #getTeamPlayersInTurf (team, col) < TURFING_PLAYER_BASE then 
+			abortTurfing (team);
+		end
+	end	
+end
+
+function abortTurfing (team)
+	if isTeamTurfing (team) then 
+		local col, base = turfing[team].col, turfing[team].base;
+		local radar = bases[base].children.radar;
+		if isTimer (turfing[team].timer) then 
+			killTimer (turfing[team].timer); 
+		end	
+		for i, v in ipairs (getPlayersInTeam (team)) do 
+			triggerClientEvent (v, "onTeamStopTurfing", v);
+		end	
+		setRadarAreaFlashing (radar, false);
+		local r, g, b = unpack (bases[base].children.colour);
+		setRadarAreaColor (radar, r, g, b, 125);
+		turfing[team] = nil;
+		triggerEvent ("onTeamGetANewTurf", team, base, nil);
+		capturing[base] = nil;
+	end	
+end
+
+function isTeamTurfing (team)
+	return turfing[team];
+end
+
+function getTeamPlayersInTurf (team, col)
+	local players = {};
+	for i, v in ipairs (getElementsWithinColShape (col, "player")) do 
+		if isElement (team) and isElement (getPlayerTeam (v)) then 
+			if getPlayerTeam (v) == team then 
+				table.insert (players, v);
+			end
+		end	
+	end	
+	return players;
+end
+
+function calculatePrize(turf)
+	local radar = bases[turf].children.radar;
+	local w, h = getRadarAreaSize(radar); 
+	return 500 + (w+h);
+end	
+
+addEvent ("onTeamGetANewTurf");
+addEventHandler ("onTeamGetANewTurf", root, 
+	function (turf, gang)
+		if gang then 
+			local prize = calculatePrize(turf);
+			for i, v in ipairs (getPlayersInTeam(source)) do 
+				outputChatBox ("[TURF] Yeni turf toplam kazanç: "..prize+1500, v, 100, 255, 100);
+				exports.database:givePlayerMoney(v, prize+1500, "Turfing: Captured "..turf);
+			end
+		end
+	end
+)	
+
+function startTurfing (player)
+	if not exports.mtatr_teams:isPlayerInAGroup(player) then 
+		return;
+	end	
+	local col, base
+	local gang = exports.mtatr_teams:getPlayerGroup (player);
+	
+	local time = TURFING_TIME;
+	
+	if isPedDead (player) then 
+		return;
+	end
+	
+	if isTeamTurfing (getPlayerTeam (player)) then
+		return;
+	end
+	
+	
+	if isPedInVehicle (player) then 
+		return;
+	end	
+	
+	if not isPedOnGround (player) then 
+		return;
+	end	
+	
+	if not isElement (getPlayerTeam (player)) then 
+		return;
+	end	
+		
+	
+	for i, v in pairs (bases) do 
+		if isElementWithinColShape (player, v.children.col) then 
+			col = v.children.col;
+			base = i;
+			break
+		end
+	end
+	if col and base then 
+		if isBaseBeingCaptured (base) then 
+			return; 
+		end	
+		if getBaseOwner (base) == exports.mtatr_teams:getPlayerGroup(player) then 
+			return;
+		end	
+		local radar = bases[base].children.radar;
+		if countPlayersInTeam (getPlayerTeam (player)) >= TURFING_PLAYER_BASE then 	
+			if #getTeamPlayersInTurf (getPlayerTeam (player), col) >= TURFING_PLAYER_BASE then 
+				setRadarAreaFlashing (radar, true);
+				setRadarAreaColor (radar, 255, 0, 0, 125);
+				local player_team = getPlayerTeam(player);
+				if isElement (player_team) then 
+					turfing[player_team] = {
+						timer = setTimer (
+							function (player_team, player)
+								setBaseOwner (base, gang);
+								if isTimer (turfing[player_team].timer) then 
+									killTimer (turfing[player_team].timer) 
+								end	
+								for i, v in ipairs (getPlayersInTeam (player_team)) do 
+									triggerClientEvent (v, "onTeamStopTurfing", v);
+								end	
+								for i, v in ipairs (getElementsWithinColShape(col, "player")) do 
+								
+									local owner, team, level = "-", "-", "-";
+									if bases[base].owner then 
+										owner = exports.mtatr_teams:getGroupName (bases[base].owner);
+										team = getTeamFromName (owner)
+									end	
+									
+									local count = 0;
+									if isElement (team) then 
+										count = #getPlayersInTeam (team);
+									end	
+									
+									capturing[base] = nil;
+									
+									triggerClientEvent (v, "onPlayerEntersABase", v, owner, count, level, base, true);
+								end
+								triggerEvent ("onTeamGetANewTurf", player_team, base, gang);
+								turfing[player_team] = nil;
+								dbExec (db, "INSERT INTO zone_owners (base, owner) VALUES (?, ?)", base, gang);
+							end,
+						time*1000*60, 1, player_team, player),
+						base = base,
+						col = col,
+					};	
+					triggerEvent ("onTeamStartTurfing", getPlayerTeam (player), base, col);
+				end				
+			else
+				exports.mtatr_hud:dmn ("Turfe başlamak için en az "..TURFING_PLAYER_BASE.. " oyuncuya ihtiyacınız var.", player);
+				return
+			end	
+		else
+			exports.mtatr_hud:dmn ("Turfe başlamak için en az "..TURFING_PLAYER_BASE.. " oyuncuya ihtiyacınız var.", player);
+		end	
+	end	
+end
+
+function doesColBelongToABase (col)
+	for i, v in pairs (bases) do 
+		if v.children.col == col then
+			return true;
+		end
+	end
+	return false;
+end
+
+function getColBase (col)
+	for i, v in pairs (bases) do 
+		if v.children.col == col then
+			return i;
+		end
+	end
+end	
+
+addEvent ("onPlayerCoreLogin");
+addEventHandler ("onPlayerCoreLogin", root, 
+	function ()
+		bindKey (source, "n", "down", startTurfing)
+	end
+);
+
+addEventHandler ("onPlayerQuit", root, 
+	function ()
+		checkTurfs (getPlayerTeam(source));
+	end
+);	
+
+addEvent ("onPlayerGangColourChange");
+addEventHandler ("onPlayerGangColourChange", root, 
+	function (r, g, b)
+		local gang = exports.mtatr_teams:getPlayerGroup (source);
+		local c_base = getClanBase (gang);
+		for _, base in ipairs (c_base) do  
+			local radar = bases[base].children.radar;
+			setRadarAreaColor (radar, r, g, b, 125);
+			dbExec (db, "UPDATE zones SET colour = ? WHERE name = ? AND owner = ?", toJSON {r, g, b}, base, gang);
+		end	
+	end
+);	
+
+addEventHandler ("onColShapeLeave", root, 
+	function (elem, dim)
+		if elem and dim then 
+			local player = elem;
+			if getElementType (elem) == "vehicle" then 
+				player = getVehicleOccupant(elem);
+			end	
+			if player and isElement (player) then 
+				if isTeamTurfing (getPlayerTeam (player)) then 
+					if source == turfing[getPlayerTeam (player)].col then 
+						checkTurfs (getPlayerTeam(player));
+						triggerClientEvent (player, "onTeamStopTurfing", player, 1);
+					end	
+				end	
+				if doesColBelongToABase (source) then 
+					triggerClientEvent (player, "onPlayerLeaveABase", player);
+				end	
+			end	
+		end	
+	end
+);	
+
+addEvent ("onTeamStartTurfing");
+addEventHandler ("onTeamStartTurfing", root, 
+	function (base, col)
+		local players = getTeamPlayersInTurf (source, col);
+		local time = getTimerDetails (turfing[source].timer);
+		for i, v in ipairs (players) do 
+			triggerClientEvent (v, "onTeamStartTurfing", v, time);
+		end		
+		local owner = getBaseOwner (base);
+		if owner then 
+			local base_owner_team = getTeamFromName (exports.mtatr_teams:getGroupName(owner));
+			if isElement (base_owner_team) then 
+				for i, v in ipairs (getPlayersInTeam (base_owner_team)) do 
+					if isElement (v) then 
+						outputChatBox ("Turfünüz "..getTeamName (source).." tarafından saldırıya uğruyor!", v, 255, 0, 0);
+					end
+				end	
+			end	
+			capturing[base] = true;
+		end	
+	end
+);	
+
+addEventHandler ("onColShapeHit", root, 
+	function (player, dim)
+		if dim and isElement (player) then 
+			if getElementType (player) == "player" then 
+				local team = getPlayerTeam (player);
+				if doesColBelongToABase (source) then 
+					if not isTeamTurfing (team) then 
+						if team and isElement (team) then
+							if getBaseOwner (getColBase (source)) ~= exports.mtatr_teams:getPlayerGroup(player) then
+								if isPedOnGround (player) then 
+									exports.mtatr_hud:dmn ("'N' tuşuna basarak turfü ele geçirmeye başlayabilirsiniz.", player);
+								end	
+							end
+						end	
+					end	
+				end	
+				if doesColBelongToABase (source) then 
+					local base = getColBase (source);
+					local owner, team, level = "-", "-", "-";
+					local count = 0;
+					if bases[base].owner then 
+						owner = exports.mtatr_teams:getGroupName (bases[base].owner);
+						team = getTeamFromName (owner)
+					else 
+						count = "-";
+					end
+					if isElement (team) then 
+						count = #getPlayersInTeam (team);
+					end	
+
+					triggerClientEvent (player, "onPlayerEntersABase", player, owner, count, level, base);
+				end	
+				if isTeamTurfing (team) and dim then 
+					local col = turfing[team].col;
+					if col == source then 
+						-- local players = getTeamPlayersInTurf (team, col);
+						local time = getTimerDetails (turfing[team].timer);
+						triggerClientEvent (player, "onTeamStartTurfing", player, time);
+					end	
+				end
+			end	
+		end	
+	end
+);	
+addEvent ("onGangDeleted");
+addEventHandler ("onGangDeleted", root, 
+	function (id)
+		if getClanBase (id) then 
+			local base = getClanBase (id);
+			for i, v in ipairs (base) do 
+				setBaseOwner (v, nil);
+			end	
+		end	
+		if isElement (source) then 
+			abortTurfing (source);
+		end	
+	end,
+true, "high+1");	
+
+addEventHandler ("onResourceStart", resourceRoot, 
+	function ()
+		for i, v in ipairs (getElementsByType"player") do 
+			bindKey (v, "n", "down", startTurfing)
+		end
+	end
+);	
+
+function isPlayerInHisBase (player)
+	local gang = exports.mtatr_teams:getPlayerGroup (player);
+	if gang then 
+		local c_base = getClanBase (gang);
+		for i, base in ipairs (c_base) do 
+			if base then 	
+				return isElementWithinColShape (player, bases[base].children.col);
+			end
+		end	
+	end
+	return false;
+end	
+
+Timer (
+	function ()
+		for i, v in ipairs (getElementsByType"team") do 
+			local gang = exports.mtatr_teams:getGroupFromName(v:getName())
+			if #getClanBase(gang) > 0 then 
+				local c_base = getClanBase(gang);
+				local prize = 0;
+				for k, turf in ipairs (c_base) do 
+					prize = prize + calculatePrize(turf);
+				end
+				for k, player in ipairs (getPlayersInTeam(v)) do 
+					outputChatBox ("[TURF] Toplam kazanç: "..prize, player, 100, 255, 100);
+					exports.database:givePlayerMoney(player, prize, "Turf: Income");
+				end
+			end
+		end
+	end,
+PRIZE_EVERY_MINS*1000*60, 0);	

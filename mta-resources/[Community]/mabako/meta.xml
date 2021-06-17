@@ -1,0 +1,90 @@
+<meta>
+	<info name="mabako-services" author="mabako, XX3, robhol" version="2.4.1" type="misc" />
+	
+	<script src="server/paynspray.lua" 	type="server"/>
+	<script src="client/paynspray.lua" 	type="client"/>
+	<script src="client/PnS_garages.lua"	type="client"/>
+	<map src="maps/paynspray.map"/>
+
+	<script	src="server/interiors_lite.lua"	type="server"/> 
+	<script	src="client/interiors.lua"	type="client"/>
+	<map	src="maps/interiors.map"/>
+	
+	<script	src="server/shops.lua" 	type="server"/>
+	<script	src="client/shops.lua" 	type="client"/>
+	<script	src="client/shop_peds.lua"     	type="client"/>
+	<script	src="client/ammu_peds.lua"     type="client"/>
+	<map	src="maps/shops.map"/>
+	
+	<script	src="client/jetpack_control.lua"	type="client"/>
+	<!-- <config src="help.xml" type="client" /> -->
+	
+	<!-- food shop images -->
+	<file src="images/food/BURHEAL.png"/>
+	<file src="images/food/BURLOW.png"/>
+	<file src="images/food/BURMED.png"/>
+	<file src="images/food/BURHIG.png"/>
+	<file src="images/food/PIZHEAL.png"/>
+	<file src="images/food/PIZLOW.png"/>
+	<file src="images/food/PIZMED.png"/>
+	<file src="images/food/PIZHIG.png"/>
+	<file src="images/food/CLUHEAL.png"/>
+	<file src="images/food/CLULOW.png"/>
+	<file src="images/food/CLUMED.png"/>
+	<file src="images/food/CLUHIG.png"/>
+	
+	<!-- weapon images -->
+	<file src="images/ammu/AK47.png"/>
+	<file src="images/ammu/BAT.png"/>
+	<file src="images/ammu/BRASSKNUCKLES.png"/>
+	<file src="images/ammu/CAMERA.png"/>
+	<file src="images/ammu/CANE.png"/>
+	<file src="images/ammu/CHAINSAW.png"/>
+	<file src="images/ammu/COLT45.png"/>
+	<file src="images/ammu/COMBAT.png"/>
+	<file src="images/ammu/DEAGLE.png"/>
+	<file src="images/ammu/DETONATOR.png"/>
+	<file src="images/ammu/DILDO1.png"/>
+	<file src="images/ammu/DILDO2.png"/>
+	<file src="images/ammu/FIREEXT.png"/>
+	<file src="images/ammu/FLAMETHROWER.png"/>
+	<file src="images/ammu/FLOWERS.png"/>
+	<file src="images/ammu/GOLF.png"/>
+	<file src="images/ammu/GRENADE.png"/>
+	<file src="images/ammu/HEATSEEK.png"/>
+	<file src="images/ammu/IRGOGGLES.png"/>
+	<file src="images/ammu/JETPACK.png"/>
+	<file src="images/ammu/KATANA.png"/>
+	<file src="images/ammu/KNIFE.png"/>
+	<file src="images/ammu/M4.png"/>
+	<file src="images/ammu/MICROUZI.png"/>
+	<file src="images/ammu/MINIGUN.png"/>
+	<file src="images/ammu/MOLOTOV.png"/>
+	<file src="images/ammu/MP5.png"/>
+	<file src="images/ammu/NITESTICK.png"/>
+	<file src="images/ammu/NVGOGGLES.png"/>
+	<file src="images/ammu/PARACHUTE.png"/>
+	<file src="images/ammu/POOLCUE.png"/>
+	<file src="images/ammu/RIFLE.png"/>
+	<file src="images/ammu/ROCKETLAUNCHER.png"/>
+	<file src="images/ammu/SACHTEL.png"/>
+	<file src="images/ammu/SAWNOFF.png"/>
+	<file src="images/ammu/SHOTGUN.png"/>
+	<file src="images/ammu/SHOVEL.png"/>
+	<file src="images/ammu/SILENCED.png"/>
+	<file src="images/ammu/SNIPER.png"/>
+	<file src="images/ammu/SPRAYCAN.png"/>
+	<file src="images/ammu/TEARGAS.png"/>
+	<file src="images/ammu/TEC9.png"/>
+	<file src="images/ammu/VIBE1.png"/>
+	<file src="images/ammu/VIBE2.png"/>
+
+	<settings>
+		<setting name="@PayNSprayCosts" value="[100]"/>
+		<setting name="@DisallowedVehicles" value="[[592,553,577,488,511,497,548,563,512,476,593,447,425,519,520,460,417,469,487,513,472,473,493,595,484,430,453,452,446,454,416,596,433,597,427,599,490,432,528,601,407,428,544,523,470,598]]"/>
+		
+		<setting name="@MaxJetpackFuel" value="[1000]"/>
+		<setting name="@JetpackHotKey" value="rctrl"/> <!-- Hotkey to press for getting/removing a jetpack -->
+		<setting name="@JetpackVeloMultiplier" value="[10]"/> <!-- Configures how fast the fuel tank will get empty - higer value = faster -->
+	</settings>
+</meta>

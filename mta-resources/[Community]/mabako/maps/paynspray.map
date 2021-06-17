@@ -1,0 +1,77 @@
+<!--
+
+<°))><
+
+Public Services - Pay'N'Spray map
+(c) 2008 mabako network. All Rights reserved.
+
+-->
+
+<map>
+	<!--
+	EMPTY BLOCK:
+	
+	<garage name=""			cameraMode=""			garageType=""			zone=""
+		lowerLeftFrontX=""	lowerLeftFrontY=""	lowerLeftFrontZ=""	
+		lowerRightFrontX=""	lowerRightFrontY=""	
+		upperLeftRearX=""	upperLeftRearY=""	upperLeftRearZ=""/>
+	
+	
+	INFO:
+	
+	  [garageType]s
+		5: Pay'N'Spray
+		
+	  cameraMode (not used)
+	
+	
+	*.ipl files - GRGE-block syntax
+	lowerLeftFrontX, lowerLeftFrontY, lowerLeftFrontZ, lowerRightFrontX, lowerRightFrontY, upperLeftRearX, upperLeftRearY, upperLeftRearZ, cameraMode, garageType, name
+	-->
+
+	<garage	name="spLAw2"			cameraMode="1"			garageType="5"			zone="Los Santos, Santa Maria Beach"
+		lowerLeftFrontX="491.103"	lowerLeftFrontY="-1747.55"	lowerLeftFrontZ="9.45516"	
+		lowerRightFrontX="492.717"	lowerRightFrontY="-1735.77"	
+		upperLeftRearX="481.972"	upperLeftRearY="-1746.3"	upperLeftRearZ="17.565"/>
+		
+	<garage name="sprLAe"			cameraMode="1"			garageType="5"			zone="Los Santos, Temple"
+		lowerLeftFrontX="1021.81"	lowerLeftFrontY="-1018.71"	lowerLeftFrontZ="30.9081"	
+		lowerRightFrontX="1021.81"	lowerRightFrontY="-1029.53"	
+		upperLeftRearX="1027.93"	upperLeftRearY="-1018.71"	upperLeftRearZ="36.9081"/>
+	
+	<garage name="sprLAe"			cameraMode="1"			garageType="5"			zone="Los Santos, Idlewood"
+		lowerLeftFrontX="2056.6"	lowerLeftFrontY="-1835.9"	lowerLeftFrontZ="12.5443"	
+		lowerRightFrontX="2071.3"	lowerRightFrontY="-1835.9"	
+		upperLeftRearX="2056.6"		upperLeftRearY="-1826.97"	upperLeftRearZ="18.5443"/>
+
+	<garage name="CNspray"			cameraMode="1"			garageType="5"			zone="Tierra Robada, El Querebados"
+		lowerLeftFrontX="-1424.11"	lowerLeftFrontY="2576.61"	lowerLeftFrontZ="54.8156"	
+		lowerRightFrontX="-1416.85"	lowerRightFrontY="2576.61"	
+		upperLeftRearX="-1424.11"	upperLeftRearY="2590.84"	upperLeftRearZ="60.8747"/>
+		
+	<garage name="CN2spry"			cameraMode="1"			garageType="5"			zone="Bone County, Fort Carson"
+		lowerLeftFrontX="-103.636"	lowerLeftFrontY="1112.42"	lowerLeftFrontZ="18.7017"	
+		lowerRightFrontX="-96.3613"	lowerRightFrontY="1112.42"	
+		upperLeftRearX="-103.636"	upperLeftRearY="1125.79"	upperLeftRearZ="24.5489"/>
+		
+	<garage name="CEspray"			cameraMode="1"			garageType="5"			zone="Red County, Dillimore"
+		lowerLeftFrontX="715.806"	lowerLeftFrontY="-462.403"	lowerLeftFrontZ="14.9635"	
+		lowerRightFrontX="724.293"	lowerRightFrontY="-462.403"	
+		upperLeftRearX="715.806"	upperLeftRearY="-447.29"	upperLeftRearZ="21.4398"/>
+
+	<garage name="sprsfw"			cameraMode="1"			garageType="5"			zone="San Fierro, Paradiso"
+		lowerLeftFrontX="-2430.13"	lowerLeftFrontY="1013.71"	lowerLeftFrontZ="49.3413"	
+		lowerRightFrontX="-2421.2"	lowerRightFrontY="1013.71"	
+		upperLeftRearX="-2430.13"	upperLeftRearY="1027.76"	upperLeftRearZ="55.3413"/>
+	
+	<garage name="sprsfse"			cameraMode="1"			garageType="5"			zone="San Fierro, Doherty"
+		lowerLeftFrontX="-1908.93"	lowerLeftFrontY="292.353"	lowerLeftFrontZ="40.0413"	
+		lowerRightFrontX="-1908.93"	lowerRightFrontY="277.989"	
+		upperLeftRearX="-1900.11"	upperLeftRearY="292.353"	upperLeftRearZ="45.539"/>
+
+	<garage name="blob1"			cameraMode="1"			garageType="5"			zone="Las Venturas, Redsands East"
+		lowerLeftFrontX="1968.23"	lowerLeftFrontY="2157.88"	lowerLeftFrontZ="9.59696"	
+		lowerRightFrontX="1983.32"	lowerRightFrontY="2157.88"	
+		upperLeftRearX="1968.23"	upperLeftRearY="2167.03"	upperLeftRearZ="16.2367"/>
+
+</map>

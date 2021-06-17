@@ -1,0 +1,29 @@
+<meta>
+	<oop>true</oop>
+	<script src = "dm_c.lua" type = "client" />
+	<script src = "dm.lua" type = "server" />
+	<config src = "levels.xml" type = "client" />
+
+	<export function = "getPlayerCharacterExperience" type = "server" />
+	<export function = "givePlayerCharacterExperience" type = "server" />
+	<export function = "takePlayerCharacterExperience" type = "server" />
+	<export function = "setPlayerCharacterLevel" type = "server" />
+	<export function = "getPlayerCharacterLevel" type = "server" />
+	<export function = "hideBar" type = "client" />
+	<export function = "showBar" type = "client" />
+	<export function = "isPlayerDamaged" type = "server" />
+
+	<file src="font/birth_of_a_hero.ttf"/>
+
+	<file src="sounds/dominating.mp3"/>
+	<file src="sounds/first_blood.mp3"/>
+	<file src="sounds/godlike.mp3"/>
+	<file src="sounds/headshot.mp3"/>
+	<file src="sounds/killing_spree.mp3"/>
+	<file src="sounds/multikill.mp3"/>
+	<file src="sounds/rampage.mp3"/>
+	<file src="sounds/unstoppable.mp3"/>
+	<file src="sounds/wicked_sick.mp3"/>
+	<file src="sounds/holy_shit.mp3"/>
+	<file src="sounds/yeni_seviye.mp3"/>
+</meta>

@@ -1,0 +1,167 @@
+REFRESH_INTERVAL = 500; --ms
+
+addEvent ("admin.startevent", true);
+addEvent ("admin.stopevent", true);
+
+local acl ={};
+for i, v in ipairs (xmlNodeGetChildren(xmlLoadFile("acl.xml"))) do 
+	acl[xmlNodeGetAttribute(v, "name")] = true;
+end	
+
+function isPlayerInACL(player)
+	local acc = getPlayerAccount(player)
+	if acc and not isGuestAccount(acc) then 
+		return acl[getAccountName(acc)];
+	end
+	return false;
+end	
+
+addEventHandler ("admin.startevent", root,
+	function (text, mapname)
+		exports.mtatr_engines:cycleEvent(text, mapname);
+	end
+);
+
+addEventHandler ("admin.stopevent", root, 
+	function (text, mapid)
+		local _, response = exports.mtatr_engines:stopEvent (text);
+		if response then 
+			outputChatBox (response, client, 255, 0, 0);
+		end	
+	end
+);
+
+addEvent ("admin.request", true);
+addEventHandler ("admin.request", root, 
+	function ()
+		if exports.mtatr_accounts:isPlayerAdmin (client) or isPlayerInACL(client) then 
+			triggerClientEvent (client, "admin.respond", client, isPlayerInACL(client));
+		end
+	end
+);	
+
+addEvent ("admin.setstat", true);
+addEventHandler ("admin.setstat", root,
+	function (player, key, stat)
+		if isElement (player) then 
+			if key == "Experience" then 
+				exports.mtatr_mode:givePlayerCharacterExperience (player, tonumber(stat));
+				outputChatBox ("Admin "..client:getName().." size +"..stat.." deneyim puanı verdi!", player, 200, 200, 0);
+				outputChatBox (player:getName().." adlı oyuncuya +"..stat.." deneyim puanı verdiniz.", client, 200, 200, 0);
+			end
+		end	
+	end
+);	
+
+local jails = {}
+local serialjails = {}
+
+local jailPos = 
+{
+	-- for jail locations
+	-- {x, y, z, int}
+	{196.89841, 175.17732, 1003.02344, 3},
+	{193.41698, 175.17732, 1003.02344, 3},
+}
+
+function jailPlayer(player, jail, time, reason, res_p)
+	if jail == true then
+		if isTimer (jails[player]) then return; end
+		if (isPedInVehicle(player)) then
+			removePedFromVehicle(player)
+		end
+		local jailNo = math.random(1,#jailPos)
+		setElementInterior(player, jailPos[jailNo][4])
+		setElementDimension(player, jailPos[jailNo][4])
+		setElementPosition(player, jailPos[jailNo][1], jailPos[jailNo][2], jailPos[jailNo][3])
+		local time = time or 0
+		local reason_ = "";
+		if time == "Oto" then 
+			local id = exports.database:getPlayerId(player);
+			local multiplier = exports.database:getPlayerData (id, "fr_stats", "jailmultiplier") or 1;
+			reason_ = "x"..multiplier;
+			time = (multiplier*2) * 60 * 1000;
+			multiplier = multiplier + 1;
+			exports.database:setPlayerData (id, "fr_stats", "jailmultiplier", multiplier);
+		end	
+		serialjails[getPlayerSerial(player)] = time
+		if time > 50 and time < 10000000000 then
+			jails[player] = setTimer(jailPlayer, time, 1, player, false)
+			setElementData (player, "jailed", true);
+			local timestr = time and time/1000/60 or 0;
+			local s = timestr>1 and math.floor(timestr).." dakika" or math.floor(timestr).." saniye";
+			outputChatBox ("* "..player:getName().." hapse atıldı! ("..s.. " "..reason_ ..")", root, 255, 0, 0);
+			toggleControl (player, "fire", false)
+			toggleControl (player, "aim_weapon", false)
+			toggleControl (player, "vehicle_fire", false)
+		end
+	else
+		if isTimer(jails[player]) then
+			killTimer(jails[player])
+		end
+		jails[player] = nil
+		serialjails[getPlayerSerial(player)] = nil
+		if not isElement(admin) then
+			outputChatBox("* "..getPlayerName(player).." hapisten çıktı.", root, 0, 255, 0)
+		end
+		setElementInterior(player, 0)
+		setElementDimension(player, 0)
+		setElementPosition(player, 1553.33386, -1675.62659, 16.19531)
+		if isTimer(jails[player:getSerial()]) then
+			killTimer(jails[player:getSerial()])
+			jails[player] = nil
+		end
+		setElementData (player, "jailed", nil);
+		toggleControl (player, "fire", true)
+		toggleControl (player, "aim_weapon", true)
+		toggleControl (player, "vehicle_fire", true)
+	end
+end
+
+addEventHandler("onPlayerSpawn",root,
+	function()
+		local player = source
+		if tonumber(serialjails[getPlayerSerial(player)]) then
+			local time =  tonumber(serialjails[getPlayerSerial(player)])
+			if time > 50 then
+				jailPlayer(player,true, time)
+			end
+		end
+	end
+)
+
+addEvent("onPlayerCharacterLogin",true)
+addEventHandler("onPlayerCharacterLogin",root,
+	function ()
+		local player = source;
+		if tonumber(serialjails[getPlayerSerial(player)]) then
+			local time =  tonumber(serialjails[getPlayerSerial(player)])
+			if time > 50 then
+				jailPlayer(player, true, time)
+			end
+		end
+		triggerClientEvent(root, "admin.refreshGrid", resourceRoot);
+	end
+)
+addEventHandler("onPlayerQuit",root,
+	function ()
+		if jails[source] then
+			local time = getTimerDetails(jails[source])
+			serialjails[getPlayerSerial(source)] = time
+			killTimer(jails[source])
+			jails[source] = nil
+		end
+		triggerClientEvent(root, "admin.refreshGrid", resourceRoot);
+	end
+)
+
+addEvent ("admin.jailplayer", true);
+addEventHandler ("admin.jailplayer", root, 
+	function (player, time)
+		if jails[player] then 
+			jailPlayer(player, false);
+		else
+			jailPlayer(player, true, time, "", client);
+		end
+	end
+);	

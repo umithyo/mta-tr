@@ -1,0 +1,5 @@
+<meta>
+	<oop>true</oop>
+	<config src = "url.xml" type = "client" />
+	<script src = "client.lua" type = "client" />
+</meta>

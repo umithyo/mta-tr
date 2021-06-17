@@ -1,0 +1,400 @@
+--CREATE ENTITY TABLES STORE VEHICLE AND MARKERS
+local entity = {};
+local players = {};
+local assets = {};
+
+function notificate (...)
+	local args = {...}
+	local element = args[3];
+	table.remove (args, 3);
+	triggerClientEvent (element, "civ.notificate", element, unpack (args));
+end
+
+function playFX (fx, elem)
+	local element = elem or root;
+	triggerClientEvent (element, "civ.playfx", element, fx);
+end
+
+function construct(name, desc, x, y, z, r, g, b, level_table)
+	assets[name] = {};
+	assets[name].levels = level_table;
+	assets[name].color = {r, g, b};
+	local marker = createMarker (x, y, z-1, "cylinder", 1.5, r, g, b);
+	local blip = Blip (x, y, z, 56);
+	entity[marker] = name;
+	entity[blip] = name;
+	local function accept(player, _, _, mission, desc)
+		setPlayerMission (player, mission, desc, r, g, b);
+		exports.mtatr_hud:dNote("mission_nav_a", "", player);
+		unbindKey (player, "J", "down", accept);
+	end
+	addEventHandler ("onMarkerLeave", marker,
+		function (player, dim)
+			if getElementType (player) ~= "player" then return; end
+			if player and dim then
+				exports.mtatr_hud:dNote("mission_nav_a", "", player);
+				unbindKey (player, "J", "down", accept);
+			end
+		end
+	);
+	addEventHandler ("onMarkerHit", marker,
+		function (player, dim)
+			if not dim then return end
+			if getElementType (player) ~= "player" then return; end
+			if exports.mtatr_accounts:isPlayerInGame(player) then
+				if getElementData (player, "inpvp") then return end
+				if getPlayerMission(player) then return; end
+				bindKey (player, "J", "down", accept, name, desc);
+				exports.mtatr_hud:dNote ("mission_nav_a", "Press 'J' to Görevi kabul et.", player, r, g, b);
+			end
+		end
+	);
+end
+
+function givePrize (player, money, exp)
+	exports.database:givePlayerMoney(player, money, "Mission: "..getPlayerMission(player) or "N/A");
+	exports.mtatr_mode:givePlayerCharacterExperience (player, exp);
+	notificate (math.floor (money), math.floor (exp), player);
+end
+
+function setCivData (player, key, data)
+	local char = exports.mtatr_accounts:getPlayerCurrentCharacter(player);
+	local id = exports.database:getPlayerId(player);
+	if not id or not char then return false; end
+	local civ_tbl = fromJSON (exports.database:getPlayerData (id, "fr_stats", "missions") or "[[]]");
+	if not civ_tbl[char] then
+		civ_tbl[char] = {};
+	end
+	civ_tbl[char][key] = data;
+	return exports.database:setPlayerData (id, "fr_stats", "missions", toJSON(civ_tbl));
+end
+
+function getCivData (player, key)
+	local char = exports.mtatr_accounts:getPlayerCurrentCharacter(player);
+	local id = exports.database:getPlayerId(player);
+	if not id or not char then return false; end
+	local civ_tbl = fromJSON (exports.database:getPlayerData (id, "fr_stats", "missions") or "[[]]");
+	if civ_tbl[char] then
+		local data = civ_tbl[char][key];
+		return tonumber (data) or data;
+	end
+end
+
+function setPlayerData (player, key, data)
+	local mission = getPlayerMission (player);
+	if not mission then return false; end
+	return setCivData (player, mission.."."..key, data);
+end
+
+function getPlayerData (player, key)
+	local mission = getPlayerMission (player);
+	if not mission then return false; end
+	return getCivData (player, mission.."."..key);
+end
+
+function setPlayerLevel (player, level)
+	return setPlayerData (player, "level", level);
+end
+
+function getPlayerLevel (player)
+	return getPlayerData (player, "level") or 1;
+end
+
+function setPlayerExperience (player, exp)
+	return setPlayerData (player, "exp", exp);
+end
+
+function getPlayerExperience (player)
+	return getPlayerData (player, "exp") or 0;
+end
+
+function givePlayerExperience (player, exp)
+	local ex = getPlayerExperience (player);
+	local new = ex + exp;
+	local level = getPlayerLevel (player);
+	local mission = getPlayerMission(player);
+	local level_table = assets[mission].levels;
+	if new >= level_table[level] then
+		if level ~= #level_table then
+			setPlayerLevel(player, level+1);
+			setPlayerExperience(player, 0);
+			local color = assets[mission].color;
+			local r, g, b = unpack(color);
+			output (mission, "Yeni seviye kazandın! Artık görevler daha fazla kazanç verecek!", player, r, g, b);
+			return;
+		end
+	end
+	return setPlayerExperience (player, new);
+end
+
+function createVehicle (...)
+	local vehicle = Vehicle (...);
+	local offset = vehicle.matrix.up*2;
+	local marker = Marker (0, 0, 0, "arrow", .7, 246, 187, 8);
+	attachElements (marker, vehicle, offset.x, offset.y, offset.z);
+	addEventHandler ("onElementDestroy", vehicle, function () if isElement (marker) then marker:destroy(); end end);
+	return vehicle;
+end
+
+function assignPlayerVehicle (player, vehicle, blockExit)
+	entity[vehicle] = getPlayerMission(player);
+	if not players[player] then
+		players[player] = {};
+	end
+	players[player].vehicle = vehicle;
+	addEventHandler ("onVehicleStartEnter", vehicle,
+		function (thePlayer)
+			if not doesPlayerOwnVehicle (thePlayer, source) then
+				outputChatBox ("Bu araca sahip değilsiniz!", thePlayer, 255, 0, 0);
+				return;
+			end
+		end
+	)
+	if blockExit then
+		addEventHandler ("onVehicleExit", vehicle,
+			function (plr)
+				if player == plr then
+					local time = 7000;
+					local t = getTickCount();
+					setTimer (
+						function (p, v)
+							if getTickCount() - t >= 1000 then
+								if not isElement (p) then
+									if isTimer (sourceTimer) then
+										sourceTimer:destroy();
+									end
+								end
+								if not getPlayerMission(p) then
+									exports.mtatr_hud:dNote ("veh_restrict", "", p);
+									if isTimer (sourceTimer) then
+										sourceTimer:destroy();
+									end
+									return;
+								end
+
+								if getPedOccupiedVehicle(p) == v then
+									setTimer (function ()
+										exports.mtatr_hud:dNote ("veh_restrict", "", p);
+										if isTimer (sourceTimer) then
+											sourceTimer:destroy();
+										end
+									end, 500, 1);
+									return;
+								end
+								t = getTickCount();
+								-- iprint (tick)
+								time = time - 1000;
+								if time > 0 then
+									exports.mtatr_hud:dNote ("veh_restrict", (time/1000).." saniye içinde araca geri dön.", p);
+								else
+									setPlayerMission(p, nil, "Aracını terkettin.");
+									exports.mtatr_hud:dNote ("veh_restrict", "", p);
+									if isTimer (sourceTimer) then
+										sourceTimer:destroy();
+									end
+								end
+							end
+						end,
+					50, 0, plr, source);
+				end
+			end
+		);
+	end
+	addEventHandler ("onVehicleExplode", vehicle,
+		function ()
+			setPlayerMission(player, nil, "Aracın patladı.");
+		end
+	);
+end
+
+_takeWeapon = takeWeapon;
+function takeWeapon(...)
+	local arg = {...};
+	local player = arg[1];
+	if not isElement(player) then return false; end
+	-- exports.mtatr_accounts:saveWeapons(player);
+	return _takeWeapon(...);
+end
+
+_takeAllWeapon = takeAllWeapons;
+function takeAllWeapons(...)
+	local arg = {...};
+	local player = arg[1];
+	if not isElement(player) then return false; end
+	-- exports.mtatr_accounts:saveWeapons(player);
+	return _takeAllWeapon(...);
+end
+
+function setPlayerModel(...)
+	local arg = {...};
+	local player = arg[1];
+	if not isElement(player) then return false; end
+	-- exports.mtatr_accounts:saveMisc(player);
+	return setElementModel(...);
+end
+
+function doesPlayerOwnVehicle(player, vehicle)
+	return players[player] and players[player].vehicle == vehicle;
+end
+
+function givePlayerAssetsBack(player)
+	if not isElement (player) then return false; end
+	_takeAllWeapon(player);
+	local char = exports.mtatr_accounts:getPlayerCurrentCharacter (player);
+	local weapons = exports.database:getPlayerCharacterData (player, char, "weapons");
+	local model = exports.database:getPlayerCharacterData (player, char, "model");
+	for i, v in ipairs (weapons or {}) do
+		giveWeapon (player, v.id, v.ammo);
+	end
+	if model then
+		player:setModel(model);
+	end
+	return true;
+end
+
+function assignPlayerAsset (player, name, asset)
+	if not players[player] then
+		players[player] = {};
+	end
+	players[player][name] = asset;
+end
+
+function setPlayerMission (player, mission, reason, ...)
+	if not mission then
+		triggerEvent ("onPlayerLeaveMission", player, getPlayerMission(player), reason);
+		triggerClientEvent (player, "onClientPlayerLeaveMission", player, getPlayerMission(player), reason);
+		setElementData (player, "inmission", nil);
+		setElementData (player, "Görev", nil);
+		return;
+	end
+	exports.mtatr_accounts:saveMisc(player);
+	exports.mtatr_accounts:saveWeapons(player);
+	exports.mtatr_accounts:saveLocation(player);
+	setElementData (player, "inmission", mission);
+	setElementData (player, "Görev", mission);
+	triggerEvent ("onPlayerJoinMission", player, mission, reason, ...);
+	triggerClientEvent (player, "onClientPlayerJoinMission", player, mission, reason, ...);
+end
+
+function getPlayerMission (player)
+	if not isElement (player) then return; end
+	return getElementData (player, "inmission");
+end
+
+addEvent ("onPlayerJoinMission");
+addEventHandler ("onPlayerJoinMission", root,
+	function ()
+		outputChatBox ("Yeni bir göreve girdin. Çıkmak için /gorevcik veya /görevçık yazabilirsin!", source, 200, 200, 255);
+	end
+);
+
+addEvent ("onPlayerLeaveMission");
+addEventHandler ("onPlayerLeaveMission", root,
+	function (mission, reason)
+		if reason ~= "stop" and reason ~= "stoprmt" then
+			output ("GÖREV BAŞARISIZ", reason, source, 255, 0, 0);
+			for i, v in pairs (players[source] or {}) do
+				if isElement (v) then
+					v:destroy();
+				end
+			end
+			players[source] = nil;
+		end
+		givePlayerAssetsBack(source);
+	end
+);
+
+addEvent ("onPlayerSucceedMission");
+addEventHandler ("onPlayerSucceedMission", root,
+	function ()
+		for i, v in pairs (players[source] or {}) do
+			if isElement (v) then
+				v:destroy();
+			end
+		end
+		players[source] = nil;
+		setElementData (source, "inmission", nil);
+		setElementData (source, "Görev", nil);
+		givePlayerAssetsBack(source);
+	end
+);
+
+addEventHandler ("onPlayerQuit", root,
+	function ()
+		setPlayerMission (source, nil, "quit");
+	end
+);
+
+addEventHandler ("onResourceStop", root,
+	function (res)
+		if getResourceInfo (res, "type") == "mission" then
+			for i, v in ipairs (getElementsByType"player") do
+				if getPlayerMission (v) == getResourceInfo (res, "name") then
+					setPlayerMission(v, nil, "stoprmt");
+				end
+			end
+			for i, v in pairs (entity) do
+				if isElement (i) then
+					if v == getResourceInfo(res, "name") then
+						i:destroy();
+					end
+				end
+			end
+		end
+		if res == resource then
+			for i, v in ipairs (getElementsByType"player") do
+				if getPlayerMission(v) then
+					setPlayerMission(v, nil, "stop");
+				end
+			end
+		end
+	end
+);
+
+function findRotation( x1, y1, x2, y2 )
+    local t = -math.deg( math.atan2( x2 - x1, y2 - y1 ) )
+    return t < 0 and t + 360 or t
+end
+
+function gps (player, element, tX, tY)
+	local x, y, _ = getElementPosition (element);
+	local rot = findRotation (tX, tY, x, y);
+	local object = Object(1318, element.position + element.matrix.up*2, 180, 90, rot);
+end
+
+-- gps (getRandomPlayer(), getRandomPlayer(), 1007.37, 1334.91);
+
+addEventHandler ("onResourceStart", resourceRoot,
+	function ()
+		for i, v in ipairs (getResources()) do
+			if getResourceInfo (v, "type") == "mission" then
+				if getResourceState (v) ~= "running" then
+					startResource (v, true);
+				else
+					restartResource (v, true);
+				end
+			end
+		end
+	end
+);
+
+addCommandHandler ("görevçık",
+	function (player)
+		if not getPlayerMission(player) then return; end
+		setPlayerMission (player, nil, "Görevden ayrıldın.");
+	end
+);
+
+addCommandHandler ("gorevcik",
+	function (player)
+		if not getPlayerMission(player) then return; end
+		setPlayerMission (player, nil, "Görevden ayrıldın.");
+	end
+);
+
+addEventHandler ("onPlayerWasted", root,
+	function()
+		if not getPlayerMission(source) then return; end
+		setPlayerMission (source, nil, "Görevde öldün.");
+	end
+);

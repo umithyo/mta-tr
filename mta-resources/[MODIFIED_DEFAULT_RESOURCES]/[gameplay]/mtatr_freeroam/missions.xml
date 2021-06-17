@@ -1,0 +1,10 @@
+<catalog type="missions">
+	<group name="Taşıma Görevleri">
+		<missions name="Uyuşturucu Kaçakçılığı" posX="967.19" posY="2133.04" posZ="10.82" />
+		<missions name="Otobüs Şoförü" posX="2258.28" posY="2055.66" posZ="10.82" />
+		<missions name="Pizza Kuryesi" posX="2095.91" posY="-1800.5" posZ="13.38" />
+	</group>
+	<group name="Diğer">
+		<missions name="Madencilik" posX = "825.38" posY = "869.07" posZ = "12.29" />
+	</group>
+</catalog>	

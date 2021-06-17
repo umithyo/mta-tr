@@ -1,0 +1,6 @@
+<meta>
+	<info author="khepra" version="11.04.08" type="script" />
+	<script src="ktypestatus.lua" type="server"/>
+	<script src="ktypestatus_cl.lua" type="client"/>
+	<file src="chat.png" />
+</meta>

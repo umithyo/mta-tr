@@ -1,0 +1,36 @@
+<bus_routes>
+	<route1>
+		<location id="1" type="cylinder" dimension="0" alpha="255" posX="2360.2" posY="1993.5" posZ="9.4" rot="0" rotY="0" rotZ="0"/>
+		<location id="2" type="cylinder" dimension="0" alpha="255" posX="2264.2" posY="2151.5" posZ="9.4" rot="0" rotY="0" rotZ="0"/>
+		<location id="3" type="cylinder" dimension="0" alpha="255" posX="2154.3999" posY="2181.3999" posZ="9.4" rot="0" rotY="0" rotZ="0"/>
+		<location id="4" type="cylinder" dimension="0" alpha="255" posX="2289.7" posY="2388.2" posZ="9.4" rot="0" rotY="0" rotZ="0"/>
+		<location id="5" type="cylinder" dimension="0" alpha="255" posX="2369.8" posY="2480.1001" posZ="9.4" rot="0" rotY="0" rotZ="0"/>
+		<location id="6" type="cylinder" dimension="0" alpha="255" posX="2361.3999" posY="2715.8" posZ="9.4" rot="0" rotY="0" rotZ="0"/>
+		<location id="7" type="cylinder" dimension="0" alpha="255" posX="2160.5" posY="2775.6001" posZ="9.4" rot="0" rotY="0" rotZ="0"/>
+		<location id="8" type="cylinder" dimension="0" alpha="255" posX="2084.7" posY="2659.3999" posZ="9.4" rot="0" rotY="0" rotZ="0"/>
+		<location id="9" type="cylinder" dimension="0" alpha="255" posX="1960.8" posY="2395.6001" posZ="9.4" rot="0" rotY="0" rotZ="0"/>
+		<location id="10" type="cylinder" dimension="0" alpha="255" posX="1924.9" posY="2210" posZ="9.4" rot="0" rotY="0" rotZ="0"/>
+		<location id="11" type="cylinder" dimension="0" alpha="255" posX="1877.6" posY="2050.5" posZ="9.4" rot="0" rotY="0" rotZ="0"/>
+		<location id="12" type="cylinder" dimension="0" alpha="255" posX="1704.7" posY="1965" posZ="9.4" rot="0" rotY="0" rotZ="0"/>
+		<location id="13" type="cylinder" dimension="0" alpha="255" posX="1644.7" posY="1817.7" posZ="9.4" rot="0" rotY="0" rotZ="0"/>
+		<location id="14" type="cylinder" dimension="0" alpha="255" posX="1731.3" posY="1615.9" posZ="8.4" rot="0" rotY="0" rotZ="0"/>
+		<location id="15" type="cylinder" dimension="0" alpha="255" posX="1720" posY="1380.8" posZ="9.4" rot="0" rotY="0" rotZ="0"/>
+		<location id="16" type="cylinder" dimension="0" alpha="255" posX="1700.2" posY="1130.6" posZ="9.4" rot="0" rotY="0" rotZ="0"/>
+		<location id="17" type="cylinder" dimension="0" alpha="255" posX="1901.9" posY="1090.6" posZ="9.4" rot="0" rotY="0" rotZ="0"/>
+		<location id="18" type="cylinder" dimension="0" alpha="255" posX="2039.8" posY="1023.8" posZ="9.4" rot="0" rotY="0" rotZ="0"/>
+		<location id="19" type="cylinder" dimension="0" alpha="255" posX="2132.2" posY="970.79999" posZ="9.4" rot="0" rotY="0" rotZ="0"/>
+		<location id="20" type="cylinder" dimension="0" alpha="255" posX="2309" posY="970.79999" posZ="9.4" rot="0" rotY="0" rotZ="0"/>
+		<location id="21" type="cylinder" dimension="0" alpha="255" posX="2350" posY="1115.2" posZ="9.4" rot="0" rotY="0" rotZ="0"/>
+		<location id="22" type="cylinder" dimension="0" alpha="255" posX="2429.8" posY="1231.4" posZ="9.4" rot="0" rotY="0" rotZ="0"/>
+		<location id="23" type="cylinder" dimension="0" alpha="255" posX="2429.7" posY="1417.8" posZ="9.4" rot="0" rotY="0" rotZ="0"/>
+		<location id="24" type="cylinder" dimension="0" alpha="255" posX="2429.8" posY="1571.9" posZ="9.4" rot="0" rotY="0" rotZ="0"/>
+		<location id="25" type="cylinder" dimension="0" alpha="255" posX="2329.7" posY="1634.6" posZ="9.4" rot="0" rotY="0" rotZ="0"/>
+		<location id="26" type="cylinder" dimension="0" alpha="255" posX="2392" posY="1710.9" posZ="9.4" rot="0" rotY="0" rotZ="0"/>
+		<location id="27" type="cylinder" dimension="0" alpha="255" posX="2509.8999" posY="1852.3" posZ="9.4" rot="0" rotY="0" rotZ="0"/>
+		<location id="28" type="cylinder" dimension="0" alpha="255" posX="2464.8" posY="1975.8" posZ="9.4" rot="0" rotY="0" rotZ="0"/>
+		<location id="29" type="cylinder" dimension="0" alpha="255" posX="2360.3" posY="2105.7" posZ="9.4" rot="0" rotY="0" rotZ="0"/>
+		<location id="32" type="cylinder" dimension="0" alpha="255" posX="2193.3" posY="2325.8" posZ="9.4" rot="0" rotY="0" rotZ="0"/>
+	</route1>
+</bus_routes>
+
+

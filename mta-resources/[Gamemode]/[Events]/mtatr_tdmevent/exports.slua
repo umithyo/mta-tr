@@ -1,0 +1,53 @@
+function startEvent(map_name)
+	construct();
+	local mapid;
+	if getResourceFromName(map_name) then 
+		mapid = getMapIDFromName(map_name);
+	end	
+	if tonumber(mapid) then
+		setMapID(mapid);
+	end	
+	startMap();
+	_startEvent();
+	ACTIVE = true;
+end	
+
+function stopEvent(winner)
+	if winner == nil then 
+		if ACTIVE and RUNNING then 
+			__check();
+			return;
+		end
+	end	
+	for i, v in ipairs (getPlayersInEvent()) do 
+		setPlayerOut(v, eventName=="onResourceStop");
+		if winner == nil then 	
+			output ("Etkinlik Bitti", "Takımlar berabere kaldı.", v, 255, 255, 0);
+		end	
+	end	
+	construct();
+	stopMap();
+	exports.mtatr_engines:setPlayerImmuneAgainst();
+	triggerEvent ("onEventFinished", resourceRoot, "tdm");
+end
+
+function getMapDetails()
+	return "Slotlar: ".. LIMIT * 4 .. " Map: ".. MAP.name .. "\nMapper: "..MAP.mapper;
+end
+
+function joinEvent(player)
+	setPlayerIn(player);
+end
+
+function canPlayerJoinEvent(player)
+	if isPlayerInEvent (player) then 
+		return false, "Zaten etkinliktesiniz!";	
+	end	
+	if not ACTIVE then 
+		return false, "Etkinlik aktif değil.";
+	end
+	if RUNNING then 
+		return false, "Etkinlik çoktan başladı. Şuan katılamazsınız.";
+	end	
+	return true;
+end	

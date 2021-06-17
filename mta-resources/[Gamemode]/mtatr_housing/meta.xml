@@ -1,0 +1,15 @@
+<meta>
+	<oop>true</oop>
+	<script src = "shared/utils.lua" type = "shared" />
+	<config src = "config/interiors.xml" type = "client"/>
+	<script src = "database/server.lua" type = "server" />
+	<script src = "sync/client.lua" type = "client" />
+	<script src = "sync/server.lua" type = "server" />
+	<script src = "creation/client.lua" type = "client" />
+	<script src = "creation/server.lua" type = "server" />
+	<script src = "management/client.lua" type = "client" />
+	<script src = "management/server.lua" type = "server" />
+
+	<export function = "isHouseSpawnEnabled" type = "server" />
+	<export function = "getPlayerSpawnPoint" type = "server" />
+</meta>

@@ -1,0 +1,15 @@
+<meta> 
+	<info type = "event"  name = "ptp" />
+	<oop>true</oop>
+	
+	<script src = "server/globals.lua"			    type = "server" />
+	<script src = "server/functions.lua"	     	type = "server" />
+	<script src = "server/server.lua" 		     	type = "server" />
+	<script src = "server/exports.lua"		     	type = "server" />
+	
+	<export function = "getMapDetails"   			type = "server" />
+	<export function = "joinEvent"       			type = "server" />
+	<export function = "startEvent"      			type = "server" />
+	<export function = "stopEvent"       			type = "server" />
+	<export function = "canPlayerJoinEvent" 		type = "server" />
+</meta>

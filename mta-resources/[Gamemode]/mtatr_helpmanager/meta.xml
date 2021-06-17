@@ -1,0 +1,6 @@
+<meta>
+	<config src = "help.xml" type = "client" />
+	<script src = "client.lua" type = "client" />
+	<!-- <script src = "server.slua" type = "server" /> -->
+	<file src = "RobotoSlab-Bold.ttf" />
+</meta>

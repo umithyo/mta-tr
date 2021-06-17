@@ -1,0 +1,47 @@
+MAP 			= {index = 1};
+DEF_PRIZE 		= {money = 15000, exp = 250, indmoney = 1000, indexp = 50};
+DIMENSION 		= 6967;
+UPDATE_HP		= 500; -- ms
+RESTRICT_TIME 	= 15; -- sec
+
+SYMBOLIC_NAMES = {
+	team1 = "ALPHA",
+	team2 = "BRAVO"
+};
+
+TEAM_COLORS = {
+	team1 = {81, 255, 0},
+	team2 = {255, 0, 55},
+};
+
+MODELS = {
+	team1 = 188,
+	team2 = 189
+};
+
+function construct()
+	local map_index = MAP.index;
+	PRIZE 			= {};
+	MAP 			= {index = map_index};
+	players			= {};
+	order			= {team1={}, team2={}};
+	ACTIVE			= false;
+	RUNNING 		= false;
+	STOPPING		= false;
+	FIRST_BLOOD 	= false;
+	for i, v in pairs (timers or {}) do 
+		if isTimer (v) then 
+			v:destroy();
+		end
+	end
+	vehicles		= {};
+	timers 			= {};
+	scores			= {team1=0, team2=0};
+	stats			= {};
+	pending 		= {};
+	stopMap();
+end
+
+function output (...)
+	exports.mtatr_engines:output (...);
+end	

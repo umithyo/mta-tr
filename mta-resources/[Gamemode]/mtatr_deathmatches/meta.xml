@@ -1,0 +1,16 @@
+<meta>
+	<oop>true</oop>
+	<script src = "dm_list.lua" type = "server" />
+	<script src = "load.lua" type = "server" />
+	<script src = "server.lua" type = "server" />
+	<script src = "client.lua" type = "client" />
+	
+	<export function = "isPlayerInDeathmatch" type = "server" />
+	<export function = "setPlayerOutOfDeathmatch" type = "server" />
+	<export function = "getPlayerCurrentDeathmatch" type = "server" />
+	<export function = "setPlayerInDeathmatch" type = "server" />
+	<export function = "getDeathmatchColors" type = "server" />
+	<export function = "getDeathmatchData" type = "server" />
+	<export function = "getDeathmatchType" type = "server" />
+	<export function = "buildDeathmatches" type = "server" />	<export function = "getPlayersInDeathmatch" type = "server" />
+</meta>

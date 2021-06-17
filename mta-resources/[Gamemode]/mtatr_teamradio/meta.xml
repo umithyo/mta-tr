@@ -1,0 +1,41 @@
+<meta>
+	<oop>true</oop>
+	<info author = "Adolfram" />
+	<script src = "list.lua" type = "client" />
+	<script src = "c.lua" type = "client"/>
+	<script src = "s.lua" type = "server"/>
+
+	<file src = "radio/affirmative.wav"/>
+	<file src = "radio/circle_around_back.wav"/>
+	<file src = "radio/cover_me.wav"/>
+	<file src = "radio/enemy_down.wav"/>
+	<file src = "radio/enemy_spotted.wav"/>
+	<file src = "radio/fall_back.wav"/>
+	<file src = "radio/fire_in_the_hole.wav"/>
+	<file src = "radio/flank_them.wav"/>
+	<file src = "radio/follow_me.wav"/>
+	<file src = "radio/follow_my_command.wav"/>
+	<file src = "radio/get_in_position.wav"/>
+	<file src = "radio/go.wav"/>
+	<file src = "radio/ill_take_the_point.wav"/>
+	<file src = "radio/im_hit_need_assistance.wav"/>
+	<file src = "radio/im_in_position.wav"/>
+	<file src = "radio/its_gonna_blow.wav"/>
+	<file src = "radio/lets_get_out_of_here.wav"/>
+	<file src = "radio/lets_go.wav"/>
+	<file src = "radio/lets_move_out.wav"/>
+	<file src = "radio/lock_and_load.wav"/>
+	<file src = "radio/meet_me.wav"/>
+	<file src = "radio/need_backup.wav"/>
+	<file src = "radio/negative.wav"/>
+	<file src = "radio/regroup.wav"/>
+	<file src = "radio/report_in.wav"/>
+	<file src = "radio/reporting_in.wav"/>
+	<file src = "radio/roger_that.wav"/>
+	<file src = "radio/sector_clear.wav"/>
+	<file src = "radio/stick_together.wav"/>
+	<file src = "radio/storm_front.wav"/>
+	<file src = "radio/take_the_point.wav"/>
+	<file src = "radio/taking_fire_need_assistance.wav"/>
+	<file src = "radio/teammate_down.wav"/>
+</meta>

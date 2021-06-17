@@ -1,0 +1,16 @@
+<meta>
+	<oop>true</oop>
+	<script src = "edf/database.slua" type = "server" />
+	<script src = "edf/edfloader.slua" type = "server"/>
+	<script src = "bases/turfing.slua" type = "server" />
+	<script src = "bases/turfing_c.lua" type = "client" />
+
+	<file src = "files/turf_rectangle.png" />
+	<file src = "files/flag.png" />
+
+	<export function = "getBases" type = "server" />
+	<export function = "getClanBase" type = "server" />
+	<export function = "setBaseOwner" type = "server" />
+	<export function = "isPlayerInHisBase" type = "server" />
+	<export function = "createBase" type = "server" />
+</meta>

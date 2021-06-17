@@ -1,0 +1,16 @@
+<help popup="yes">
+Freeroam
+Oyuncu:
+ ac / giysi ekle [type] [texture] [model]
+ rc / giysi kaldır [type]
+ setstyle [dövüş stili]
+ anim [lib] [name]
+Araçlar:
+ cv / oluştur [vehicleid]
+ au / modifiye ekle [upgradeid]
+ ru / modifiye kaldır [upgradeid]
+ pj / paintjob [paintjobid]
+ rp / onar
+ cl / renk [id]
+ f / çevirDiğer Komutlar transfer / para göndermeTuşlar  F1 - Freeroam GUI F2 - Grup Paneli F3 - Mod Yönetim Paneli  F9 - Yardım Paneli  
+</help>

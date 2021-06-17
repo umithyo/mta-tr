@@ -1,0 +1,127 @@
+addEventHandler ("onResourceStart", resourceRoot, construct);
+addEventHandler ("onResourceStop", resourceRoot, stopEvent);
+
+addEvent ("onPlayerJoinTDMEvent");
+addEventHandler ("onPlayerJoinTDMEvent", root, 
+	function ()
+		if ACTIVE then 
+			check();
+		end	
+	end
+);	
+
+function check()
+	if not RUNNING and ACTIVE then 
+		if #getPlayersInEvent() >= LIMIT*4 then 
+			runEvent();
+		end
+	end	
+end
+
+function __check ()
+	if #getPlayersInEventTeam("team1") > #getPlayersInEventTeam("team2") then 
+		return finishEvent("team1");
+	elseif #getPlayersInEventTeam("team2") > #getPlayersInEventTeam("team1") then 
+		return finishEvent("team2");
+	end
+	stopEvent();
+end	
+
+function _startEvent()
+	timers.starter = Timer (
+		function ()
+			if #getPlayersInEvent() >= LIMIT/2 then 
+			-- if true then
+				runEvent();
+			else
+				for i, v in ipairs (getPlayersInEvent()) do 
+					exports.mtatr_engines:output ("ETKİNLİK BAŞLATILAMADI", "Yeterli sayıda katılım olmadığından etkinlik sonlandırıldı. Yönlendiriliyorsunuz...", v, 255, 0, 0);
+				end	
+				stopEvent();
+			end	
+		end,
+	60000, 1);
+end
+
+function runEvent()
+	if not ACTIVE then return; end
+	if isTimer (timers.starter) then 
+		timers.starter:destroy();
+	end	
+	if RUNNING then return; end
+	RUNNING = true;
+	for i, v in ipairs (getPlayersInEvent ()) do 
+		exports.mtatr_engines:startCountDown (v);
+	end		
+	triggerEvent ("onEventRun", resourceRoot, "tdm");
+end
+
+addEvent ("onCountDownReachedToEnd");
+addEventHandler ("onCountDownReachedToEnd", root, 
+	function ()
+		if RUNNING then 
+			for i, v in ipairs (getPlayersInEvent ()) do 
+				toggleAllControls (v, true);
+			end
+		end	
+	end
+);	
+
+addEvent ("onEventRun");
+addEventHandler ("onEventRun", root, 
+	function (event)
+		if event == "tdm" then 
+			timers.updater = Timer (updateInformation, UPDATE_HP, 0);
+			for i, v in ipairs (getPlayersInEvent()) do		
+				local team = getPlayerEventTeam(v);
+				exports.mtatr_engines:setPlayerImmuneAgainst(v, getPlayersInEventTeam(team));
+				exports.mtatr_engines:createTeamBlips(v, getPlayersInEventTeam(team), getTeamColor(team));
+			end	
+		end
+	end
+);	
+
+addEventHandler ("onPlayerWasted", root, 
+	function (_, killer)
+		if isElement (killer) then 
+			if isPlayerInEvent(killer) then 
+				if source ~= killer then 
+					local team = getPlayerEventTeam(killer);
+					local score = scores[team] or 0;
+					score = score+1;
+					scores[team] = score;
+				end
+			end
+		end
+	end
+);	
+
+function finishEvent (winners)
+	if not winners then return; end
+	if STOPPING then return; end
+	if ACTIVE and RUNNING then 
+		local teamName = getEventTeamName(winners);
+		local plrs = getPlayersInEventTeam(winners);	
+		local text 		= "";
+		local kill		= getStats ("kills")[1];
+		local dmg		= getStats ("dmg")[1];
+		if kill and dmg then 
+			local topkiller = kill.name;
+			local topdmger	= dmg.name;
+			local topkill   = kill.kills or 1;
+			local topdmg 	= dmg.dmg or 1;
+			
+			if topkiller and topdmger then 
+				text = "Top Skor: "..topkiller.."("..topkill.." öldürme)\nTop DMG: "..topdmger.."("..math.floor (topdmg).." dmg)\nÖdül: "..PRIZE.money.. "₺ ve + "..PRIZE.exp.." deneyim puanı.";
+			end	
+		end	
+		output ("TDM etkinliği bitti!", teamName.." kazandı!\n"..text, root, 200, 19, 19);
+		for i, v in ipairs (plrs) do 
+			exports.mtatr_engines:setEventFinished(v, 6);
+			exports.database:givePlayerMoney (v, PRIZE.money, "Event: TDM");
+			exports.mtatr_mode:givePlayerCharacterExperience (v, PRIZE.exp);
+		end
+		setTimer (stopEvent, 6000, 1, true);
+		STOPPING = true;
+	end	
+end

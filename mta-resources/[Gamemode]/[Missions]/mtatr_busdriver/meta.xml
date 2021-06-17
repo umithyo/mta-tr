@@ -1,0 +1,6 @@
+<meta>
+	<info type = "mission" name = "Otobüs Şoförü" />
+	<oop>true</oop>
+	<script src="bus.lua"/>
+	<script src="bus_c.lua" type="client"/>
+</meta>

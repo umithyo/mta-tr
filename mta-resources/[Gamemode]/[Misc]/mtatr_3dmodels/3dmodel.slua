@@ -1,0 +1,7 @@
+function activateModels(player)
+	triggerClientEvent (player, "3dmodel.active", player, true);
+end
+
+function deactivateModels(player)
+	triggerClientEvent (player, "3dmodel.active", player);
+end	

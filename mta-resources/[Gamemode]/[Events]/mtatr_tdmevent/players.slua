@@ -1,0 +1,176 @@
+local function _check()
+	if ACTIVE and RUNNING then
+		if #getPlayersInEventTeam("team1") <= 0 then
+			finishEvent ("team2");
+		elseif #getPlayersInEventTeam("team2") <= 0 then
+			finishEvent("team1");
+		end
+	end
+end
+
+addEvent ("onPlayerJoinTDMEvent");
+addEventHandler ("onPlayerJoinTDMEvent", root,
+	function ()
+		setElementData (source, "inevent", "TDM");
+	end
+);
+
+addEvent ("onPlayerLeaveTDMEvent");
+addEventHandler ("onPlayerLeaveTDMEvent", root,
+	function (immediate)
+		local team = getPlayerEventTeam(source);
+		setElementData (source, "inevent", nil);
+		_setPlayerOut(source, immediate);
+		for i, player in ipairs (getPlayersInEventTeam(team)) do
+			exports.mtatr_engines:createTeamBlips(player, getPlayersInEventTeam(team), getTeamColor(team));
+		end
+	end
+);
+
+function _setPlayerIn(player)
+	local id = getPlayerEventData(player, "id");
+	local team = getPlayerEventData (player, "team");
+	if id and MAP.spawnpoints[team][id] then
+		if tonumber(MAP.interior) then
+			setElementInterior (player, MAP.interior);
+		end
+		local x, y, z = unpack (MAP.spawnpoints[team][id].pos);
+		local rot = MAP.spawnpoints[team][id].rot;
+		takeAllWeapons(player);
+		exports.mtatr_engines:createWeaponSelectionMenu(player, true);
+		toggleAllControls(player, false, true, false);
+		setElementDimension(player, DIMENSION);
+		if isPedInVehicle(player) then
+			removePedFromVehicle(player);
+		end
+		fadeCamera(player, false);
+		Timer (setElementPosition, 1000, 1, player, x, y, z);
+		Timer (setElementRotation, 1000, 1, player, 0, 0, rot);
+		Timer (fadeCamera, 1000, 1, player, true);
+		exports.mtatr_engines:showTeamsBar(player, true);
+		setElementModel (player, MODELS[team]);
+		exports.mtatr_playerblips:destroyBlipsAttachedTo(player);
+		exports.mtatr_engines:createTeamBlips(player, getPlayersInEventTeam(team), getTeamColor(team));
+		stats[player] = {};
+		setElementHealth (player, 100);
+		updateInformation();
+	end
+end
+
+function _setPlayerOut (player, immediate)
+	if isPedDead (player) then
+		players[player] = nil;
+		pending[player] = true;
+		_check();
+		return;
+	end
+	local char = exports.mtatr_accounts:getPlayerCurrentCharacter(player);
+	local location = exports.database:getPlayerCharacterData(player, char, "location");
+	local dim, int = exports.database:getPlayerCharacterData(player, char, "dim"), exports.database:getPlayerCharacterData(player, char, "int")
+	local model = exports.database:getPlayerCharacterData (player, char, "model");
+	local weapons = exports.database:getPlayerCharacterData (player, char, "weapons");
+	takeAllWeapons(player);
+	for i, v in ipairs (weapons) do
+		giveWeapon (player, v.id, v.ammo);
+	end
+	local x, y, z = unpack(location);
+	exports.mtatr_engines:removeRestriction (player);
+	if not immediate then
+		fadeCamera(player, false);
+		Timer(setElementPosition, 1000, 1, player, x, y, z)
+		Timer (fadeCamera, 1000, 1, player, true);
+	else
+		fadeCamera(player, true);
+		setElementPosition (player, x, y, z);
+	end
+	setElementDimension (player, 0);
+	setElementInterior (player, int);
+	toggleAllControls(player, true);
+	exports.mtatr_engines:showTeamsBar(player, false);
+	setElementModel (player, model);
+	exports.mtatr_engines:destroyTeamBlips(player);
+	exports.mtatr_engines:createWeaponSelectionMenu(player, false);
+	players[player] = nil;
+	_check();
+end
+
+addEvent ("onPlayerSubmitWeaponList");
+addEventHandler ("onPlayerSubmitWeaponList", root,
+	function (list)
+		if ACTIVE then
+			for i, v in pairs (list) do
+				giveWeapon (source, v.weapon, v.ammo);
+			end
+		end
+	end
+);
+
+addEventHandler ("onPlayerSpawn", root,
+	function ()
+		if pending[source] then
+			pending[source] = nil;
+			_setPlayerOut(source);
+		end
+	end
+);
+
+addEventHandler ("onPlayerWasted", root,
+	function (_, killer)
+		if isElement (killer) and killer ~= source then
+			if isPlayerInEvent (killer) then
+				local id = exports.database:getPlayerId (killer);
+				local kills = (exports.database:getPlayerData (id, "fr_stats", "tdm.kills") or 0) + 1;
+				exports.database:setPlayerData (id, "fr_stats", "tdm.kills", kills);
+				exports.database:givePlayerMoney (killer, PRIZE.individualmoney, "Event: TDM Individual");
+				exports.mtatr_mode:givePlayerCharacterExperience (killer, PRIZE.individualexp);
+				if not stats[killer] then
+					stats[killer] = {};
+				end
+				stats[killer].kills = (stats[killer].kills or 0) + 1;
+			end
+		end
+		if isPlayerInEvent (source) then
+			local s_id = exports.database:getPlayerId (source);
+			local deaths = (exports.database:getPlayerData (s_id, "fr_stats", "tdm.deaths") or 0) + 1;
+			exports.database:setPlayerData (s_id, "fr_stats", "tdm.deaths", deaths);
+			setPlayerOut(source);
+		end
+	end
+);
+
+addEventHandler ("onPlayerDamage", root,
+	function (attacker, _, _, loss)
+		if isElement (attacker) then
+			if attacker ~= source then
+				if isPlayerInEvent (attacker) and isPlayerInEvent (source) then
+					if isElement (attacker) then
+						if not FIRST_BLOOD then
+							FIRST_BLOOD = true;
+							for i, v in ipairs (getPlayersInEvent()) do
+								exports.mtatr_engines:playFX("firstblood.mp3", v);
+							end
+						end
+						if not stats[attacker] then
+							stats[attacker] = {};
+						end
+						stats[attacker].dmg = (stats[attacker].dmg or 0) + loss;
+
+						local id = exports.database:getPlayerId (attacker);
+						local dmg = (exports.database:getPlayerData (id, "fr_stats",  "tdm.dmg") or 0) + loss;
+						exports.database:setPlayerData (id, "fr_stats", "tdm.dmg", dmg);
+					end
+				end
+			end
+		end
+	end
+);
+
+addEventHandler ("onPlayerQuit", root,
+	function ()
+		if isPlayerInEvent (source) then
+			pending[source] = nil;
+			setPlayerOut(source);
+			_check();
+		end
+	end
+);

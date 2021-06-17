@@ -1,0 +1,31 @@
+<meta>
+	<download_priority_group>-10</download_priority_group>
+	<oop>true</oop>
+	<!-- <config src = "config/skins.xml" type = "client" /> -->
+	<script src = "camera.lua"			type = "client" />
+	<script src = "char_c.lua"			type = "client" />
+	<script src = "char_s.lua"			type = "server" />
+	<script src = "panel_c.lua"		type = "client" />
+	<script src = "panel_s.lua"			type = "server" />
+	<script src = "saving_stuff.lua"	type = "server" />
+	<script src = "adminperks.lua"		type = "server" />
+
+	<export function = "loadSkins"					type = "client" />
+	<export function = "getPlayerCurrentCharacter"	type = "server" />
+	<export function = "isPlayerLoggedIn"			type = "server" />
+	<export function = "saveWeapons"				type = "server" />
+	<export function = "saveLocation"				type = "server" />
+	<export function = "saveMisc"					type = "server" />
+	<export function = "isPlayerInGame"				type = "server" />
+	<export function = "isPlayerInStaff"			type = "server" />
+	<export function = "isPlayerAdmin"				type = "server" />
+	<export function = "isPlayerInACL"				type = "server" />
+	<export function = "showLogo"					type = "client" />
+	<export function = "hideLogo"					type = "client" />
+
+	<file src = "img/login_logo.png" />
+	<file src = "img/MTA-TR.png" />
+	<file src = "img/trlogo.png" />
+	<file src = "img/tr_small_logo.png" />
+	<file src = "blur.fx" />
+</meta>

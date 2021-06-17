@@ -1,0 +1,19 @@
+<meta>
+	<info author="Aberforth" />	
+	<oop>true</oop>
+
+	<!-- 3D SOUND API -->	
+	<file src="3dSoundAPI/sound/leap.ogg" />
+	<file src="3dSoundAPI/sound/swagniTaunt.ogg" />
+	<file src="3dSoundAPI/sound/swagniDeath.ogg" />
+	<file src="3dSoundAPI/sound/ramaLaugh.ogg" />
+	
+	<script src="3dSoundAPI/3dSoundPathList.lua" type="shared" />
+	<script src="3dSoundAPI/s.lua" type="server" />
+	<script src="3dSoundAPI/c.lua" type="client" />
+	
+	<export function = "createShared3DSound" type = "server" />
+	<export function = "create3DOwnerSound" type  = "server" />
+	
+	<min_mta_version server="1.3.4-0.00000" client="1.3.4-0.00000"></min_mta_version>
+</meta>

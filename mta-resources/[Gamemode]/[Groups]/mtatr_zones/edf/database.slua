@@ -1,0 +1,66 @@
+db = exports.database:dbConnect ();
+
+addEventHandler ("onResourceStart", root, 
+	function (res)
+		if getResourceName (res) == "database" then 
+			db = exports.database:dbConnect();
+		end	
+	end
+);
+
+function doesBaseExists (base)
+	return #dbPoll(dbQuery (db, "SELECT name FROM zones WHERE `name` = ?", base), -1) > 0;
+end
+
+function createBase (base, owner, x, y, w, h, colour )
+	dbExec (db, "INSERT INTO zones (name, x, y, w, h, owner, colour) VALUES (?, ?, ?, ?, ?, ?, ?)", base, x, y, w, h, owner, colour);
+	setBasePropertiesOnStart(base);
+end
+
+function setBasePropertiesOnStart (base)
+	local result = dbPoll(dbQuery (db, "SELECT * FROM zones WHERE `name` = ?", base), -1)[1];
+	local x, y = result.x, result.y;
+	local w, h = result.w, result.h;
+	local col = createColRectangle (x, y, w, h);
+	local r, g, b =  255, 255, 255;
+	local radar = createRadarArea (x, y, w, h, r, g, b, 125 );
+	if not bases[base] then 
+		bases[base] = {
+			children = {
+				radar = radar,
+				colour = {r, g, b},
+				col = col,
+			},
+			owner = nil, 					
+		};
+	end	
+
+	local owner = result.owner;
+	local r, g, b = unpack (fromJSON (result.colour));
+	bases[base].children.colour = {r, g, b};
+	setRadarAreaColor (bases[base].children.radar, r, g, b, 125);
+	bases[base].owner = owner;
+end
+
+function setBaseOwner (base, owner)
+	if owner ~= nil then 
+		local colour = {getTeamColor (getTeamFromName (exports.mtatr_teams:getGroupName (owner)))};
+		dbExec (db, "UPDATE zones SET `owner` = ?, `colour` = ? WHERE `name` = ?", owner, toJSON (colour), base);
+		bases[base].owner = owner;
+		local r, g, b = unpack (colour);
+		setRadarAreaColor (bases[base].children.radar, r, g, b, 125);
+		bases[base].children.colour = {r, g, b};
+		if isRadarAreaFlashing (bases[base].children.radar) then 
+			setRadarAreaFlashing (bases[base].children.radar, false);
+		end	
+	else
+		local r, g, b = 255, 255, 255;
+		dbExec (db, "UPDATE zones SET `owner` = NULL, `colour` = ? WHERE `name` = ?", toJSON ({r, g, b}), base);
+		bases[base].owner =  nil;
+		setRadarAreaColor (bases[base].children.radar, 255, 255, 255, 125);
+		bases[base].children.colour = {r, g, b};
+		if isRadarAreaFlashing (bases[base].children.radar) then 
+			setRadarAreaFlashing (bases[base].children.radar, false);
+		end	
+	end	
+end

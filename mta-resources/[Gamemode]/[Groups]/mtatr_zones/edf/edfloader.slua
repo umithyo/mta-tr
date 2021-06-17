@@ -1,0 +1,63 @@
+bases = {};
+
+function hex2rgb(hex)
+    hex = hex:gsub("#","")
+    return tonumber("0x"..hex:sub(1,2)), tonumber("0x"..hex:sub(3,4)), tonumber("0x"..hex:sub(5,6))
+end
+
+addEventHandler ("onResourceStart", resourceRoot, 
+	function ()
+		dbExec (db, "CREATE TABLE IF NOT EXISTS zones (id INT (11) NOT NULL AUTO_INCREMENT, name TEXT DEFAULT NULL, x TEXT DEFAULT NULL, y TEXT DEFAULT NULL, w TEXT DEFAULT NULL, h TEXT DEFAULT NULL, owner INT DEFAULT NULL, colour TEXT DEFAULT NULL, PRIMARY KEY (`id`))");
+		dbExec (db, "CREATE TABLE IF NOT EXISTS zone_owners (id INT (11) NOT NULL AUTO_INCREMENT, `base` TEXT, owner INT, PRIMARY KEY (`id`))");
+		for i, v in ipairs (dbPoll(dbQuery(db, "SELECT name FROM zones"), -1)) do 
+			setBasePropertiesOnStart(v.name);
+		end	
+		for i, v in ipairs (getElementsByType"radar_area") do
+			local x, y = getElementPosition (v);
+			local w, h = getElementData (v, "sizeX"), getElementData (v, "sizeY");
+			local col = createColRectangle (x, y, w, h);
+			local r, g, b =  255, 255, 255;
+			local radar = createRadarArea (x, y, w, h, r, g, b, 125 );
+			if not bases[getElementID (v)] then 
+				bases[getElementID (v)] = {
+					children = {
+						radar = radar,
+						colour = {r, g, b},
+						col = col,
+					},
+					owner = nil, 					
+				};
+			end	
+			
+			if not doesBaseExists (getElementID(v)) then 
+				createBase (getElementID(v), nil, x, y, w, h, toJSON ({r, g, b}));
+			else
+				setBasePropertiesOnStart (getElementID(v));
+			end	
+		end
+	end
+);	
+
+function getBases ()
+	return bases 
+end
+
+function getClanBase (clan)
+	local tbl = {};
+	if clan then 
+		for i, v in pairs(bases) do 
+			if v.owner then 
+				if clan == v.owner then 
+					table.insert(tbl, i);
+				end
+			end
+		end
+	end
+	return tbl;
+end	
+
+function getBaseOwner (base)
+	if bases[base] then 
+		return bases[base].owner;
+	end	
+end

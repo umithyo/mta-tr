@@ -1,0 +1,20 @@
+<meta>
+	<info type = "event"  name = "tdm" />
+	<oop>true</oop>
+	<script src = "globals.slua"	type = "server" />
+	<script src = "engine.slua"		type = "server" />
+	<script src = "map.slua"		type = "server" />
+	<script src = "order.slua"		type = "server" />
+	<script src = "functions.slua"	type = "server" />
+	<script src = "players.slua"	type = "server" />
+	<script src = "teams.slua"		type = "server" />
+	<script src = "exports.slua"	type = "server" />
+	<script src = "server.slua" 	type = "server" />
+	
+	<export function = "getMapDetails"   			type = "server" />
+	<export function = "joinEvent"       			type = "server" />
+	<export function = "startEvent"      			type = "server" />
+	<export function = "stopEvent"       			type = "server" />
+	<export function = "canPlayerJoinEvent" 		type = "server" />
+	<export function = "runEvent"					type = "server" />
+</meta>	

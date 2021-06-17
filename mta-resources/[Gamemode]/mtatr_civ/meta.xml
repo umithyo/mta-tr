@@ -1,0 +1,57 @@
+<meta>
+	<oop>true</oop>
+	<script src = "utils/output_c.lua" type = "client" />
+	<script src = "utils/output_s.lua" 	type = "server" />
+	<script src = "cutscene.lua" 		type = "client" />
+	<script src = "cutscene.slua" 		type = "server" />
+	<script src = "client.lua" 		type = "client" />
+	<script src = "server.slua" 		type = "server" />
+
+	<!-- CUTSCENE -->
+	<export function = "toggleHUD" 					type = "client" />
+	<export function = "toggleHUD" 					type = "server" />
+	<export function = "createCutscene" 			type = "client" />
+	<export function = "createCutscene" 			type = "server" />
+	<export function = "setCutsceneFocus" 			type = "client" />
+	<export function = "setCutsceneFocus"			type = "server" />
+	<export function = "setCutsceneFocusOnElement" 	type = "client" />
+	<export function = "setCutsceneFocusOnElement" 	type = "server" />
+	<export function = "destroyCutscene"			type = "client" />
+	<export function = "destroyCutscene" 			type = "server" />
+	<export function = "setSubtitles" 				type = "client" />
+	<export function = "setSubtitles" 				type = "server" />
+	<export function = "createCutscenePed" 			type = "client" />
+	<export function = "createCutsceneVehicle" 		type = "client" />
+	<export function = "createCutsceneObject" 		type = "client" />
+	<export function = "setCutscenePedAnimation"	type = "client" />
+	<export function = "isCutsceneEntity" 			type = "client" />
+
+	<!-- ENGINE -->
+	<export function = "construct" 					type = "server" />
+	<export function = "givePrize" 					type = "server" />
+	<export function = "setCivData"					type = "server" />
+	<export function = "getCivData" 				type = "server" />
+	<export function = "setPlayerData"				type = "server" />
+	<export function = "getPlayerData"				type = "server" />
+	<export function = "setPlayerExperience"		type = "server" />
+	<export function = "getPlayerExperience"		type = "server" />
+	<export function = "setPlayerLevel" 			type = "server" />
+	<export function = "getPlayerLevel"				type = "server" />
+	<export function = "givePlayerExperience"		type = "server" />
+	<export function = "createVehicle" 				type = "server" />
+	<export function = "assignPlayerVehicle" 		type = "server" />
+	<export function = "assignPlayerAsset"			type = "server" />
+	<export function = "setPlayerMission" 			type = "server" />
+	<export function = "getPlayerMission" 			type = "server" />
+	<export function = "output"						type = "client" />
+	<export function = "output"						type = "server" />
+	<export function = "takeWeapon"					type = "server"	/>
+	<export function = "takeAllWeapons"				type = "server"	/>
+	<export function = "setPlayerModel"				type = "server"	/>
+	<export function = "doesPlayerOwnVehicle"		type = "server"	/>
+	<!-- <export function = ""					type = "server"	/> -->
+
+	<!-- FILES -->
+	<file src = "files/sub.ttf" />
+	<file src = "files/sounds/accomplished.mp3" />
+</meta>

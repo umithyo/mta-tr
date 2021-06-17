@@ -1,0 +1,3 @@
+function _sort(tbl, data)
+	return table.sort(tbl, function(a, b) return (a[data]or 0) < (b[data] or 0); end);
+end	

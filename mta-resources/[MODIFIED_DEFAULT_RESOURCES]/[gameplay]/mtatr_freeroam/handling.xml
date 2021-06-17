@@ -1,0 +1,42 @@
+<catalog type = "pack">
+	<pack 
+		name = "Orijinal Paket"
+		cost = "0"
+		accel = "default"
+		decel = "default"
+		maxvel = "default"
+		driveType = "default" 
+		traction = "default" 
+		mass = "default"
+		/>
+	<pack 
+		name = "Drift Paketi"
+		cost = "500" 
+		accel = "15" 
+		decel = "25"
+		maxvel = "20" 
+		driveType = "awd" 
+		traction = "-0.400" 
+		mass = "default" 
+		/>
+	<pack 
+		name = "Hız Paketi"
+		cost = "1500"
+		accel = "25"
+		decel = "65"
+		maxvel = "60"
+		driveType = "awd"
+		traction = "0.200"
+		mass = "2850"
+		/>
+	<pack 
+		name = "Offroad Paketi"
+		cost = "750"
+		accel = "default"
+		decel = "default"
+		maxvel = "default" 
+		driveType = "awd" 
+		traction = "7.500"
+		mass = "5225"
+		/>
+</catalog>

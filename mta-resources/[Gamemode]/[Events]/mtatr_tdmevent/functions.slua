@@ -1,0 +1,60 @@
+function getPlayersInEvent()
+	local tbl = {};
+	for player in pairs (players or {}) do 
+		table.insert (tbl, player);
+	end
+	return tbl;
+end
+
+function isPlayerInEvent (player)
+	return players[player];
+end	
+
+function setPlayerEventData (player, key, data)
+	if not players[player] then 
+		players[player] = {};
+	end
+	players[player][key] = data;
+end
+
+function getPlayerEventData (player, key)
+	if not players[player] then return false; end
+	return tonumber (players[player][key]) or players[player][key];
+end
+
+function getPlayerEventTeam(player)
+	return getPlayerEventData(player, "team");
+end	
+
+function setPlayerIn(player)
+	exports.mtatr_accounts:saveLocation(player);
+	exports.mtatr_accounts:saveMisc(player);
+	exports.mtatr_accounts:saveWeapons(player);
+	triggerEvent ("onPlayerJoinTDMEvent", player);
+	_setPlayerIn(player);
+end
+
+function setPlayerOut (player, immediate)
+	triggerEvent ("onPlayerLeaveTDMEvent", player, immediate);
+end	
+
+function arePlayersTeammates(player1, player2)
+	return getPlayerEventTeam(player1) == getPlayerEventTeam(player2);
+end	
+
+function setPlayerEventTeam(player, team)
+	local team = team or getFreeEventTeam();
+	setPlayerEventData(player, "team", team);
+	return team;
+end	
+
+function getStats (_type)
+	local tbl = {};
+	for i, v in pairs (stats) do 
+		if isElement (i) then 
+			table.insert (tbl, {name = i:getName(), kills = v.kills, dmg = v.dmg});
+		end	
+	end
+	table.sort (tbl, function (a, b) return (a[_type] or 0) > (b[_type] or 0); end);
+	return tbl;
+end	

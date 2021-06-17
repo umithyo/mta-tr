@@ -1,0 +1,101 @@
+local MAIN_VELOCITY = 90;
+local assets = {};
+
+addEventHandler ("onResourceStart", resourceRoot, 
+	function ()
+		local name = "Uyuşturucu Kaçakçısı";
+		local desc = "Görevin uyuşturucu taşımak. Anayollardan uzak durmaya çalış!";
+		local r, g, b = 252, 235, 201;
+		exports.mtatr_civ:construct (name, desc, 967.19, 2133.04, 10.82, r, g, b, LEVELS);
+	end
+);
+
+addEvent ("onPlayerMissionReady");
+addEventHandler ("onPlayerMissionReady", root, 
+	function (mission)
+		if mission == "Uyuşturucu Kaçakçısı" then 
+			fadeCamera (source, false, .5);
+			setTimer (startMission, 1000, 1, source);	
+		end
+	end
+);	
+
+addEvent ("onPlayerLeaveMission");
+addEventHandler ("onPlayerLeaveMission", root, 
+	function (mission, reason)
+		if reason ~= "stop" and reason ~= "stoprmt" then 
+			if mission == "Uyuşturucu Kaçakçısı" then 
+				triggerClientEvent (source, "drugm.onstop", source);
+				assets[source] = nil;
+			end	
+		end	
+	end
+);	
+
+function math.round(number, decimals, method)
+    decimals = decimals or 0
+    local factor = 10 ^ decimals
+    if (method == "ceil" or method == "floor") then return math[method](number * factor) / factor
+    else return tonumber(("%."..decimals.."f"):format(number)) end
+end
+
+function startMission (player)
+	assets[player] = {};
+	local level = exports.mtatr_civ:getPlayerLevel(player);
+	local x, y, z = unpack (MAP[level][math.random (#MAP[level])]);
+	local r, g, b = 252, 235, 201;
+	local px, py, pz = getElementPosition (player);
+	local distance = getDistanceBetweenPoints3D (x, y, z, px, py, pz);
+	local deadline = calculateDeadline (distance);
+	exports.mtatr_civ:output ("Uyuşturucu Kaçakçısı", "Malları bayrağa "..exports.mtatr_utils:totime (deadline*60).." dakika içinde götür.", player, 252, 235, 201);
+	local veh = exports.mtatr_civ:createVehicle (482, 980.88, 2177.84, 10.82, 0, 0, 163);
+	assets[player].vehicle = veh;
+	warpPedIntoVehicle (player, veh);
+	setVehicleColor (veh, 0, 0, 0, 0, 0, 0);	
+	exports.mtatr_civ:assignPlayerVehicle (player, veh, true);
+	local marker = createMarker (x, y, z-1, "cylinder", 3, r, g, b, 255, player);
+	local blip = createBlip (x, y, z, 53, 2, 255, 255, 255, 255, 0, 99999, player);
+	exports.mtatr_civ:assignPlayerAsset (player, "marker", marker);
+	exports.mtatr_civ:assignPlayerAsset (player, "blip", blip);
+	triggerClientEvent (player, "drugm.onstart", player, deadline*60*1000);
+	fadeCamera (player, true);
+	addEventHandler ("onMarkerHit", marker, 
+		function (plr, dim)
+			if plr and dim and isElement (plr) and getElementType (plr) == "vehicle" then 
+				succeedMission(player, distance);
+			end	
+		end
+	);	
+end
+
+function stopMission (player, reason)
+	return exports.mtatr_civ:setPlayerMission (player, nil, reason);
+end	
+
+function succeedMission (player, distance)
+	local level = exports.mtatr_civ:getPlayerLevel (player);
+	local reward = (distance/1000) + (level*100) + (500 - ((getElementHealth (assets[player].vehicle)/1000)*100));
+	exports.mtatr_civ:givePrize (player, reward, reward/10);
+	local exp = reward/10;
+	exports.mtatr_civ:givePlayerExperience (player, exp);
+	triggerEvent ("onPlayerSucceedMission", player);
+	triggerClientEvent (player, "drugm.onstop", player);
+end
+
+function getVelocity (element)
+	local speedx, speedy, speedz = getElementVelocity (element);
+	local actualspeed = (speedx^2 + speedy^2 + speedz^2)^(0.5);
+	local kmh = actualspeed * 180;
+	return kmh;
+end	
+
+function calculateDeadline (distance)
+	return math.round((distance/MAIN_VELOCITY)/10, 2);
+end	
+
+addEvent ("drugm.elapsed", true);
+addEventHandler ("drugm.elapsed", root, 
+	function ()
+		stopMission (client, "Süre doldu.");
+	end
+);	

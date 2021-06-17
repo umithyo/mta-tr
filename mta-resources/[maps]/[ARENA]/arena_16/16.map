@@ -1,0 +1,27 @@
+<map edf:definitions="BaseMode">
+    <Team2 id="Team2 (1)" interior="0" posX="2783.84375" posY="1013.867980957" posZ="10.75" rotX="0" rotY="0" rotZ="0" />
+    <Team2 id="Team2 (2)" interior="0" posX="2790.1218261719" posY="1010.9685058594" posZ="10.75" rotX="0" rotY="0" rotZ="0" />
+    <Team2 id="Team2 (3)" interior="0" posX="2792.6003417969" posY="1017.9753417969" posZ="10.75" rotX="0" rotY="0" rotZ="0" />
+    <Team2 id="Team2 (4)" interior="0" posX="2782.7067871094" posY="1005.7362060547" posZ="10.75" rotX="0" rotY="0" rotZ="0" />
+    <Team2 id="Team2 (5)" interior="0" posX="2790.1862792969" posY="1002.0340576172" posZ="10.75" rotX="0" rotY="0" rotZ="0" />
+    <Team2 id="Team2 (6)" interior="0" posX="2784.4345703125" posY="994.5205078125" posZ="10.75" rotX="0" rotY="0" rotZ="0" />
+    <Team2 id="Team2 (7)" interior="0" posX="2791.7160644531" posY="990.50891113281" posZ="10.75" rotX="0" rotY="0" rotZ="0" />
+    <Team2 id="Team2 (8)" interior="0" posX="2799.57421875" posY="1018.6374511719" posZ="10.8984375" rotX="0" rotY="0" rotZ="0" />
+    <Team2 id="Team2 (9)" interior="0" posX="2813.3435058594" posY="1019.1580810547" posZ="10.8984375" rotX="0" rotY="0" rotZ="0" />
+    <Team2 id="Team2 (10)" interior="0" posX="2820.0668945313" posY="1017.5712280273" posZ="10.75" rotX="0" rotY="0" rotZ="0" />
+    <Team1 id="Team1 (1)" interior="0" posX="2884.8134765625" posY="847.24456787109" posZ="10.75" rotX="0" rotY="0" rotZ="0" />
+    <Team1 id="Team1 (2)" interior="0" posX="2878.9172363281" posY="840.61804199219" posZ="10.75" rotX="0" rotY="0" rotZ="0" />
+    <Team1 id="Team1 (3)" interior="0" posX="2874.4702148438" posY="849.99682617188" posZ="10.75" rotX="0" rotY="0" rotZ="0" />
+    <Team1 id="Team1 (4)" interior="0" posX="2886.7556152344" posY="839.00421142578" posZ="10.75" rotX="0" rotY="0" rotZ="0" />
+    <Team1 id="Team1 (5)" interior="0" posX="2870.7014160156" posY="843.17120361328" posZ="10.75" rotX="0" rotY="0" rotZ="0" />
+    <Team1 id="Team1 (6)" interior="0" posX="2865.3256835938" posY="849.04040527344" posZ="10.757797241211" rotX="0" rotY="0" rotZ="0" />
+    <Team1 id="Team1 (7)" interior="0" posX="2860.2802734375" posY="840.5283203125" posZ="10.75" rotX="0" rotY="0" rotZ="0" />
+    <Team1 id="Team1 (8)" interior="0" posX="2851.0993652344" posY="840.82708740234" posZ="10.75" rotX="0" rotY="0" rotZ="0" />
+    <Team1 id="Team1 (9)" interior="0" posX="2846.7578125" posY="849.49304199219" posZ="10.75" rotX="0" rotY="0" rotZ="0" />
+    <Team1 id="Team1 (10)" interior="0" posX="2844.0358886719" posY="845.51263427734" posZ="10.75" rotX="0" rotY="0" rotZ="0" />
+    <Central_Marker id="Central_Marker (1)" interior="0" posX="2817.9477539063" posY="933.96594238281" posZ="10.014960289001" rotX="0" rotY="0" rotZ="0" />
+    <Anti_Rush_Point id="Anti_Rush_Point (2)" interior="0" posX="2775.9624023438" posY="831.99108886719" posZ="10.012495040894" rotX="0" rotY="0" rotZ="0" />
+    <Anti_Rush_Point id="Anti_Rush_Point (3)" interior="0" posX="2896.0317382813" posY="831.64453125" posZ="9.9015483856201" rotX="0" rotY="0" rotZ="0" />
+    <Anti_Rush_Point id="Anti_Rush_Point (4)" interior="0" posX="2896.2180175781" posY="1024.6872558594" posZ="9.8984375" rotX="0" rotY="0" rotZ="0" />
+    <Anti_Rush_Point id="Anti_Rush_Point (5)" interior="0" posX="2777.1376953125" posY="1023.302734375" posZ="9.9201183319092" rotX="0" rotY="0" rotZ="0" />
+</map>

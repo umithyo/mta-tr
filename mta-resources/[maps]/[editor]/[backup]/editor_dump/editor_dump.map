@@ -1,0 +1,7 @@
+<map edf:definitions="mta-tr">
+    <teleport id="Las Venturas Airport" group="Hava Alanları" rotZ="0" posX="1490.9004" posY="1253" posZ="10.8" rotX="0" rotY="0"></teleport>
+    <teleport id="Easter Bay Airport (San Fierro)" group="Hava Alanları" rotZ="314.406" posX="-1360.8" posY="-246" posZ="14.1" rotX="0" rotY="0"></teleport>
+    <teleport id="Stunt San Fierro Island" group="Stunt" rotZ="1.997" posX="-2454.8965" posY="1320.1797" posZ="26.0709" rotX="0" rotY="0"></teleport>
+    <teleport id="Verdant Meadows (Airport)" group="Hava Alanları" rotZ="85.777" posX="431.60001" posY="2503.2" posZ="16.5" rotX="0" rotY="0"></teleport>
+    <teleport id="Los Santos International (Airport)" group="Hava Alanları" rotZ="46.12" posX="2123.8" posY="-2600.6001" posZ="13.5" rotX="0" rotY="0"></teleport>
+</map>

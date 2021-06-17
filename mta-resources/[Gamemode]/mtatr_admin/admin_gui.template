@@ -1,0 +1,94 @@
+
+ad = {
+    tab = {},
+    tabpanel = {},
+    button = {},
+    window = {},
+    gridlist = {}
+}
+GUIEditor = {
+    tab = {},
+    label = {},
+    edit = {},
+    button = {},
+    window = {},
+    gridlist = {},
+    combobox = {}
+}
+addEventHandler("onClientResourceStart", resourceRoot,
+    function()
+local screenW, screenH = guiGetScreenSize()
+        ad.window[1] = guiCreateWindow((screenW - 615) / 2, (screenH - 483) / 2, 615, 483, "Gamemode Manager (M)", false)
+        guiWindowSetSizable(ad.window[1], false)
+
+        ad.tabpanel[1] = guiCreateTabPanel(0.01, 0.05, 0.97, 0.93, true, ad.window[1])
+
+        ad.tab[1] = guiCreateTab("Event Yöneticisi", ad.tabpanel[1])
+
+        ad.gridlist[1] = guiCreateGridList(0.01, 0.02, 0.66, 0.96, true, ad.tab[1])
+        guiGridListAddColumn(ad.gridlist[1], "Event", 0.5)
+        guiGridListAddColumn(ad.gridlist[1], "Durum", 0.5)
+        ad.button[1] = guiCreateButton(0.69, 0.88, 0.14, 0.08, "Baþlat", true, ad.tab[1])
+        guiSetProperty(ad.button[1], "NormalTextColour", "FFAAAAAA")
+        ad.button[2] = guiCreateButton(0.85, 0.88, 0.14, 0.08, "Durdur", true, ad.tab[1])
+        guiSetProperty(ad.button[2], "NormalTextColour", "FFAAAAAA")
+
+        ad.tab[2] = guiCreateTab("Gamemode Manager", ad.tabpanel[1])
+
+        ad.gridlist[2] = guiCreateGridList(0.02, 0.02, 0.36, 0.96, true, ad.tab[2])
+        guiGridListAddColumn(ad.gridlist[2], "Oyuncu", 0.9)
+        ad.button[3] = guiCreateButton(0.63, 0.02, 0.35, 0.05, "Hapset", true, ad.tab[2])
+        guiSetProperty(ad.button[3], "NormalTextColour", "FFAAAAAA")
+        ad.button[4] = guiCreateButton(0.63, 0.09, 0.35, 0.05, "Deneyim Pauný Ver", true, ad.tab[2])
+        guiSetProperty(ad.button[4], "NormalTextColour", "FFAAAAAA")
+        GUIEditor.button[1] = guiCreateButton(0.63, 0.17, 0.35, 0.05, "Hesabý Dondur", true, ad.tab[2])
+        guiSetProperty(GUIEditor.button[1], "NormalTextColour", "FFAAAAAA")
+        GUIEditor.label[1] = guiCreateLabel(0.39, 0.03, 0.23, 0.19, "Hesap: \nAdmin:", true, ad.tab[2])
+
+        GUIEditor.tab[1] = guiCreateTab("Karakterler", ad.tabpanel[1])
+
+        GUIEditor.edit[1] = guiCreateEdit(0.39, 0.09, 0.27, 0.07, "", true, GUIEditor.tab[1])
+        GUIEditor.label[2] = guiCreateLabel(0.23, 0.02, 0.58, 0.08, "Hesap Adý", true, GUIEditor.tab[1])
+        guiLabelSetHorizontalAlign(GUIEditor.label[2], "center", false)
+        GUIEditor.gridlist[1] = guiCreateGridList(0.01, 0.19, 0.97, 0.56, true, GUIEditor.tab[1])
+        guiGridListAddColumn(GUIEditor.gridlist[1], "Karakter", 0.1)
+        guiGridListAddColumn(GUIEditor.gridlist[1], "Para", 0.1)
+        guiGridListAddColumn(GUIEditor.gridlist[1], "Skor", 0.1)
+        guiGridListAddColumn(GUIEditor.gridlist[1], "Ölüm", 0.1)
+        guiGridListAddColumn(GUIEditor.gridlist[1], "Seviye", 0.1)
+        guiGridListAddColumn(GUIEditor.gridlist[1], "Son Giriþ", 0.1)
+        GUIEditor.button[2] = guiCreateButton(0.68, 0.09, 0.09, 0.07, "Ara", true, GUIEditor.tab[1])
+        guiSetProperty(GUIEditor.button[2], "NormalTextColour", "FFAAAAAA")
+        GUIEditor.combobox[1] = guiCreateComboBox(0.01, 0.75, 0.77, 0.25, "", true, GUIEditor.tab[1])
+        GUIEditor.edit[2] = guiCreateEdit(0.80, 0.75, 0.19, 0.06, "", true, GUIEditor.tab[1])
+        GUIEditor.button[3] = guiCreateButton(0.83, 0.85, 0.14, 0.06, "Deðiþtir", true, GUIEditor.tab[1])
+        guiSetProperty(GUIEditor.button[3], "NormalTextColour", "FFAAAAAA")
+
+        GUIEditor.tab[2] = guiCreateTab("Hesap Hareketleri", ad.tabpanel[1])
+
+        GUIEditor.gridlist[2] = guiCreateGridList(0.01, 0.01, 0.77, 0.96, true, GUIEditor.tab[2])
+        guiGridListAddColumn(GUIEditor.gridlist[2], "Hesap", 0.2)
+        guiGridListAddColumn(GUIEditor.gridlist[2], "IP", 0.2)
+        guiGridListAddColumn(GUIEditor.gridlist[2], "Serial", 0.2)
+        guiGridListAddColumn(GUIEditor.gridlist[2], "Kayýt Tarihi", 0.2)
+        guiGridListAddColumn(GUIEditor.gridlist[2], "Son Görülme", 0.2)
+        GUIEditor.combobox[2] = guiCreateComboBox(0.79, 0.16, 0.21, 0.29, "", true, GUIEditor.tab[2])
+        guiComboBoxAddItem(GUIEditor.combobox[2], "Hesap")
+        guiComboBoxAddItem(GUIEditor.combobox[2], "Serial")
+        guiComboBoxAddItem(GUIEditor.combobox[2], "IP")
+        GUIEditor.edit[3] = guiCreateEdit(0.79, 0.45, 0.21, 0.06, "", true, GUIEditor.tab[2])
+        GUIEditor.button[4] = guiCreateButton(0.83, 0.53, 0.11, 0.05, "Ara", true, GUIEditor.tab[2])
+        guiSetProperty(GUIEditor.button[4], "NormalTextColour", "FFAAAAAA")
+
+
+        GUIEditor.window[1] = guiCreateWindow((screenW - 339) / 2, (screenH - 126) / 2, 339, 126, "Süre Belirleyin", false)
+        guiWindowSetSizable(GUIEditor.window[1], false)
+
+        GUIEditor.combobox[3] = guiCreateComboBox(0.03, 0.19, 0.94, 0.56, "", true, GUIEditor.window[1])
+        guiComboBoxAddItem(GUIEditor.combobox[3], "Oto")
+        guiComboBoxAddItem(GUIEditor.combobox[3], "1 dakika")
+        guiComboBoxAddItem(GUIEditor.combobox[3], "2 dakika")
+        GUIEditor.button[5] = guiCreateButton(0.34, 0.75, 0.31, 0.17, "Onayla", true, GUIEditor.window[1])
+        guiSetProperty(GUIEditor.button[5], "NormalTextColour", "FFAAAAAA")    
+    end
+)

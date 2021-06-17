@@ -1,0 +1,30 @@
+MAP 		= {index = 1};
+DEF_PRIZE 	= {money = 10000, exp = 100};
+DIMENSION 	= 6968;
+TIME		= 360; -- 3 minutes
+MODEL		= 496; -- blista compact
+RANK_UPDATE = 500 -- every 500 ms 
+
+function construct()
+	local map_index = MAP.index;
+	PRIZE 			= {};
+	MAP 			= {index = map_index};
+	players			= {};
+	order			= {};	
+	ACTIVE			= false;
+	RUNNING 		= false;
+	STOPPING 		= false;
+	for i, v in pairs (timers or {}) do 
+		if isTimer (v) then 
+			v:destroy();
+		end
+	end
+	for player, veh in pairs (vehicles or {}) do 
+		if isElement (veh) then 
+			veh:destroy();
+		end
+	end
+	vehicles		= {};
+	timers 			= {};
+	stopMap();
+end

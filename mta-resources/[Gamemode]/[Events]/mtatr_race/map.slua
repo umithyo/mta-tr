@@ -1,0 +1,145 @@
+local maps = {};
+
+function initializeMap ()
+	for i, v in ipairs (getResources ()) do 
+		if v:getName ():find ("race_") then 
+			table.insert (maps, v);
+		end	
+	end	
+end	
+addEventHandler ("onResourceStart", resourceRoot, initializeMap);
+
+function getRandomMap()
+	return maps[math.random(#maps)];
+end
+
+function setMapID(id)
+	if maps[id] then 
+		MAP.index = id;
+	end
+end
+
+function getMapIDFromName(name)
+	for i, v in ipairs (maps) do 
+		if v:getName() == name then 
+			return i;
+		end
+	end
+	return false;
+end	
+
+function startMap()
+	local curmap = maps[MAP.index] or getRandomMap();
+	startResource(curmap);
+	MAP.current		= curmap;
+	MAP.mapper 		= getResourceInfo (curmap, "author") or "Anonim";
+	MAP.name 		= getResourceInfo (curmap, "name") or "";
+	LIMIT			= (#getElementsByType"spawnpoint") / 4;
+	local settings 	= exports.mtatr_engines:getResourceSettings(curmap) or {};
+	MAP.time		= settings.duration and tonumber (fromJSON(settings.duration.value)) or TIME;
+	MAP.spawnpoints = {};
+	for i, v in ipairs (getElementsByType"spawnpoint") do 
+		local x, y, z = getElementPosition (v);
+		local rot = getElementData (v, "rotZ")
+		table.insert (MAP.spawnpoints, {pos = {x, y, z}, rot = rot});
+	end	
+	if settings.prize_money and settings.prize_exp then 
+		PRIZE.money = fromJSON (settings.prize_money.value);
+		PRIZE.exp = fromJSON (settings.prize_exp.value);
+	else
+		PRIZE.money = DEF_PRIZE.money;
+		PRIZE.exp = DEF_PRIZE.exp;
+	end	
+	
+	--finishline
+	local finishline = getElementsByType"checkpoint"[#getElementsByType"checkpoint"];
+	local x, y, z = getElementPosition(finishline);
+	local type = getElementData (finishline, "type") or "checkpoint";
+	MAP.finishline   = createMarker (x, y, z, type);
+	MAP.finishline:setDimension(DIMENSION);
+	
+	addEventHandler ("onMarkerHit", MAP.finishline,
+		function (player, dim)
+			if RUNNING and ACTIVE and not STOPPING then 
+				if isPlayerInEvent(player) then 
+					finishEvent(player);
+				end	
+			end	
+		end
+	);	
+	
+	MAP.index = MAP.index + 1;
+	if not maps[MAP.index] then 
+		MAP.index = 1;
+	end
+end	
+
+function stopMap()
+	for i, v in pairs (MAP) do 
+		if isElement (v) then 
+			v:destroy();
+		end
+	end	
+	if MAP.current then 
+		if getResourceState(MAP.current) == "running" then 
+			stopResource(MAP.current);
+		end
+	end	
+end	
+
+function getPlayerRanks()
+	local tbl = {};
+	local x, y, z = getElementPosition (MAP.finishline);
+	for i, v in ipairs (getPlayersInEvent()) do 
+		local px, py, pz = getElementPosition (v);
+		local distance = getDistanceBetweenPoints3D (x, y, z, px, py, pz);
+		table.insert (tbl, {player=v, distance=distance});
+	end
+	table.sort (tbl, function (a, b) return a.distance < b.distance; end);
+	return tbl;
+end
+
+function getPlayerRank (player)
+	for i, v in ipairs (getPlayerRanks() or {}) do 
+		if v.player == player then 
+			return i;
+		end
+	end
+	return 0;
+end
+
+function updateRank()
+	for i, v in ipairs (getPlayersInEvent()) do 
+		exports.mtatr_engines:updateRaceRank (v, getPlayerRank(v));
+	end	
+end	
+
+addEvent ("onEventRun");
+addEventHandler ("onEventRun", root, 
+	function (event)
+		if event == "race" then 
+			timers.rank = Timer (updateRank, RANK_UPDATE, 0);
+			timers.stopper = setTimer (finishEvent, MAP.time*1000, 1);
+		end
+		-- for _, player in ipairs (getPlayersInEvent()) do 
+			-- local missiontimer = exports.missiontimer:createMissionTimer (player, MAP.time*1000, 0, nil, x/2, 15, true);
+			-- setPlayerEventData(player, "timer", missiontimer);
+		-- end		
+	end
+);	
+
+addEvent ("onPlayerJoinRaceEvent");
+addEventHandler ("onPlayerJoinRaceEvent", root, 
+	function ()
+		exports.mtatr_engines:updateRaceRank (source, getPlayerRank(source));
+		exports.mtatr_3dmodels:activateModels(source);
+	end
+);	
+
+addEvent ("onPlayerLeaveRaceEvent");
+addEventHandler ("onPlayerLeaveRaceEvent", root, 
+	function ()
+		exports.mtatr_engines:destroyRaceRank (source);
+		exports.mtatr_3dmodels:deactivateModels(source);
+	end
+);	

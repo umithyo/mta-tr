@@ -1,0 +1,41 @@
+function getTeamTotalHP (team)
+	local hp = 0;
+	for i, v in ipairs (getPlayersInEventTeam(team)) do 
+		if isElement (v) then 
+			hp = hp + v:getHealth() + (getPedArmor (v) or 0);
+		end	
+	end
+	return hp;
+end	
+
+function updateInformation (team, key, data)
+	for i, v in ipairs (getPlayersInEvent()) do
+		if not key then 
+			local team1hp, team2hp = getTeamTotalHP ("team1"), getTeamTotalHP ("team2");
+			local time = exports.mtatr_engines:getEventProperty ("tdm", "timeout");
+			local timer = exports.mtatr_engines:getEventTimerDetails ("tdm");
+			if timer then 
+				time = timer/60/1000;
+			end	
+			local tbl = {time = time};
+			tbl.team1 = {
+				text 	= getEventTeamName"team1",
+				colour 	= (TEAM_COLORS.team1),
+				players = #getPlayersInEventTeam("team1"),
+				score 	= getTeamScore"team1",
+				health 	= team1hp,	
+			};
+			tbl.team2 = {
+				text 	= getEventTeamName"team2",
+				colour 	= (TEAM_COLORS.team2),
+				players = #getPlayersInEventTeam("team2"),
+				score 	= getTeamScore("team2"),
+				health 	= team2hp,	
+			};
+			exports.mtatr_engines:updateTeamsBar (v, tbl);
+		else
+			local t = getEventTeamName (team);
+			exports.mtatr_engines:updateTeamsBarData (v, t, key, data);
+		end
+	end
+end	

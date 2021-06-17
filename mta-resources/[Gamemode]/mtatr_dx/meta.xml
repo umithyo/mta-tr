@@ -1,0 +1,40 @@
+<meta>
+	<min_mta_version server="1.3.4-0.00000" client="1.3.4-9.05731" />
+
+	<script src="client.lua" 			type="client" />
+	<script src="server.lua" 			type="server" />
+
+	<!-- <file src="images/mtatr1.png" /> -->
+	<!-- <file src="images/mtatr2.png" /> -->
+	<!-- <file src="images/mtatr3.png" /> -->
+	<!-- <file src="images/mtatr4.png" /> -->
+	<!-- <file src="images/mtatr5.png" /> -->
+	<!-- <file src="images/mtatr6.png" /> -->
+	<!-- <file src="images/mtatr7.png" /> -->
+	<!-- <file src="images/mtatr8.png" /> -->
+	<!-- <file src="images/mtatr9.png" /> -->
+	<!-- <file src="images/mtatr10.png" /> -->
+	<!-- <file src="images/mtatr11.png" /> -->
+	<!-- <file src="images/mtatr12.png" /> -->
+	<!-- <file src="images/mtatr13.png" /> -->
+	<!-- <file src="images/mtatr14.png" /> -->
+	<!-- <file src="images/mtatr15.png" /> -->
+	<!-- <file src="images/mtatr16.png" /> -->
+	<!-- <file src="images/mtatr17.png" /> -->
+	<!-- <file src="images/mtatr18.png" /> -->
+	<!-- <file src="images/mtatr19.png" /> -->
+	<!-- <file src="images/mtatr20.png" /> -->
+	<!-- <file src="images/mtatr21.png" /> -->
+	<!-- <file src="images/mtatr22.png" /> -->
+	<!-- <file src="images/mtatr23.png" /> -->
+	<!-- <file src="images/mtatr24.png" /> -->
+	<!-- <file src="images/mtatr25.png" /> -->
+	<!-- <file src="images/mtatr26.png" /> -->
+	<!-- <file src="images/mtatr27.png" /> -->
+	<!-- <file src="images/mtatr28.png" /> -->
+	<!-- <file src="images/mtatr29.png" /> -->
+	<!-- <file src="images/mtatr30.png" /> -->
+	<file src="font.otf" />
+	<export function="drawStat" 			type="client" />
+	<export function="drawStat" 			type="server" />
+</meta>

@@ -1,0 +1,25 @@
+<catalog type="teleport">
+	<group name="Normal">
+		<teleport name="Santa Maria Beach [Doğum Bölgesi]" posX="333" posY="-1798" posZ="5" />
+		<teleport name="Mount Chiliad" posX="-2329.7" posY="-1609.5" posZ="483.7" />
+	</group>
+	<group name="Hava Alanları">
+		<teleport name="Easter Bay Airport (San Fierro)" posX="-1362.61" posY="-247.7" posZ="14.1" />
+		<teleport name="Las Venturas Airport" posX="1485.14" posY="1192.47" posZ="10.82" />
+		<teleport name="Verdant Meadows (Airport)" posX="398.1" posY="2530.3" posZ="16.5" />
+		<teleport name="Los Santos International (Airport)" posX="2119.0869" posY="-2616.2554" posZ="13.5469" />
+	</group>
+	<group name="Drift">
+		<teleport name="Verona Island" posX="3084.2" posY="-3150.0" posZ="46.7" />
+		<teleport name="Big Air Drift" posX="-302.5" posY="1531.5" posZ="75.3" rotZ = "177" />
+	</group>
+	<group name="Stunt">
+		<teleport name="Stunt San Fierro Island" posX="-2455.4228515625" posY="1259.572265625" posZ="29.98620223999" />
+		<teleport name="Master Stunt" posX="-1209.8" posY="-1093.1" posZ="128.3" />
+		<teleport name="Glen Park (Los Santos)" posX="1944.0388" posY="-1382.3387" posZ="18.9781" />
+		<teleport name="Arco Del Oeste" posX="-645.1850" posY="2311.9236" posZ="135.0301" />
+	</group>
+	<group name="Diğer">
+		<teleport name="Bay Side [Poker]" posX="-2507.2" posY="2337.5" posZ="5" rotZ = "356" />
+	</group>
+</catalog>

@@ -1,0 +1,134 @@
+local maps = {};
+
+function initializeMap ()
+	for i, v in ipairs (getResources ()) do 
+		if v:getName ():find ("arena_") then 
+			table.insert (maps, v);
+		end	
+	end	
+end	
+addEventHandler ("onResourceStart", resourceRoot, initializeMap);
+
+function getRandomMap()
+	return maps[math.random(#maps)];
+end
+
+function setMapID(id)
+	if maps[id] then 
+		MAP.index = id;
+	end
+end
+
+function getMapIDFromName(name)
+	for i, v in ipairs (maps) do 
+		if v:getName() == name then 
+			return i;
+		end
+	end
+	return false;
+end	
+
+function startMap()
+	local curmap = maps[MAP.index] or getRandomMap();
+	startResource(curmap);
+	MAP.current		= curmap;
+	MAP.mapper 		= getResourceInfo (curmap, "author") or "Anonim";
+	MAP.name 		= getResourceInfo (curmap, "name") or "";
+	LIMIT			= (#getElementsByType"Team1" + #getElementsByType"Team2") / 4;
+	if isElement (getElementsByType"Central_Marker"[1]) then 
+		MAP.interior	= getElementData (getElementsByType"Central_Marker"[1], "interior");
+	end	
+	local settings 	= exports.mtatr_engines:getResourceSettings(curmap) or {};
+	MAP.time		= settings.duration and tonumber (fromJSON(settings.duration.value)) or TIME;
+	MAP.spawnpoints = {team1={}, team2={}};
+	for i, v in ipairs (getElementsByType"Team1") do 
+		local x, y, z = getElementPosition (v);
+		local rot = getElementData (v, "rotZ")
+		table.insert (MAP.spawnpoints.team1, {pos = {x, y, z}, rot = rot});
+	end	
+	for i, v in ipairs (getElementsByType"Team2") do 
+		local x, y, z = getElementPosition (v);
+		local rot = getElementData (v, "rotZ")
+		table.insert (MAP.spawnpoints.team2, {pos = {x, y, z}, rot = rot});
+	end	
+	PRIZE.individualmoney = DEF_PRIZE.indmoney;
+	PRIZE.individualexp = DEF_PRIZE.indexp;
+	if settings.prize_money and settings.prize_exp then 
+		PRIZE.money = fromJSON (settings.prize_money.value);
+		PRIZE.exp = fromJSON (settings.prize_exp.value);
+	else
+		PRIZE.money = DEF_PRIZE.money;
+		PRIZE.exp = DEF_PRIZE.exp;
+	end	
+	
+	local col, radars = exports.mtatr_engines:createAntiRushPoints();
+	if isElement (col) then 
+		col:setDimension (DIMENSION);
+		addEventHandler ("onColShapeHit", col, removeRestriction);
+		addEventHandler ("onColShapeLeave", col, addRestriction);
+		for v in pairs (radars) do 
+			setElementDimension (v, DIMENSION);
+		end	
+		MAP.radars 	= radars;
+		MAP.col		= col;
+	else
+		iprint ("EVENT TDM COULDN'T CREATE COLSHAPE");
+	end	
+	
+	MAP.index = MAP.index + 1;
+	if not maps[MAP.index] then 
+		MAP.index = 1;
+	end
+end	
+
+function stopMap()
+	for i, v in ipairs (getElementsByType"radararea", resourceRoot) do
+		if getElementData (v, "rushpointradar") then 
+			v:destroy();
+		end	
+	end	
+	for i, v in pairs (MAP) do	
+		if type (v) == "table" then 
+			for k, value in pairs (v) do 
+				if isElement (value) then 
+					value:destroy();
+				end
+				if isElement(k) then 
+					k:destroy();
+				end	
+			end
+		end	
+		if isElement (v) then 
+			v:destroy();
+		end
+	end	
+	for v in pairs (MAP.radars or {}) do 
+		if isElement (v) then 
+			v:destroy();
+		end	
+	end
+	if isElement (MAP.col) then 
+		MAP.col:destroy();
+	end	
+	if MAP.current then 
+		local result = stopResource(MAP.current);
+		iprint (result);
+	end	
+	for i, v in ipairs (maps) do 
+		if getResourceState (v)=="running" then 
+			stopResource(v);
+		end
+	end	
+end	
+
+function addRestriction (player, dim)
+	if isElement (player) and dim then 
+		exports.mtatr_engines:addRestriction (player, RESTRICT_TIME);
+	end
+end	
+
+function removeRestriction (player, dim)
+	if isElement (player) and dim then 
+		exports.mtatr_engines:removeRestriction (player);
+	end
+end	

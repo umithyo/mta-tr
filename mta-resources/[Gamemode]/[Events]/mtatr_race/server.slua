@@ -1,0 +1,92 @@
+addEventHandler ("onResourceStart", resourceRoot, construct);
+addEventHandler ("onResourceStop", resourceRoot, stopEvent);
+
+function finishEvent(winner)
+	if isElement (winner) then 
+		exports.mtatr_engines:output("Etkinlik Bitti!", "Kazanan: "..winner:getName(), root, 237, 172, 17);
+		exports.database:givePlayerMoney(winner, PRIZE.money, "Event: Race");
+		exports.mtatr_mode:givePlayerCharacterExperience (winner, PRIZE.exp);
+		for i, v in ipairs(getPlayersInEvent()) do 
+			exports.mtatr_engines:setEventFinished(v, 6);
+		end	
+		local id = exports.database:getPlayerId(winner);
+		local won = exports.database:getPlayerData (id, "fr_stats", "race.won") or 0;
+		exports.database:setPlayerData (id, "fr_stats", "race.won", won+1);
+		setTimer(stopEvent, 6000, 1);
+		STOPPING = true;
+		return;
+	else
+		if ACTIVE then 
+			exports.mtatr_engines:output("Etkinlik Bitti!", "Kazanan olmadı.", root, 237, 172, 17);
+			for i, v in ipairs(getPlayersInEvent()) do 
+				exports.mtatr_engines:setEventFinished(v, 6);
+			end	
+			setTimer(stopEvent, 6000, 1);
+			STOPPING = true;
+			return;
+		end	
+	end
+	stopEvent();
+end
+
+addEvent ("onPlayerJoinRaceEvent");
+addEventHandler ("onPlayerJoinRaceEvent", root, 
+	function ()
+		if ACTIVE then 
+			check();
+		end	
+	end
+);	
+
+function check()
+	if not RUNNING and ACTIVE then 
+		if #getPlayersInEvent() >= LIMIT*4 then 
+			runEvent();
+		end
+	end	
+end
+
+function _startEvent()
+	timers.starter = Timer (
+		function ()
+			if #getPlayersInEvent() >= LIMIT then 
+			-- if true then
+				runEvent()
+			else
+				for i, v in ipairs (getPlayersInEvent()) do 
+					exports.mtatr_engines:output ("ETKİNLİK BAŞLATILAMADI", "Yeterli sayıda katılım olmadığından etkinlik sonlandırıldı. Yönlendiriliyorsunuz...", v, 255, 0, 0);
+				end	
+				stopEvent();
+			end	
+		end,
+	60000, 1);	
+end
+
+function runEvent()
+	if not ACTIVE then return; end
+	if isTimer (timers.starter) then 
+		timers.starter:destroy();
+	end	
+	if RUNNING then return; end
+	RUNNING = true;
+	for i, v in ipairs (getPlayersInEvent ()) do 
+		exports.mtatr_engines:startCountDown (v);
+		local veh =vehicles[v];
+		for _, value in ipairs (getElementsByType"vehicle") do 
+			-- setElementCollidableWith(veh, value, false);
+			-- setElementCollidableWith(value, veh, false);
+		end	
+	end		
+	triggerEvent ("onEventRun", resourceRoot, "race");
+end
+
+addEvent ("onCountDownReachedToEnd");
+addEventHandler ("onCountDownReachedToEnd", root, 
+	function ()
+		if RUNNING then 
+			for i, v in ipairs (getPlayersInEvent ()) do 
+				toggleAllControls (v, true);
+			end
+		end	
+	end
+);	

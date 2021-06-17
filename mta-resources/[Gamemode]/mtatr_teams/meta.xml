@@ -1,0 +1,48 @@
+<meta>
+	<oop>true</oop>
+
+	<script src = "colorpicker/colorpicker.lua" 	type = "client" />
+	<script src = "shared/global.lua" 				type = "shared" />
+	<script src = "shared/main.lua" 				type = "shared" />
+	<script src = "server/database.lua" 			type = "server" />
+	<script src = "server/members.lua" 				type = "server" />
+	<script src = "server/groups.lua" 				type = "server" />
+	<script src = "server/gui.lua" 					type = "server" />
+	<script src = "server/creation.lua" 			type = "server" />
+	<script src = "client/gui.lua" 				type = "client" />
+	<script src = "client/creation.lua" 			type = "client" />
+	<script src = "client/acl.lua" 				type = "client" />
+
+	<!-- GROUPS -->
+	<export function = "chatGroup" 					type = "server" />
+	<export function = "getGroupFromName"			type = "server" />
+	<export function = "getGroupName" 				type = "server" />
+	<export function = "getGroupColor" 				type = "server" />
+	<export function = "getMembersInGroup"			type = "server" />
+	<export function = "getPlayersInGroup" 			type = "server" />
+	<export function = "doesGroupExist" 			type = "server" />
+	<export function = "outputGroupChat" 			type = "server" />
+	<export function = "getGroupData" 				type = "server" />
+
+	<!-- MEMBERS -->
+	<export function = "isPlayerInAGroup" 			type = "server" />
+	<export function = "getMemberData" 				type = "server" />
+	<export function = "getPlayerData" 				type = "server" />
+	<export function = "getPlayerGroup" 			type = "server" />
+	<export function = "getMemberGroup" 			type = "server" />
+	<export function = "getMemberRank" 				type = "server" />
+	<export function = "getPlayerRank" 				type = "server" />
+
+	<!-- <export function = "" 			type = "server" /> -->
+
+	<file src="files/cursor.png" />
+	<file src="files/h.png" />
+	<file src="files/sv.png" />
+	<file src="files/blank.png" />
+	<file src="files/Cambria.ttf" />
+
+	<settings>
+		<setting name="*Miktar" desc = "Grup açmak için gereken para." value="500" />
+		<setting name="*Level" desc = "Grup açmak için gereken level." value = "2" />
+	</settings>
+</meta>

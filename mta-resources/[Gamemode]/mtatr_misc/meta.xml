@@ -1,0 +1,18 @@
+<meta>
+	<oop>true</oop>
+
+	<script src = "anti_curse/server.lua" 	type = "server" />
+	<script src = "client.lua" 			type = "client" />
+	<script src = "server.lua" 				type = "server" />
+	<script src = "donkey/client.lua"		type = "client" />
+	<script src = "donkey/server.lua" 		type = "server" />
+	<script src = "staff/client.lua" 		type = "client" />
+	<script src = "staff/server.lua" 		type = "server" />
+	<script src = "anims/cmds.lua" 			type = "server" />
+	<script src = "anims/server.lua" 		type = "server" />
+	<script src = "ramps/ramps_c.lua" 		type = "client" />
+	<script src = "ramps/ramps.lua" 		type = "server" />
+
+	<export function = "hasPlayerCursed" 	type = "server" />
+	<export function = "getServerStat" 		type = "server" />
+</meta>

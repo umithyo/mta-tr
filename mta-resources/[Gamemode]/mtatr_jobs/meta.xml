@@ -1,0 +1,11 @@
+<meta>
+	<oop>true</oop>
+	<script src = "joblist.lua" type = "server" />
+	<script src = "load.lua" type = "server" />
+	<script src = "server.lua" type = "server" />
+	<script src = "vehicles.lua" type = "server" />
+	<export function = "buildJobs" type = "server" />
+	<export function = "isPlayerInJob" type = "server" />
+	<export function = "getPlayerCurrentJob" type = "server" />
+	<export function = "getPlayersInJob" type = "server" />
+</meta>

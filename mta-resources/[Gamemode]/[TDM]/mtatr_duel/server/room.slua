@@ -1,0 +1,233 @@
+rooms = {};
+local free = {};
+
+function getNextRoomId()
+	local id = 1;
+	while free[id] do
+		id = id+1;
+	end
+	free[id] = true;
+	return id;
+end	
+
+function getRoomFromId (id)
+	for i, v in ipairs (rooms) do 
+		if v.id == id then 
+			return i, rooms[i];
+		end
+	end
+	return false;
+end	
+
+function createRoom(weapons, _type, starter, limit, bet, map)
+	local id = getNextRoomId();
+	table.insert(rooms, 
+		{
+			id 		= id,
+			map 	= map,
+			limit 	= tonumber(limit),
+			created = getRealTime().timestamp,
+			type 	= _type,
+			weapons = weapons,
+			starter = starter,
+			bet		= tonumber(bet),
+			players = {
+				[starter]={
+					joined = getRealTime().timestamp,
+					team="team1"
+				}
+			},
+		}
+	);
+	sync();
+	triggerLatentClientEvent (starter, "onClientPlayerJoinRoom", starter, id, true);
+end
+
+function closeRoom(id)
+	local room, entity = getRoomFromId(id);
+	for i, v in ipairs (getPlayersInRoom(id)) do 
+		kickPlayerOutOfRoom(v, id);
+	end
+ 	table.remove(rooms, room); 
+	free[id] = nil;
+	sync();
+end	
+
+function getRoomType (id)
+	local _, room = getRoomFromId(id);
+	if room then 
+		return room.type;
+	end
+end
+
+function getRoomLimit(id)
+	local _, room = getRoomFromId(id);
+	if room then 
+		return tonumber(room.limit);
+	end
+end
+
+function getRoomMap(id)
+	local _, room = getRoomFromId(id);
+	if room then 
+		return tonumber(room.map);
+	end
+end
+
+function getRoomWeapons(id)
+	local _, room = getRoomFromId(id);
+	if room then 
+		return (room.weapons);
+	end
+end
+
+function getRoomBet(id)
+	local _, room = getRoomFromId(id);
+	if room then 
+		return tonumber(room.bet);
+	end
+end
+
+function getTeamSpawnpoints(id, team)
+	local map=getRoomMap(id);
+	local type=getRoomType(id);
+	if type=="PVP" then 
+		return PVP_MAP[map][team];
+	elseif type=="TDM" then 
+		return TDM_MAP[map][team];
+	end
+end	
+
+function getRoomInterior(id)
+	local map=getRoomMap(id);
+	local type=getRoomType(id);
+	if type=="PVP" then 
+		return PVP_MAP[map].int or 0;
+	elseif type=="TDM" then 
+		return TDM_MAP[map].int or 0;
+	end
+end
+
+function getRooms()
+	local tbl = {}
+	for i, v in ipairs (rooms) do
+		table.insert(tbl, v);
+	end
+	_sort (tbl, "created");
+	return rooms;
+end	
+
+function isStarter(id, player)
+	local _, room = getRoomFromId(id);
+	if not room then return false; end
+	return room.starter == player;
+end	
+
+function getPlayersInRoom(id)
+	local _, room = getRoomFromId(id);
+	if not room then return false; end
+	local team1, team2 = {}, {};
+	local players = {};
+	for player, info in pairs (room.players) do 
+		if not info.terminated then 
+			if info.team == "team1" then 
+				table.insert(team1, player);
+			else
+				table.insert (team2, player);
+			end
+			table.insert (players, player);
+		end	
+	end
+	_sort (players, "joined");
+	_sort (team1, "joined");
+	_sort (team2, "joined");
+	return players, team1, team2;
+end	
+
+function getPlayerTeam(player)
+	if isPlayerInARoom(player) then 
+		local id = getPlayerRoom(player);
+		local room = getRoomFromId(id);
+		if room then 
+			return rooms[room].players[player].team;
+		end
+	end
+	return false;
+end	
+
+function setPlayerRoom(player, id, team)
+	local room = getRoomFromId(id);
+	if rooms[room] then 
+		rooms[room].players[player] = {
+			joined=getRealTime().timestamp,
+			team=team,
+		};
+		sync();
+		triggerLatentClientEvent (player, "onClientPlayerJoinRoom", player, id);
+	end
+end	
+
+function kickPlayerOutOfRoom(player, id)
+	triggerClientEvent (player, "onClientPlayerLeaveRoom", player);
+	local id = id;
+	if not id then 
+		id = getPlayerRoom(player);
+	end	
+	local id, room = getRoomFromId(id);
+	if not room then return false; end
+	rooms[id].players[player] = nil;
+	sync();
+end	
+
+function isPlayerInARoom(player)
+	for i, room in ipairs (rooms) do 
+		if room.players[player] then
+			return true;
+		end
+	end
+	return false;
+end
+
+function isPlayerInRoom(player, id)
+	local _, room = getRoomFromId(id);
+	if not room then return false; end
+	return room.players[player];
+end	
+
+function getPlayerRoom(player)
+	if not isPlayerInARoom(player) then return; end
+	for i, v in ipairs (rooms) do 
+		if isPlayerInRoom(player, v.id) then 
+			return v.id;
+		end
+	end
+end
+
+function canPlayerEnterRoom(player, id)
+	local _, room = getRoomFromId(id);
+	if not room then 
+		return false, "Beklenmedik bir hata oluştu.";
+	end	
+	local limit = room.limit;
+	local bet = room.bet;
+	if getPlayerMoney (player) < bet then 
+		return false, "Bu odaya girmeye paran yetmiyor.";
+	end	
+	if #getPlayersInRoom(id) >= limit then 
+		return false, "Oda dolu.";
+	end
+	if isPlayerInARoom(player) then 
+		return false, "Zaten bir odadasın.";
+	end
+	return true;
+end	
+
+function canPlayerCreateRoom(player, bet)
+	if isPlayerInARoom(player) then 
+		return false, "Zaten bir odadasın.";
+	end 
+	if getPlayerMoney (player) < tonumber(bet) then 
+		return false, "Bu odayı açmaya paran yetmiyor.";
+	end	
+	return true;
+end	

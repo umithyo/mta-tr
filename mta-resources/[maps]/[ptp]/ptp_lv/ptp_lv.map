@@ -1,0 +1,135 @@
+<map edf:definitions="mta-tr,editor_main">
+	 <removeWorldObject id="removeWorldObject (gate_autoL) (1)" radius="7.4280729" interior="0" model="986" lodModel="0" posX="2497.2119" posY="2773.1245" posZ="11.94649" rotX="0" rotY="0" rotZ="0"></removeWorldObject>
+    <removeWorldObject id="removeWorldObject (gate_autoR) (1)" radius="7.3802581" interior="0" model="985" lodModel="0" posX="2497.2419" posY="2773.4524" posZ="11.47585" rotX="0" rotY="0" rotZ="0"></removeWorldObject>
+    <pickup id="pickup (Combat Shotgun) (1)" type="27" interior="0" amount="100" respawn="150000" dimension="6969" alpha="255" posX="2246.1001" posY="1744.8" posZ="11" rotX="0" rotY="0" rotZ="0"></pickup>
+    <pickup id="pickup (Rocket Launcher) (1)" type="35" interior="0" amount="3" respawn="600000" dimension="6969" alpha="255" posX="1606.6" posY="1765.9" posZ="37.3" rotX="0" rotY="0" rotZ="0"></pickup>
+    <pickup id="pickup (Rocket Launcher HS) (1)" type="36" interior="0" amount="2" respawn="600000" dimension="6969" alpha="255" posX="1293.1" posY="1579.1" posZ="50.3" rotX="0" rotY="0" rotZ="0"></pickup>
+    <pickup id="pickup (Sniper) (1)" type="34" interior="0" amount="100" respawn="60000" dimension="6969" alpha="255" posX="1093.3" posY="1527.2" posZ="52.3" rotX="0" rotY="0" rotZ="0"></pickup>
+    <pickup id="pickup (health) (1)" type="health" interior="0" amount="100" respawn="150000" dimension="6969" alpha="255" posX="2328.8" posY="1875.3" posZ="16.5" rotX="0" rotY="0" rotZ="0"></pickup>
+    <pickup id="pickup (health) (2)" type="health" interior="0" amount="100" respawn="150000" dimension="6969" alpha="255" posX="2672.3" posY="2276.8999" posZ="10.8" rotX="0" rotY="0" rotZ="0"></pickup>
+    <pickup id="pickup (health) (3)" type="health" interior="0" amount="100" respawn="30000" dimension="6969" alpha="255" posX="2609.8" posY="2394.5" posZ="17.8" rotX="0" rotY="0" rotZ="0"></pickup>
+    <pickup id="pickup (Rocket Launcher) (2)" type="35" interior="0" amount="3" respawn="600000" dimension="6969" alpha="255" posX="1966" posY="1918.6" posZ="130.89999" rotX="0" rotY="0" rotZ="0"></pickup>
+    <pickup id="pickup (armor) (1)" type="armor" interior="0" amount="30" respawn="150000" dimension="6969" alpha="255" posX="2225.3" posY="2539.1001" posZ="10.8" rotX="0" rotY="0" rotZ="0"></pickup>
+    <pickup id="pickup (health) (4)" type="health" interior="0" amount="50" respawn="150000" dimension="6969" alpha="255" posX="2252.6001" posY="2491" posZ="11" rotX="0" rotY="0" rotZ="0"></pickup>
+    <Team1 id="Team1 (2)" rotZ="0" skin="0" posX="1640.3" posY="957.09998" posZ="10.7" rotX="0" rotY="0"></Team1>
+    <Team1 id="Team1 (3)" rotZ="0" skin="0" posX="1644.4" posY="957" posZ="10.7" rotX="0" rotY="0"></Team1>
+    <Team1 id="Team1 (4)" rotZ="0" skin="0" alpha="255" interior="0" posX="1648.3" posY="956.90002" posZ="10.7" rotX="0" rotY="0"></Team1>
+    <Team1 id="Team1 (5)" rotZ="0" skin="0" alpha="255" interior="0" posX="1652.3" posY="956.79999" posZ="10.7" rotX="0" rotY="0"></Team1>
+    <Team1 id="Team1 (6)" rotZ="0" skin="0" alpha="255" interior="0" posX="1656.6" posY="956.59998" posZ="10.7" rotX="0" rotY="0"></Team1>
+    <Team1 id="Team1 (7)" rotZ="0" skin="0" alpha="255" interior="0" posX="1660.3" posY="956.20001" posZ="10.7" rotX="0" rotY="0"></Team1>
+    <Team1 id="Team1 (8)" rotZ="0" skin="0" alpha="255" interior="0" posX="1640.3" posY="960.70001" posZ="10.7" rotX="0" rotY="0"></Team1>
+    <Team1 id="Team1 (9)" rotZ="0" skin="0" alpha="255" interior="0" posX="1644.5" posY="960.79999" posZ="10.7" rotX="0" rotY="0"></Team1>
+    <Team1 id="Team1 (10)" rotZ="0" skin="0" alpha="255" interior="0" posX="1648.8" posY="960.79999" posZ="10.7" rotX="0" rotY="0"></Team1>
+    <Team1 id="Team1 (11)" rotZ="0" skin="0" alpha="255" interior="0" posX="1653.1" posY="960.40002" posZ="10.7" rotX="0" rotY="0"></Team1>
+    <Team1 id="Team1 (12)" rotZ="0" skin="0" alpha="255" interior="0" posX="1658.2" posY="960.29999" posZ="10.7" rotX="0" rotY="0"></Team1>
+    <Team1 id="Team1 (13)" rotZ="0" skin="0" alpha="255" interior="0" posX="1662.2" posY="960.5" posZ="10.7" rotX="0" rotY="0"></Team1>
+    <vehicle id="vehicle (Sentinel) (1)" paintjob="3" interior="0" alpha="255" model="405" plate="H7AIJQP" dimension="6969" color="37,37,39,245,245,245,0,0,0,0,0,0" posX="1652.3" posY="987.79999" posZ="10.8" rotX="0" rotY="0" rotZ="0"></vehicle>
+    <pickup id="pickup (health) (5)" type="health" interior="0" amount="100" respawn="60000" dimension="6969" alpha="255" posX="1629.4" posY="972.20001" posZ="10.8" rotX="0" rotY="0" rotZ="0"></pickup>
+    <pickup id="pickup (armor) (2)" type="armor" interior="0" amount="100" respawn="60000" dimension="6969" alpha="255" posX="1629.4" posY="974.20001" posZ="10.8" rotX="0" rotY="0" rotZ="0"></pickup>
+    <vehicle id="vehicle (Infernus) (1)" paintjob="3" interior="0" alpha="255" model="411" plate="SZISGSS" dimension="6969" color="89,110,135,245,245,245,0,0,0,0,0,0" posX="1658.8" posY="987.90002" posZ="10.6" rotX="0" rotY="0" rotZ="0"></vehicle>
+    <vehicle id="vehicle (Super GT) (1)" paintjob="3" interior="0" alpha="255" model="506" plate="67U431C" dimension="6969" color="77,98,104,77,98,104,0,0,0,0,0,0" posX="1664.9" posY="988" posZ="10.6" rotX="0" rotY="0" rotZ="0"></vehicle>
+    <vehicle id="vehicle (S.W.A.T.) (1)" paintjob="3" interior="0" alpha="255" model="601" plate="9HIQN62" dimension="6969" color="245,245,245,245,245,245,0,0,0,0,0,0" posX="1671.2" posY="987.79999" posZ="10.8" rotX="0" rotY="0" rotZ="0"></vehicle>
+    <vehicle id="vehicle (Euros) (1)" paintjob="3" interior="0" alpha="255" model="587" plate="MYH6AR3" dimension="6969" color="37,37,39,245,245,245,0,0,0,0,0,0" posX="1655.6" posY="999.09998" posZ="10.6" rotX="0" rotY="0" rotZ="0"></vehicle>
+    <vehicle id="vehicle (Jester) (1)" paintjob="3" interior="0" alpha="255" model="559" plate="CG7UHOE" dimension="6969" color="42,119,161,245,245,245,0,0,0,0,0,0" posX="1662.1" posY="998.59998" posZ="10.6" rotX="0" rotY="0" rotZ="0"></vehicle>
+    <vehicle id="vehicle (Cheetah) (1)" paintjob="3" interior="0" alpha="255" model="415" plate="LPAIEJA" dimension="6969" color="63,62,69,245,245,245,0,0,0,0,0,0" posX="1668.8" posY="999.90002" posZ="10.7" rotX="0" rotY="0" rotZ="0"></vehicle>
+    <vehicle id="vehicle (Police Maverick) (1)" paintjob="3" interior="0" alpha="255" model="497" plate="82GXQSH" dimension="6969" color="0,0,0,245,245,245,0,0,0,0,0,0" posX="1639.3" posY="983.70001" posZ="11.1" rotX="0" rotY="0" rotZ="0"></vehicle>
+    <vehicle id="vehicle (Maverick) (1)" paintjob="3" interior="0" alpha="255" model="487" plate="3NIZ9CG" dimension="6969" color="96,26,35,90,87,82,0,0,0,0,0,0" posX="1639.1" posY="998.79999" posZ="11.1" rotX="0" rotY="0" rotZ="0"></vehicle>
+    <vehicle id="vehicle (Leviathan) (1)" paintjob="3" interior="0" alpha="255" model="417" plate="1YVQS75" dimension="6969" color="0,0,0,0,0,0,0,0,0,0,0,0" posX="1694.5" posY="976.70001" posZ="10.8" rotX="0" rotY="0" rotZ="358.016"></vehicle>
+    <vehicle id="vehicle (News Chopper) (1)" paintjob="3" interior="0" alpha="255" model="488" plate="6P8SAFK" dimension="6969" color="42,119,161,151,149,146,0,0,0,0,0,0" posX="1681.7" posY="956.59998" posZ="11" rotX="0" rotY="0" rotZ="0"></vehicle>
+    <vehicle id="vehicle (Emperor) (1)" paintjob="3" interior="0" alpha="255" model="585" plate="ERWJLS0" dimension="6969" color="101,106,121,101,106,121,0,0,0,0,0,0" posX="1678.1" posY="987.90002" posZ="10.5" rotX="0" rotY="0" rotZ="0"></vehicle>
+    <vehicle id="vehicle (Admiral) (1)" paintjob="3" interior="0" alpha="255" model="445" plate="0N1CRPI" dimension="6969" color="109,122,136,109,122,136,0,0,0,0,0,0" posX="1674.7" posY="1000.2" posZ="10.8" rotX="0" rotY="0" rotZ="0"></vehicle>
+    <vehicle id="vehicle (Feltzer) (1)" paintjob="3" interior="0" alpha="255" model="533" plate="3BWT7NN" dimension="6969" color="77,50,47,245,245,245,0,0,0,0,0,0" posX="2570.6001" posY="2768.8999" posZ="10.6" rotX="0" rotY="0" rotZ="0"></vehicle>
+    <vehicle id="vehicle (Super GT) (2)" paintjob="3" interior="0" alpha="255" model="506" plate="17O2488" dimension="6969" color="77,98,104,77,98,104,0,0,0,0,0,0" posX="2570.5" posY="2791.1001" posZ="10.6" rotX="0" rotY="0" rotZ="0"></vehicle>
+    <vehicle id="vehicle (Comet) (1)" paintjob="3" interior="0" alpha="255" model="480" plate="V1CAG4B" dimension="6969" color="22,34,72,22,34,72,0,0,0,0,0,0" posX="2562.7" posY="2769.1001" posZ="10.7" rotX="0" rotY="0" rotZ="0"></vehicle>
+    <vehicle id="vehicle (Bullet) (1)" paintjob="3" interior="0" alpha="255" model="541" plate="875YPI3" dimension="6969" color="88,89,90,189,190,198,0,0,0,0,0,0" posX="2562.8999" posY="2790.3" posZ="10.5" rotX="0" rotY="0" rotZ="0"></vehicle>
+    <vehicle id="vehicle (Uranus) (1)" paintjob="3" interior="0" alpha="255" model="558" plate="DZRNX3V" dimension="6969" color="90,87,82,245,245,245,0,0,0,0,0,0" posX="2570.3" posY="2760" posZ="10.5" rotX="0" rotY="0" rotZ="0"></vehicle>
+    <vehicle id="vehicle (Turismo) (1)" paintjob="3" interior="0" alpha="255" model="451" plate="J3IYWUT" dimension="6969" color="123,10,42,123,10,42,0,0,0,0,0,0" posX="2554.2" posY="2769.5" posZ="10.6" rotX="0" rotY="0" rotZ="0"></vehicle>
+    <vehicle id="vehicle (Buffalo) (1)" paintjob="3" interior="0" alpha="255" model="402" plate="N0TGQQ2" dimension="6969" color="175,177,177,175,177,177,0,0,0,0,0,0" posX="2562.3" posY="2759.8" posZ="10.8" rotX="0" rotY="0" rotZ="0"></vehicle>
+    <vehicle id="vehicle (Jester) (2)" paintjob="3" interior="0" alpha="255" model="559" plate="HC8WBUI" dimension="6969" color="37,37,39,189,190,198,0,0,0,0,0,0" posX="2554.3999" posY="2791" posZ="10.6" rotX="0" rotY="0" rotZ="0"></vehicle>
+    <vehicle id="vehicle (ZR-350) (1)" paintjob="3" interior="0" alpha="255" model="477" plate="RO80IRZ" dimension="6969" color="37,37,39,245,245,245,0,0,0,0,0,0" posX="2554.1001" posY="2760" posZ="10.7" rotX="0" rotY="0" rotZ="0"></vehicle>
+    <vehicle id="vehicle (Infernus) (2)" paintjob="3" interior="0" alpha="255" model="411" plate="DTQ92JW" dimension="6969" color="16,80,130,245,245,245,0,0,0,0,0,0" posX="2546.1001" posY="2759.3" posZ="10.6" rotX="0" rotY="0" rotZ="0"></vehicle>
+    <vehicle id="vehicle (Banshee) (1)" paintjob="3" interior="0" alpha="255" model="429" plate="I29X6NJ" dimension="6969" color="132,4,16,245,245,245,0,0,0,0,0,0" posX="2546.6001" posY="2791.1001" posZ="10.6" rotX="0" rotY="0" rotZ="0"></vehicle>
+    <vehicle id="vehicle (NRG-500) (1)" paintjob="3" interior="0" alpha="255" model="522" plate="TOKF0MP" dimension="6969" color="189,190,198,116,29,40,0,0,0,0,0,0" posX="2545.8999" posY="2769.3999" posZ="10.5" rotX="0" rotY="0" rotZ="0"></vehicle>
+    <vehicle id="vehicle (PCJ-600) (1)" paintjob="3" interior="0" alpha="255" model="461" plate="UHTGLPW" dimension="6969" color="45,58,53,245,245,245,0,0,0,0,0,0" posX="2541.3" posY="2769.5" posZ="10.5" rotX="0" rotY="0" rotZ="0"></vehicle>
+    <vehicle id="vehicle (NRG-500) (2)" paintjob="3" interior="0" alpha="255" model="522" plate="WYJVUMY" dimension="6969" color="48,79,69,163,173,198,0,0,0,0,0,0" posX="2537.5" posY="2769.3" posZ="10.5" rotX="0" rotY="0" rotZ="0"></vehicle>
+    <pickup id="pickup (health) (6)" type="health" interior="0" amount="100" respawn="60000" dimension="6969" alpha="255" posX="2575.7" posY="2779.5" posZ="10.8" rotX="0" rotY="0" rotZ="0"></pickup>
+    <pickup id="pickup (armor) (3)" type="armor" interior="0" amount="100" respawn="60000" dimension="6969" alpha="255" posX="2575.5" posY="2782.1001" posZ="10.8" rotX="0" rotY="0" rotZ="0"></pickup>
+    <vehicle id="vehicle (Burrito) (1)" paintjob="3" interior="0" alpha="255" model="482" plate="1VTGY38" dimension="6969" color="124,27,68,124,27,68,0,0,0,0,0,0" posX="2537.7" posY="2758.7" posZ="11.1" rotX="0" rotY="0" rotZ="0"></vehicle>
+    <vehicle id="vehicle (Maverick) (2)" paintjob="3" interior="0" alpha="255" model="487" plate="CWW8KYS" dimension="6969" color="96,26,35,90,87,82,0,0,0,0,0,0" posX="2618.5" posY="2720.8999" posZ="36.8" rotX="0" rotY="0" rotZ="0"></vehicle>
+    <vehicle id="vehicle (Maverick) (3)" paintjob="3" interior="0" alpha="255" model="487" plate="AAZ9A2S" dimension="6969" color="93,126,141,109,122,136,0,0,0,0,0,0" posX="2511.791" posY="2754.2959" posZ="9.82097" rotX="0" rotY="0" rotZ="0"></vehicle>
+    <vehicle id="vehicle (Maverick) (4)" paintjob="3" interior="0" alpha="255" model="487" plate="VUEOX9V" dimension="6969" color="151,149,146,124,28,42,0,0,0,0,0,0" posX="2513.2" posY="2732.5" posZ="11.1" rotX="0" rotY="0" rotZ="0"></vehicle>
+    <vehicle id="vehicle (News Chopper) (2)" paintjob="3" interior="0" alpha="255" model="488" plate="TQHQ0V4" dimension="6969" color="42,119,161,151,149,146,0,0,0,0,0,0" posX="2518.3" posY="2777.8" posZ="11.5" rotX="0" rotY="0" rotZ="0"></vehicle>
+    <!-- <vehicle id="vehicle (Hydra) (1)" paintjob="3" interior="0" alpha="255" model="520" plate="FXZQ6TE" dimension="6969" color="0,0,0,0,0,0,0,0,0,0,0,0" posX="1351.5" posY="1622.5" posZ="11.7" rotX="0" rotY="0" rotZ="312.424"></vehicle> -->
+    <!-- <vehicle id="vehicle (Hydra) (2)" paintjob="3" interior="0" alpha="255" model="520" plate="M0U21FF" dimension="6969" color="0,0,0,0,0,0,0,0,0,0,0,0" posX="1351.2" posY="1605.5" posZ="11.7" rotX="0" rotY="0" rotZ="312.424"></vehicle> -->
+    <!-- <vehicle id="vehicle (Hydra) (3)" paintjob="3" interior="0" alpha="255" model="520" plate="QIKN1V0" dimension="6969" color="0,0,0,0,0,0,0,0,0,0,0,0" posX="1347.5" posY="1583.6" posZ="11.7" rotX="0" rotY="0" rotZ="312.424"></vehicle> -->
+    <vehicle id="vehicle (Rustler) (1)" paintjob="3" interior="0" alpha="255" model="476" plate="UP9FO22" dimension="6969" color="76,117,183,215,142,16,0,0,0,0,0,0" posX="1342.2" posY="1362.6" posZ="12" rotX="0" rotY="0" rotZ="300.53"></vehicle>
+    <vehicle id="vehicle (Rustler) (2)" paintjob="3" interior="0" alpha="255" model="476" plate="QN67LB0" dimension="6969" color="76,117,183,215,142,16,0,0,0,0,0,0" posX="1343" posY="1347.8" posZ="12" rotX="0" rotY="0" rotZ="300.526"></vehicle>
+    <vehicle id="vehicle (Rustler) (3)" paintjob="3" interior="0" alpha="255" model="476" plate="EH4SF3V" dimension="6969" color="76,117,183,215,142,16,0,0,0,0,0,0" posX="1342.5" posY="1333.3" posZ="12" rotX="0" rotY="0" rotZ="300.526"></vehicle>
+    <!-- <vehicle id="vehicle (Hunter) (1)" paintjob="3" interior="0" alpha="255" model="425" plate="PN03BJW" dimension="6969" color="95,10,21,0,0,0,0,0,0,0,0,0" posX="1519.9" posY="1285.2" posZ="11.7" rotX="0" rotY="0" rotZ="0"></vehicle> -->
+    <!-- <vehicle id="vehicle (Hunter) (2)" paintjob="3" interior="0" alpha="255" model="425" plate="AZMB2S8" dimension="6969" color="95,10,21,0,0,0,0,0,0,0,0,0" posX="1501.6" posY="1281.5" posZ="11.7" rotX="0" rotY="0" rotZ="0"></vehicle> -->
+    <vehicle id="vehicle (Enforcer) (2)" paintjob="3" interior="0" alpha="255" model="427" plate="V8OU24E" dimension="6969" color="0,0,0,245,245,245,0,0,0,0,0,0" posX="1661.7" posY="1027.6" posZ="11.1" rotX="0" rotY="0" rotZ="0"></vehicle>
+    <vehicle id="vehicle (Yosemite) (1)" paintjob="3" interior="0" alpha="255" model="554" plate="7MUC2MD" dimension="6969" color="142,140,70,132,148,171,0,0,0,0,0,0" posX="1668.5" posY="1028.1" posZ="11" rotX="0" rotY="0" rotZ="0"></vehicle>
+    <Team2 id="Team2 (1)" rotZ="91.216" skin="0" posX="2588.8999" posY="2834" posZ="10.8" rotX="0" rotY="0"></Team2>
+    <Team2 id="Team2 (14)" rotZ="91.214" skin="0" alpha="255" interior="0" posX="2589" posY="2831.6001" posZ="10.8" rotX="0" rotY="0"></Team2>
+    <Team2 id="Team2 (15)" rotZ="93.198" skin="0" alpha="255" interior="0" posX="2589.2" posY="2828.8999" posZ="10.8" rotX="0" rotY="0"></Team2>
+    <Team2 id="Team2 (16)" rotZ="95.181" skin="0" alpha="255" interior="0" posX="2589.3999" posY="2825.3999" posZ="10.8" rotX="0" rotY="0"></Team2>
+    <Team2 id="Team2 (17)" rotZ="97.164" skin="0" alpha="255" interior="0" posX="2589.3999" posY="2822.7" posZ="10.8" rotX="0" rotY="0"></Team2>
+    <Team2 id="Team2 (18)" rotZ="95.179" skin="0" alpha="255" interior="0" posX="2585.3999" posY="2822.7" posZ="10.8" rotX="0" rotY="0"></Team2>
+    <Team2 id="Team2 (19)" rotZ="93.195" skin="0" alpha="255" interior="0" posX="2585.3999" posY="2825" posZ="10.8" rotX="0" rotY="0"></Team2>
+    <Team2 id="Team2 (20)" rotZ="103.113" skin="0" alpha="255" interior="0" posX="2585.3" posY="2828.3999" posZ="10.8" rotX="0" rotY="0"></Team2>
+    <Team2 id="Team2 (21)" rotZ="97.161" skin="0" alpha="255" interior="0" posX="2585.2" posY="2831.3" posZ="10.8" rotX="0" rotY="0"></Team2>
+    <Team2 id="Team2 (22)" rotZ="93.193" skin="0" alpha="255" interior="0" posX="2585.1001" posY="2834" posZ="10.8" rotX="0" rotY="0"></Team2>
+    <Team2 id="Team2 (23)" rotZ="89.224" skin="0" alpha="255" interior="0" posX="2584.5" posY="2836.8" posZ="10.8" rotX="0" rotY="0"></Team2>
+    <Team2 id="Team2 (24)" rotZ="93.191" skin="0" alpha="255" interior="0" posX="2584.8999" posY="2818.8999" posZ="10.8" rotX="0" rotY="0"></Team2>
+    <vehicle id="vehicle (NRG-500) (3)" paintjob="3" interior="0" alpha="255" model="522" plate="B5NDI26" dimension="6969" color="109,122,136,16,80,130,0,0,0,0,0,0" posX="1681.5" posY="999" posZ="10.5" rotX="0" rotY="0" rotZ="0"></vehicle>
+    <vehicle id="vehicle (NRG-500) (4)" paintjob="3" interior="0" alpha="255" model="522" plate="ABGOMCV" dimension="6969" color="132,4,16,132,4,16,0,0,0,0,0,0" posX="1677.4" posY="1028.5" posZ="10.5" rotX="0" rotY="0" rotZ="0"></vehicle>
+    <vehicle id="vehicle (PCJ-600) (2)" paintjob="3" interior="0" alpha="255" model="461" plate="RVJYLUN" dimension="6969" color="145,115,71,245,245,245,0,0,0,0,0,0" posX="1680.9" posY="1028.5" posZ="10.5" rotX="0" rotY="0" rotZ="0"></vehicle>
+    <Anti_Rush_Point id="Anti_Rush_Point (1)" posX="2791.8999" posY="608.79999" posZ="9.9" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (2)" posX="2626.8999" posY="594.20001" posZ="3" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (3)" posX="2537.3999" posY="564.40002" posZ="1.2" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (4)" posX="2483.6001" posY="569.79999" posZ="1.6" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (5)" posX="2453" posY="565.90002" posZ="2.6" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (6)" posX="2398.6001" posY="546.90002" posZ="2.8" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (7)" posX="2367.5" posY="549.40002" posZ="6.8" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (9)" posX="2371.7" posY="521.90002" posZ="0.9" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (8)" posX="2348.2" posY="522.40002" posZ="0.9" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (11)" posX="2346.3999" posY="547.09998" posZ="6.8" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (12)" posX="2300.8" posY="546.29999" posZ="6.9" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (13)" posX="2300.8" posY="523.29999" posZ="2.1" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (14)" posX="2287.5" posY="523.09998" posZ="2.1" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (15)" posX="2287.7" posY="546.5" posZ="8.1" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (16)" posX="2237.6001" posY="546.29999" posZ="7.6" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (17)" posX="2237.2" posY="558.40002" posZ="6.9" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (18)" posX="2117.3999" posY="572.20001" posZ="6.6" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (19)" posX="2051.1001" posY="574.70001" posZ="6.5" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (20)" posX="1998" posY="562.5" posZ="6.3" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (21)" posX="1949.8" posY="551.40002" posZ="6.2" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (22)" posX="1772.9" posY="585.40002" posZ="8.8" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (24)" posX="1749.6" posY="589.79999" posZ="9.8" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (26)" posX="1663.5" posY="599.20001" posZ="5.4" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (27)" posX="1580.9" posY="613.70001" posZ="6.4" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (28)" posX="1095.3" posY="662.59998" posZ="5.7" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (10)" posX="813.90002" posY="1151.9" posZ="27.5" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (23)" posX="761.79999" posY="1443.3" posZ="20" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (25)" posX="845.5" posY="1576.4" posZ="16" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (31)" posX="814.79999" posY="1760.5" posZ="9.3" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (35)" posX="802.5" posY="1837.9" posZ="3.1" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (36)" posX="808.59998" posY="2132.7" posZ="10.3" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (37)" posX="764.29999" posY="2268.7" posZ="11.8" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (38)" posX="742.20001" posY="2430.8" posZ="19.5" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (39)" posX="531.70001" posY="2802.5" posZ="65.5" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (29)" posX="2572.7" posY="2989.8" posZ="30" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (33)" posX="2624.1001" posY="2989.8" posZ="25.4" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (34)" posX="2758.8999" posY="2963.6001" posZ="26.9" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (40)" posX="2891.2" posY="2926.1001" posZ="31.2" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (41)" posX="2960.1001" posY="2767.1001" posZ="30.5" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (42)" posX="2976.8999" posY="2628.5" posZ="28.8" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (43)" posX="2969.3" posY="1140.4" posZ="28.8" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (32)" posX="2949.3999" posY="840.90002" posZ="35.1" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (44)" posX="2877.5" posY="671.09998" posZ="33" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <pickup id="pickup (health) (7)" type="health" interior="0" amount="100" respawn="30000" dimension="0" alpha="255" posX="1607.3" posY="1816.4" posZ="10.8" rotX="0" rotY="0" rotZ="0"></pickup>
+    <pickup id="pickup (Rocket Launcher HS) (2)" type="36" interior="0" amount="100" respawn="150000" dimension="0" alpha="255" posX="1696.3" posY="1724" posZ="17.5" rotX="0" rotY="0" rotZ="0"></pickup>
+    <vehicle id="vehicle (Police Maverick) (2)" paintjob="3" interior="0" alpha="255" model="497" plate="2D93F2Y" dimension="0" color="0,0,0,245,245,245,0,0,0,0,0,0" posX="1511.4" posY="1492.8" posZ="11.1" rotX="0" rotY="0" rotZ="0"></vehicle>
+    <pickup id="pickup (health) (8)" type="health" interior="0" amount="100" respawn="30000" dimension="0" alpha="255" posX="1597.1" posY="1447.7" posZ="33.8" rotX="0" rotY="0" rotZ="0"></pickup>
+    <pickup id="pickup (armor) (4)" type="armor" interior="0" amount="100" respawn="30000" dimension="0" alpha="255" posX="2291.3999" posY="2074.6001" posZ="104" rotX="0" rotY="0" rotZ="0"></pickup>
+</map>

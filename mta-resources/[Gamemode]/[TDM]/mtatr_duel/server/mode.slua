@@ -1,0 +1,32 @@
+function getPlayersInMode()
+	local tbl = {};
+	for i, v in ipairs (getElementsByType"player") do 
+		if getElementData(v, "inpvp") then 
+			table.insert(tbl, v);
+		end
+	end
+	return tbl;
+end
+
+addEvent ("onPlayerRequestGamemode");
+addEventHandler ("onPlayerRequestGamemode", root, 
+	function (mode)
+		if mode == "PVP/TDM" then
+			setCameraMatrix (source, 1450, -848.91, 258.21, 1450.12, -849.83, 257.81);
+			triggerClientEvent (source, "onClientPlayerChangeGamemode", source, "TDM");
+			triggerEvent ("onPlayerChangeGamemode", source, "TDM");
+		end	
+	end
+);	
+
+addEventHandler ("onResourceStop", resourceRoot, 
+	function ()
+		for i, v in ipairs (getPlayersInMode()) do 
+			setPlayerOutOfMode(v);
+		end
+	end
+);	
+
+function isPlayerInMode(player)
+	return player:getData"inpvp";
+end	

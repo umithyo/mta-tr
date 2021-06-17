@@ -1,0 +1,8 @@
+<meta>
+	<oop>true</oop>
+	<script src = "gui.lua" type = "client" />
+	<script src = "transfer_c.lua" type = "client" />
+	<script src = "transfer.lua" type = "server" />
+	<script src = "credit_c.lua" type = "client" />
+	<script src = "credit.lua" type = "server" />
+</meta>

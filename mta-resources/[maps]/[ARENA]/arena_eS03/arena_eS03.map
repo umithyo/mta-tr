@@ -1,0 +1,34 @@
+<map edf:definitions="editor_main,Tactics-12-r14">
+    <Anti_Rush_Point id="Anti_Rush_Point (1)" posX="2139.1999511719" posY="2750.3000488281" posZ="9.8000001907349" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (2)" interior="0" posX="1899.5999755859" posY="2751.6000976562" posZ="9.6999998092651" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (3)" interior="0" posX="1900.4000244141" posY="2634.6000976562" posZ="9.8999996185303" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Anti_Rush_Point id="Anti_Rush_Point (4)" interior="0" posX="2138.8000488281" posY="2634.8999023438" posZ="9.8000001907349" rotX="0" rotY="0" rotZ="0"></Anti_Rush_Point>
+    <Team1 id="Team1 (1)" posX="2128" posY="2677.6000976562" posZ="10.800000190735" rotX="0" rotY="0" rotZ="0"></Team1>
+    <Team2 id="Team2 (1)" posX="1914.3000488281" posY="2719.1000976562" posZ="10.800000190735" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (2)" interior="0" posX="1913" posY="2719.1000976562" posZ="10.800000190735" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (3)" interior="0" posX="1913" posY="2718.3000488281" posZ="10.800000190735" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (4)" interior="0" posX="1914.3000488281" posY="2718.3000488281" posZ="10.800000190735" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (5)" interior="0" posX="1914.3000488281" posY="2717.3000488281" posZ="10.800000190735" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (6)" interior="0" posX="1913" posY="2717.3000488281" posZ="10.800000190735" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (7)" interior="0" posX="1913" posY="2716.3000488281" posZ="10.800000190735" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (8)" interior="0" posX="1914.3000488281" posY="2716.3000488281" posZ="10.800000190735" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (9)" interior="0" posX="1914.3000488281" posY="2715.5" posZ="10.800000190735" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (10)" interior="0" posX="1913" posY="2715.5" posZ="10.800000190735" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (11)" interior="0" posX="1913" posY="2714.3000488281" posZ="10.800000190735" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team2 id="Team2 (12)" interior="0" posX="1914.3000488281" posY="2714.3000488281" posZ="10.800000190735" rotX="0" rotY="0" rotZ="0"></Team2>
+    <Team1 id="Team1 (2)" interior="0" posX="2128" posY="2676.6000976562" posZ="10.800000190735" rotX="0" rotY="0" rotZ="0"></Team1>
+    <Team1 id="Team1 (3)" interior="0" posX="2127" posY="2676.6000976562" posZ="10.800000190735" rotX="0" rotY="0" rotZ="0"></Team1>
+    <Team1 id="Team1 (4)" interior="0" posX="2127" posY="2677.6000976562" posZ="10.800000190735" rotX="0" rotY="0" rotZ="0"></Team1>
+    <Team1 id="Team1 (5)" interior="0" posX="2127" posY="2675.6000976562" posZ="10.800000190735" rotX="0" rotY="0" rotZ="0"></Team1>
+    <Team1 id="Team1 (6)" interior="0" posX="2128" posY="2675.6000976562" posZ="10.800000190735" rotX="0" rotY="0" rotZ="0"></Team1>
+    <Team1 id="Team1 (7)" interior="0" posX="2128" posY="2674.6000976562" posZ="10.800000190735" rotX="0" rotY="0" rotZ="0"></Team1>
+    <Team1 id="Team1 (8)" interior="0" posX="2127" posY="2674.6000976562" posZ="10.800000190735" rotX="0" rotY="0" rotZ="0"></Team1>
+    <Team1 id="Team1 (9)" interior="0" posX="2127" posY="2673.6000976562" posZ="10.800000190735" rotX="0" rotY="0" rotZ="0"></Team1>
+    <Team1 id="Team1 (10)" interior="0" posX="2128" posY="2673.6000976562" posZ="10.800000190735" rotX="0" rotY="0" rotZ="0"></Team1>
+    <Team1 id="Team1 (11)" interior="0" posX="2128" posY="2672.3000488281" posZ="10.800000190735" rotX="0" rotY="0" rotZ="0"></Team1>
+    <Team1 id="Team1 (12)" interior="0" posX="2127" posY="2672.3000488281" posZ="10.800000190735" rotX="0" rotY="0" rotZ="0"></Team1>
+    <Central_Marker id="Central_Marker (1)" posX="1998.4000244141" posY="2694.1999511719" posZ="9.8999996185303" rotX="0" rotY="0" rotZ="0"></Central_Marker>
+    <vehicle id="vehicle (Tram) (4)" paintjob="3" model="449" plate="KZA6DJ5" interior="0" dimension="6967" posX="2007.5999755859" posY="2694.1999511719" posZ="12.300000190735" rotX="0" rotY="0" rotZ="0"></vehicle>
+    <object id="object (a51_jetdoor) (1)" doublesided="false" model="3095" interior="0" dimension="6967" posX="1889.8000488281" posY="2694.3999023438" posZ="12.60000038147" rotX="0" rotY="96" rotZ="0"></object>
+    <object id="object (a51_jetdoor) (2)" doublesided="false" model="3095" interior="0" dimension="6967" posX="2158.8000488281" posY="2694" posZ="13.300000190735" rotX="0" rotY="266" rotZ="0"></object>
+</map>

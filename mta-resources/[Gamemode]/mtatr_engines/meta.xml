@@ -1,0 +1,67 @@
+<meta>
+	<oop>true</oop>
+
+	<!-- SHARED -->
+	<script src = "utils.lua" 						type = "server" />
+	<script src = "shared/output_s.lua"				type = "server" />
+	<script src = "shared/output_c.lua"			type = "client" />
+	<export function = "output" 					type = "client" />
+	<export function = "output"						type = "server" />
+	<export function = "playFX"						type = "client" />
+	<export function = "playFX"						type = "server" />
+
+	<!-- EVENTS -->
+	<script src	= "events/server.lua"  				type = "server" />
+	<script src = "events/shared.lua"				type = "server" />
+	<script src = "events/client.lua"				type = "client" />
+	<export function = "getEventTimerDetails"  		type = "server" />
+	<export function = "createAntiRushPoints"		type = "server" />
+	<export function = "showTeamsBar"				type = "server" />
+	<export function = "updateTeamsBar"				type = "server" />
+	<export function = "updateTeamsBarData"			type = "server" />
+	<export function = "startTeamsBarTimer"			type = "server" />
+	<export function = "createTeamMenu"				type = "server" />
+	<export function = "updateTeamMenu"				type = "server" />
+	<export function = "destroyTeamMenu"			type = "server" />
+	<export function = "addRestriction" 			type = "server" />
+	<export function = "removeRestriction"			type = "server" />
+	<export function = "startCountDown" 			type = "server" />
+	<export function = "setEventFinished" 			type = "server" />
+	<export function = "getNextSlot"				type = "server" />
+	<export function = "getResourceSettings"		type = "server" />
+	<export function = "setPlayerImmuneAgainst"		type = "server" />
+	<export function = "getEventProperty"			type = "server" />
+	<export function = "startCountDown" 			type = "client" />
+	<export function = "cycleEvent" 				type = "server" />
+	<export function = "stopEvent"					type = "server" />
+	<export function = "getEvents"					type = "server" />
+	<export function = "getEvents" 					type = "client" />
+	<export function = "showRaceRank" 				type = "server" />
+	<export function = "updateRaceRank"				type = "server" />
+	<export function = "destroyRaceRank"			type = "server" />
+	<export function = "createTeamBlips"			type = "server" />
+	<export function = "destroyTeamBlips" 			type = "server" />
+	<export function = "createWeaponSelectionMenu" 	type = "server" />
+
+	<!-- MISSIONS	 -->
+	<script src	= "missions/server.lua"			type = "server" />
+	<export function = "getMissionTimerDetails" type = "server" />
+
+	<!-- FILES -->
+	<file src = "events/files/img/bg.png" />
+	<file src = "events/files/img/health.png" />
+	<file src = "events/files/img/players.png" />
+	<file src = "events/files/img/score.png" />
+	<file src = "events/files/img/time.png" />
+	<file src = "events/files/img/event_bg.png" />
+	<file src = "events/files/img/event_layer.png" />
+	<file src = "events/files/img/count_3.png" />
+	<file src = "events/files/img/count_2.png" />
+	<file src = "events/files/img/count_1.png" />
+	<file src = "events/files/img/count_go.png" />
+	<file src = "events/files/sound/count_3.mp3" />
+	<file src = "events/files/sound/count_2.mp3" />
+	<file src = "events/files/sound/count_1.mp3" />
+	<file src = "events/files/sound/count_go.mp3" />
+	<file src = "files/sounds/firstblood.mp3" />
+</meta>

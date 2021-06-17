@@ -1,0 +1,5 @@
+<map edf:definitions="mta-tr">
+    <teleport id="LV Havaalanı" group="Las Venturas" rotZ="0" posX="1490.9" posY="1253" posZ="10.8" rotX="0" rotY="0"></teleport>
+    <teleport id="SF Havaalanı" group="San Fierro" rotZ="318.375" posX="-1360.9" posY="-245.60001" posZ="14.1" rotX="0" rotY="0"></teleport> 
+    <teleport id="SF Stunts" group="San Fierro" rotZ="336.212" posX="-2454.89624" posY="1320.17944" posZ="26.0709" rotX="0" rotY="0"></teleport>
+</map>
