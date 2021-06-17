@@ -16,6 +16,7 @@ services:
       - "./config/mtaserver.local.conf:/data/mtaserver.local.conf"
       - "./native-modules/ml_sysutils.so:/native-modules/ml_sysutils.so"
       - "./volumes/data/:/data"
+      - ./volumes/dynamic-files:/dynamic-files
     tty: true
     stdin_open: true
   mtatr-discord-bot:
