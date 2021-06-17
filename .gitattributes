@@ -1,0 +1,3 @@
+*.slua linguist-language=lua
+*.clua linguist-language=lua
+mtaserver.*.conf linguist-language=xml
