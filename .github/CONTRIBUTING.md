@@ -36,4 +36,4 @@ All issues should be handled (if it's related to code) in a seperate branch and 
 
 
 ## Setup
-Simply create a local.env and `docker-compose up -d` and connect to `mtasa://127.0.0.1:22003` on your local computer.
+Simply create a local.env and fill it like [example](../example.env) `docker-compose up -d` and connect to `mtasa://127.0.0.1:22003` on your local computer.
