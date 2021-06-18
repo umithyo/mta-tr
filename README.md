@@ -7,3 +7,6 @@ The project is completely playable but of course, like every project out there i
 Thanks to;
 * [4O4's mtasa-docker](https://github.com/4O4/mtasa-docker)
 * [SSH Remote Commands](https://github.com/marketplace/actions/ssh-remote-commands)
+
+## Getting Started
+You can get started by following [this](.github/CONTRIBUTING.md) guide.
