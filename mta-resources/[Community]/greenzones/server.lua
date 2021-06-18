@@ -1,6 +1,6 @@
 addEventHandler ("onResourceStart",getResourceRootElement(getThisResource()),
 function()
-  local allGreenzones = getElementsByType ("radararea")
+  local allGreenzones = getElementsByType ("gz")
   for i,v in ipairs (allGreenzones) do
     local r,g,b = getRadarAreaColor (v)
       local x,y = getElementPosition (v)
@@ -14,35 +14,35 @@ function()
 	res_col = createColCuboid (x, y, -50, w, h, 7500)
 end)
 
-addEventHandler ("onColShapeHit", getRootElement(), 
+addEventHandler ("onColShapeHit", getRootElement(),
 function(hitElement, matchingDimension)
   if (isElement(hitElement)) and (getElementID (source) == "greenzoneColshape") and matchingDimension then
 	local hitElement = hitElement;
 	local vh;
-	if (getElementType (hitElement) == "player") and isPedInVehicle( hitElement ) then 
+	if (getElementType (hitElement) == "player") and isPedInVehicle( hitElement ) then
 		  vh = getPedOccupiedVehicle( hitElement )
-	elseif (getElementType (hitElement) == "vehicle") then 
+	elseif (getElementType (hitElement) == "vehicle") then
 		vh = hitElement;
-	end	
-	if isElement (vh) then 
+	end
+	if isElement (vh) then
 	  setVehicleEngineState( vh, false )
 	  blowVehicle( vh, false)
-	  setTimer( function(v) if isElement (v) then  destroyElement (v)  end end, 3000, 1, vh )  
-	end 
-	if isElement (hitElement) then 
-		if (getElementType (hitElement) == "player") then 
+	  setTimer( function(v) if isElement (v) then  destroyElement (v)  end end, 3000, 1, vh )
+	end
+	if isElement (hitElement) then
+		if (getElementType (hitElement) == "player") then
 			toggleControl (hitElement, "fire", false)
 			toggleControl (hitElement, "aim_weapon", false)
 			toggleControl (hitElement, "vehicle_fire", false)
 			setElementData(hitElement, "greenzoned", true )
 			triggerClientEvent (hitElement, "enableGodMode", hitElement)
 			--outputDebugString (getPlayerName(hitElement) .. " has entered the greenzone")
-		end	
-	end	
+		end
+	end
   end
 end)
 
-addEventHandler ("onColShapeLeave", getRootElement(), 
+addEventHandler ("onColShapeLeave", getRootElement(),
 function(leaveElement, matchingDimension)
   if (getElementType (leaveElement) == "player") and (getElementID (source) == "greenzoneColshape") then
     toggleControl (leaveElement, "fire", true)
@@ -55,31 +55,31 @@ function(leaveElement, matchingDimension)
 end)
 
 addEvent ("gz.onload", true);
-addEventHandler ("gz.onload", root, 
+addEventHandler ("gz.onload", root,
 	function ()
-	 for i, v in ipairs (getElementsByType"colshape", resourceRoot) do 
-		if getElementID (v) == "greenzoneColshape" then 
-			if isElementWithinColShape(client, v) then 
+	 for i, v in ipairs (getElementsByType"colshape", resourceRoot) do
+		if getElementID (v) == "greenzoneColshape" then
+			if isElementWithinColShape(client, v) then
 				local hitElement = client;
-				if (getElementType (hitElement) == "player") then 
+				if (getElementType (hitElement) == "player") then
 					toggleControl (hitElement, "fire", false)
 					toggleControl (hitElement, "aim_weapon", false)
 					toggleControl (hitElement, "vehicle_fire", false)
 					setElementData(hitElement, "greenzoned", true )
 					triggerClientEvent (hitElement, "enableGodMode", hitElement)
 					--outputDebugString (getPlayerName(hitElement) .. " has entered the greenzone")
-				end	
-			end	
-		end	
+				end
+			end
+		end
 	  end
 	end
-);	
+);
 
-addEventHandler ("onPlayerSpawn", root, 
+addEventHandler ("onPlayerSpawn", root,
 	function ()
-		for i, v in ipairs (getElementsByType("colshape", resourceRoot)) do 
-			if getElementID (v) == "greenzoneColshape" then 
-				if isElementWithinColShape(source, v) then 
+		for i, v in ipairs (getElementsByType("colshape", resourceRoot)) do
+			if getElementID (v) == "greenzoneColshape" then
+				if isElementWithinColShape(source, v) then
 					toggleControl (source, "fire", false)
 					toggleControl (source, "aim_weapon", false)
 					toggleControl (source, "vehicle_fire", false)
@@ -113,16 +113,16 @@ addEventHandler ("onPlayerQuit", root,
 );
 
 function checkEvaded (player)
-	if not evaded[player] then 
+	if not evaded[player] then
 		evaded[player] = 3;
 	end
 	evaded[player] = evaded[player] - 1;
 	outputChatBox ("Spawn kill! Kalan hakkın: "..evaded[player], player);
-	if evaded[player] <= 0 then 
+	if evaded[player] <= 0 then
 		exports.mtatr_admin:jailPlayer(player, true, "Oto");
 		-- banPlayer (player, true, false, false, "20 dakika", "Spawn Kill", 20*60);
 		-- return;
 		return;
-	end	
+	end
 	killPed (player);
 end
