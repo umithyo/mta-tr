@@ -13,7 +13,8 @@ function createSocketFromConfig()
      iprint(_channels);
      if (_channels) then
         channels = split(_channels, ',');
-        for _, channel in ipairs (channels, ',') do
+        for _, channel in ipairs (channels) do
+            iprint(channel)
             createDiscordPipe(hostname, port, passphrase, channel)
         end
     end

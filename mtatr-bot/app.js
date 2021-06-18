@@ -18,6 +18,9 @@ let config = {
     bots: process.env.DISCORD_CHANNELS.split(",")
 };
 
+console.log(process.env.DISCORD_CHANNELS)
+console.log(process.env.DISCORD_CHANNELS.split(","))
+
 /**
  * Public socket endpoint server
  */
@@ -39,8 +42,7 @@ let channelBots = new Map();
 let channelSessions = new Map();
 
 // Create bots from configuration
-for (let botconfig of config.bots) {
-    let channel = botconfig.channel;
+for (let channel of config.bots) {
 
     // Disallow channel duplicates
     if (channelBots.has(channel)) {
