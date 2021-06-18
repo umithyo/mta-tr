@@ -9,13 +9,10 @@ function createSocketFromConfig()
      local passphrase = getSystemEnvVariable("DISCORD_PASSPHRASE");
      local hostname = "mtatr-discord-bot";
      local port = getSystemEnvVariable("DISCORD_PORT");
-     iprint(passphrase);
-     iprint(_channels);
      if (_channels) then
         channels = split(_channels, ',');
         for _, channel in ipairs (channels) do
-            iprint(channel)
-            createDiscordPipe(hostname, port, passphrase, channel)
+            createDiscordPipe(hostname, tonumber(port), passphrase, channel)
         end
     end
 end
