@@ -1,7 +1,7 @@
 local MAIN_VELOCITY = 90;
 local assets = {};
 
-addEventHandler ("onResourceStart", resourceRoot, 
+addEventHandler ("onResourceStart", resourceRoot,
 	function ()
 		local name = "Uyuşturucu Kaçakçısı";
 		local desc = "Görevin uyuşturucu taşımak. Anayollardan uzak durmaya çalış!";
@@ -11,26 +11,26 @@ addEventHandler ("onResourceStart", resourceRoot,
 );
 
 addEvent ("onPlayerMissionReady");
-addEventHandler ("onPlayerMissionReady", root, 
+addEventHandler ("onPlayerMissionReady", root,
 	function (mission)
-		if mission == "Uyuşturucu Kaçakçısı" then 
+		if mission == "Uyuşturucu Kaçakçısı" then
 			fadeCamera (source, false, .5);
-			setTimer (startMission, 1000, 1, source);	
+			setTimer (startMission, 1000, 1, source);
 		end
 	end
-);	
+);
 
 addEvent ("onPlayerLeaveMission");
-addEventHandler ("onPlayerLeaveMission", root, 
+addEventHandler ("onPlayerLeaveMission", root,
 	function (mission, reason)
-		if reason ~= "stop" and reason ~= "stoprmt" then 
-			if mission == "Uyuşturucu Kaçakçısı" then 
+		if reason ~= "stop" and reason ~= "stoprmt" then
+			if mission == "Uyuşturucu Kaçakçısı" then
 				triggerClientEvent (source, "drugm.onstop", source);
 				assets[source] = nil;
-			end	
-		end	
+			end
+		end
 	end
-);	
+);
 
 function math.round(number, decimals, method)
     decimals = decimals or 0
@@ -51,7 +51,7 @@ function startMission (player)
 	local veh = exports.mtatr_civ:createVehicle (482, 980.88, 2177.84, 10.82, 0, 0, 163);
 	assets[player].vehicle = veh;
 	warpPedIntoVehicle (player, veh);
-	setVehicleColor (veh, 0, 0, 0, 0, 0, 0);	
+	setVehicleColor (veh, 0, 0, 0, 0, 0, 0);
 	exports.mtatr_civ:assignPlayerVehicle (player, veh, true);
 	local marker = createMarker (x, y, z-1, "cylinder", 3, r, g, b, 255, player);
 	local blip = createBlip (x, y, z, 53, 2, 255, 255, 255, 255, 0, 99999, player);
@@ -59,18 +59,18 @@ function startMission (player)
 	exports.mtatr_civ:assignPlayerAsset (player, "blip", blip);
 	triggerClientEvent (player, "drugm.onstart", player, deadline*60*1000);
 	fadeCamera (player, true);
-	addEventHandler ("onMarkerHit", marker, 
+	addEventHandler ("onMarkerHit", marker,
 		function (plr, dim)
-			if plr and dim and isElement (plr) and getElementType (plr) == "vehicle" then 
-				succeedMission(player, distance);
-			end	
+			if plr and dim and isElement (plr) and getElementType (plr) == "vehicle" then
+				succeedMission(plr, distance);
+			end
 		end
-	);	
+	);
 end
 
 function stopMission (player, reason)
 	return exports.mtatr_civ:setPlayerMission (player, nil, reason);
-end	
+end
 
 function succeedMission (player, distance)
 	local level = exports.mtatr_civ:getPlayerLevel (player);
@@ -87,15 +87,15 @@ function getVelocity (element)
 	local actualspeed = (speedx^2 + speedy^2 + speedz^2)^(0.5);
 	local kmh = actualspeed * 180;
 	return kmh;
-end	
+end
 
 function calculateDeadline (distance)
 	return math.round((distance/MAIN_VELOCITY)/10, 2);
-end	
+end
 
 addEvent ("drugm.elapsed", true);
-addEventHandler ("drugm.elapsed", root, 
+addEventHandler ("drugm.elapsed", root,
 	function ()
 		stopMission (client, "Süre doldu.");
 	end
-);	
+);
