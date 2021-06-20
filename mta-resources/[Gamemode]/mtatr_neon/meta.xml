@@ -1,12 +1,23 @@
-<meta>
-	<info author="MTA-TR.com" version="0.1.0" type="script" description="MTATRNeon" />
-	
-    <script src="main.lua" type="server" />
-
-	<export function="removeNeon" type="server"/>
-	<export function="addNeon" type="server"/>
-	<export function="setNeonColor" type="server"/>
-	<export function="isNeonLightsEnabled" type="server"/>
-	<export function="setNeonLightsEnabled" type="server"/>
-	<export function="doesVehicleHaveNeon" type="server"/>
-</meta>
+<meta>
+
+	<info author="MTA-TR.com" version="0.1.0" type="script" description="mtatr_neon" />
+
+
+
+    <script src="main.lua" type="server" />
+
+
+
+	<export function="removeNeon" type="server"/>
+
+	<export function="addNeon" type="server"/>
+
+	<export function="setNeonColor" type="server"/>
+
+	<export function="isNeonLightsEnabled" type="server"/>
+
+	<export function="setNeonLightsEnabled" type="server"/>
+
+	<export function="doesVehicleHaveNeon" type="server"/>
+
+</meta>
