@@ -1,0 +1,4 @@
+[submodule "mta-resources/[DEFAULT_RESOURCES]"]
+	path = mta-resources/[DEFAULT_RESOURCES]
+	url = https://github.com/multitheftauto/mtasa-resources.git
+	branch = master
