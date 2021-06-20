@@ -38,45 +38,40 @@
 		Num 7 - Takım Radyosu
 	</hotkeys>
 	<gameplay>Para kazanma
-		Para kazanmak için; haritada bulunan sari bliplere giderek görev yapabilir, etkinliklere katılabilir, grubunuzla turf alabilir, deathmatchlere girebilir, zombi öldürebilir veya drift yapabilirsiniz. 
-		
+		Para kazanmak için; haritada bulunan sari bliplere giderek görev yapabilir, etkinliklere katılabilir, grubunuzla turf alabilir, deathmatchlere girebilir, zombi öldürebilir veya drift yapabilirsiniz.
+
 		Silahlar
 		Silahları ammunation(silah blipleri)lardan belli ücret karşılığı alabilirsiniz.
-		
+
 		Seviye
 		Yeni eklenen bu özellik, deneyim puanınıza göre size yeni seviyeler veriyor. Yeni seviyeler, yeni olanaklar sağlıyor. Seviye kazandıkça; oyundaki en iyi evleri açabilir, en sevdiğiniz skinleri alabilir, ve ileride eklenecek birçok özelliğe kolayca erişim sağlayabilirsiniz. Deneyim kazanmanın üç yolu var: görev yapmak, zombi veya normal deathmatchlere girip savaşmak.
-			
+
 		Evler
-		Bir başka yeni özellik ise evler. Evinizde doğabilir, evinize arkadaşlarınızı alıp güzel bir parti verebilir, evinizi yabancılardan korumak için kilitleyebilir hatta ev ticareti yaparak oyunda yüksek meblağlar kazanabilirsiniz. Unutmayın, sadece 4 eve kadar satın alma imkanınız var. 
-			
+		Bir başka yeni özellik ise evler. Evinizde doğabilir, evinize arkadaşlarınızı alıp güzel bir parti verebilir, evinizi yabancılardan korumak için kilitleyebilir hatta ev ticareti yaparak oyunda yüksek meblağlar kazanabilirsiniz. Unutmayın, sadece 4 eve kadar satın alma imkanınız var.
+
 		Dükkanlar
-		Mabako paketi. Yemek dükkanlarına gidip canınızı artırabilir, silahçılara gidip istediğiniz silahı alabilirsiniz. 
-			
-		Mod Yönetimi 
+		Mabako paketi. Yemek dükkanlarına gidip canınızı artırabilir, silahçılara gidip istediğiniz silahı alabilirsiniz.
+
+		Mod Yönetimi
 		Modlarınızı F3 tuşuna basarak yönetebilirsiniz. Sadece istediğiniz modları aktif etme imkanı sunmamızın sebebi, gereksiz veri transferinin önüne geçerek size daha keyifli bir deneyim sunmak.
-			
-		Finans 
+
+		Finans
 		F5'e basarak para transferi yapabilir, kredi talebinde bulunabilirsiniz.
-		
+
 		Etkinlikler
 		TDM -> Savaş etkinliğidir. Karşı takımı temizlerseniz etkinliği kazanırsınız.
 		Yarış -> Yarışı 1. bitirirseniz ödülü kazanırsınız.
 		PTP -> Eğer Hunters takımındaysanız, başkanı öldürerek; Government takımındaysanız başkanı koruyarak etkinliği kazanırsınız.
-		
+
 		Turfler
 		Turfleri alıp korudukça para kazanırsınız. Turfler, şimdilik sadece SF şehrindedir.
-			
+
 		Yönetici Alımı
-		MTA-TR.com sunucularında yöneticilik para ile satın alınamaz, başvuru yapılamaz. Yönetici olacak kişiye özel mesaj yoluyla bildirilir. O yüzden lütfen yönetici olmakla ilgili soru sormayın çünkü yanıtsız kalacaktır.			
+		MTA-TR.com sunucularında yöneticilik para ile satın alınamaz, başvuru yapılamaz. Yönetici olacak kişiye özel mesaj yoluyla bildirilir. O yüzden lütfen yönetici olmakla ilgili soru sormayın çünkü yanıtsız kalacaktır.
 	</gameplay>
 	<deathmatch>Deathmatchler MTA-TR.com'un vazgeçilmez özelliklerinden biridir. Deathmatchler'de deneyim puanı ve para kazanabilirsiniz. F1 > Deathmatch menüsünü takip edip istediğiniz deathmatchi seçip girin ve kazanmaya başlayın!
 	</deathmatch>
-	<contact>Sorularınız, öneri ve şikayetleriniz için forumu kullanın: mta-tr.com
-		Yönetim 
-		    roaboar@mta-tr.com
-		    diamonds@mta-tr.com
-		IRC'de bize katılın!
-		    irc.gtanet.com 6667 #mta-tr
+	<contact>https://discord.gg/Kbx2uEvsbr
 	</contact>
 	<about>MTA-TR.com 2009 yılında kurulan, dünyanın ilk Türk MTA serverı ve platformudur. 2013 yılında sunucular kapanmış, bayrağı diğer Türk sunucular almıştır. MTA-TR.com'u eski formuna döndürmek için çalışmalar hala sürmektedir. 2016 yılının sonlarına doğru alınan kararla birlikte sunucuların tekrardan ayağa kaldırılma çalışması başlamıştır. Şuan sadece Freeroam sunucusu tekrardan kodlanmış, gözler Race/DD sunucularına çevrilmiştir. En kısa sürede onların da tamamlanacağından emin olmak için sıkı şekilde çalışılmaktadır.
 	</about>
