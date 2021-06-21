@@ -29,7 +29,7 @@ function setPlayerTeam (player, team, name)
 		-- if name == true then
 			local tag = getGroupData (getGroupFromName (getTeamName (team)), "tag");
 			if tag and exports.mtatr_accounts:getPlayerCurrentCharacter (player) then
-				local name = tag..exports.mtatr_accounts:getPlayerCurrentCharacter (player);
+				local name = "["..tag.."] "..exports.mtatr_accounts:getPlayerCurrentCharacter (player);
 				if  #name > 22 then
 					name = name:sub (1, 22 - (#name - 22));
 				end
