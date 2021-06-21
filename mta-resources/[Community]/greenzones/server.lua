@@ -1,6 +1,6 @@
 addEventHandler ("onResourceStart",getResourceRootElement(getThisResource()),
 function()
-  local allGreenzones = getElementsByType ("gz")
+  local allGreenzones = getElementsByType ("radararea", resourceRoot)
   for i,v in ipairs (allGreenzones) do
     local r,g,b = getRadarAreaColor (v)
       local x,y = getElementPosition (v)
