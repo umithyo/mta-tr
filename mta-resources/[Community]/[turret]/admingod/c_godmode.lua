@@ -1,5 +1,6 @@
 addEventHandler("onClientPlayerDamage", localPlayer, function(attacker, weapon, bodypart, damage)
-	if getElementData(source, "invincible") then
+
+	if getElementData(source, "invincible") and attacker ~= false then
 		cancelEvent()
 		triggerServerEvent("dealDamageToAttacker", source, attacker, damage)
 	end
