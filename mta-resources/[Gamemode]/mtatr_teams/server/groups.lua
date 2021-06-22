@@ -112,7 +112,7 @@ function setGroupTag (group, tag)
 	setGroupData (group, "tag", tag);
 	for i, player in ipairs (getPlayersInGroup(group)) do
 		if tag and exports.mtatr_accounts:getPlayerCurrentCharacter (player) then 
-			local name = "["..tag.."] "..exports.mtatr_accounts:getPlayerCurrentCharacter (player);
+			local name = "["..tag.."]"..exports.mtatr_accounts:getPlayerCurrentCharacter (player);
 			if  #name > 22 then 
 				name = name:sub (1, 22 - (#name - 22));
 			end
