@@ -115,9 +115,9 @@ addEventHandler("onPlayerChat", root,
 
 addEventHandler("onDebugMessage", root, function(message, level, file, line)
     local str;
-    if level == 1 then
+    if level == 1 and file then
         str = ":red_square: **ERROR**: " .. file .. ":" .. tostring(line) .. ", " .. message;
-    elseif level == 2 then
+    elseif level == 2 and file then
         str = ":warning: **WARNING**: " .. file .. ":" .. tostring(line) .. ", " .. message;
     else
         -- str = ":information_source: **INFO**: " .. file .. ":" .. tostring(line) .. ", " .. message
