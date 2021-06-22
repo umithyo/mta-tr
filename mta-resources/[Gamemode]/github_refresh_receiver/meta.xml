@@ -1,0 +1,5 @@
+<meta>
+    <script src='receive.slua' type='server' />
+
+    <export function='triggerRefreshAll' type='server' http='true' />
+</meta>

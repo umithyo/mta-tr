@@ -1,0 +1,14 @@
+{
+    "name": "mtatr-github-refresher",
+    "version": "1.0.0",
+    "description": "Runs various tasks for MTA-TR Servers",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "express": "^4.17.1",
+        "mtasa": "^0.1.3"
+    }
+}
