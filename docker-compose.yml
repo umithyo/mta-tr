@@ -19,6 +19,7 @@ services:
       - ./volumes/dynamic-files:/dynamic-files
     tty: true
     stdin_open: true
+
   mtatr-discord-bot:
     container_name: "mtatr-discord-bot"
     restart: always
@@ -28,6 +29,16 @@ services:
       dockerfile: DiscordBot.DockerFile
     ports:
       - "8101:8101"
+
+  mtatr-github-refresher:
+    container_name: "mtatr-github-refresher"
+    env_file: local.env
+    restart: always
+    build:
+      context: ./www/mtatr-github-refresher
+      dockerfile: DockerFile
+    ports:
+      - "8201:8201"
 
 networks:
   default:
