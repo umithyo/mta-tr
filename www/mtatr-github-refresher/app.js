@@ -9,11 +9,15 @@ app.get('/', (req, res) => {
 });
 
 app.get('/trigger-refreshall', async (req, res) => {
-    const result = await mta.resources.github_refresh_receiver.triggerRefreshAll();
-    if (result) {
-        res.sendStatus(200);
-    } else {
-        res.sendStatus(400);
+    try {
+        const result = await mta.resources.github_refresh_receiver.triggerRefreshAll();
+        if (result) {
+            res.sendStatus(200);
+        } else {
+            res.sendStatus(400);
+        }
+    } catch (err) {
+        console.error(`Ooops! Something went wrong ${err}`);
     }
 });
 
