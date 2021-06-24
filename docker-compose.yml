@@ -2,9 +2,9 @@ version: "3.4"
 
 services:
   mtasa-server:
-    container_name: mta-tr
+    container_name: ${PROJECT_NAME}-mtasa-server
     image: "notfound/mtasa-server:1.5.8-20668-v4"
-    env_file: local.env
+    env_file: .env
     restart: always
     ports:
       - "22003:22003/udp"
@@ -20,19 +20,19 @@ services:
     tty: true
     stdin_open: true
 
-  mtatr-discord-bot:
-    container_name: "mtatr-discord-bot"
+  mtasa-discord-bot:
+    container_name: "${PROJECT_NAME}-discord-bot"
     restart: always
-    env_file: local.env
+    env_file: .env
     build:
-      context: ./mtatr-bot
+      context: ./www/mtatr-bot
       dockerfile: DiscordBot.DockerFile
     ports:
       - "8101:8101"
 
-  mtatr-github-refresher:
-    container_name: "mtatr-github-refresher"
-    env_file: local.env
+  mtasa-github-refresher:
+    container_name: "${PROJECT_NAME}-github-refresher"
+    env_file: .env
     restart: always
     build:
       context: ./www/mtatr-github-refresher
