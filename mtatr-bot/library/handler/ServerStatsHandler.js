@@ -30,8 +30,8 @@ class ServerStatsHandler extends Handler {
             let count = this.escape(payload.count);
             let max_count = this.escape(payload.max_count);
             let name = this.escape(payload.name);
-            name = name == 'MTA:SA' ? 'GÜNLÜK ETKİNLİKLER GÖREVLER VE DAHA FAZLASI' : name;
-            bot.setChannelStatus(`${name} :mouse_three_button: ${count}/${max_count}`)
+            name = name == 'MTA:SA' ? process.env.HOST_IP : name;
+            bot.setChannelStatus(name)
                 .then(updated => {
                     console.log('updated channel topic:');
                     console.log(`${updated}`);
