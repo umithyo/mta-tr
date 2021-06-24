@@ -2,7 +2,7 @@ _dbConnect = dbConnect;
 
 function dbConnect ()
 	local dbName = getSystemEnvVariable("MYSQL_DB_NAME");
-    local host = getSystemEnvVariable("PROJECT_NAME").."mysql-server";
+    local host = getSystemEnvVariable("PROJECT_NAME").."-mysql-server";
     if getSystemEnvVariable("MTA_ENVIRONMENT") == "Local" then
         host = getSystemEnvVariable("HOST_IP");
     end
