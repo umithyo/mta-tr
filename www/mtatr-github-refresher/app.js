@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const port = 8201;
 const MTAClient = require('mtasa').Client;
-const mta = new MTAClient(process.env.MTA_HOST, process.env.MTA_PORT, process.env.MTA_HTTP_USER, process.env.MTA_HTTP_PASSWORD);
+const mta = new MTAClient(`${process.env.PROJECT_NAME}-mtasa-server`, process.env.MTA_PORT, process.env.MTA_HTTP_USER, process.env.MTA_HTTP_PASSWORD);
 
 app.get('/', (req, res) => {
     res.send('App works.');
