@@ -103,7 +103,7 @@ local function event_start (event)
 	end
 
 	for i, v in ipairs (getElementsByType"player") do
-		exports.play:disableSpawnFor (v, false);
+		exports.mtatr_play:disableSpawnFor (v, false);
 	end
 	event_inc ();
 	event_active 	= false;
@@ -257,7 +257,7 @@ addCommandHandler ("eventgir",
 		end
 		exports[events[events_index].resource]:joinEvent(player);
 		if events[events_index].repetitive then
-			exports.play:disableSpawnFor (player, true);
+			exports.mtatr_play:disableSpawnFor (player, true);
 		end
 	end
 );
