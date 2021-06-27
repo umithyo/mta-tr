@@ -7,7 +7,7 @@ local channels = {};
 function createSocketFromConfig()
      local _channels = getSystemEnvVariable("DISCORD_CHANNELS");
      local passphrase = getSystemEnvVariable("DISCORD_PASSPHRASE");
-     local hostname = "mtatr-discord-bot";
+     local hostname = "mta-tr-discord-bot";
      local port = getSystemEnvVariable("DISCORD_PORT");
      if (_channels) then
         channels = split(_channels, ',');
