@@ -61,7 +61,7 @@ function startMission (player)
 	fadeCamera (player, true);
 	addEventHandler ("onMarkerHit", marker,
 		function (plr, dim)
-			if plr and dim and isElement (plr) and getElementType (plr) == "vehicle" then
+			if plr and dim and isElement (plr) and getElementType (plr) == "player" then
 				succeedMission(plr, distance);
 			end
 		end
