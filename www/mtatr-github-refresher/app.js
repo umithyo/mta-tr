@@ -19,8 +19,8 @@ app.get('/trigger-refreshall', async (req, res) => {
             res.send(`[Error] MTA Server returned ${result}`);
         }
     } catch (err) {
-        res.send(`Ooops! Something went wrong ${err}`);
-        console.error(`Ooops! Something went wrong ${err}`);
+        res.statusCode = 500;
+        res.send(err);
     }
 });
 
